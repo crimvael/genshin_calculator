@@ -15,6 +15,9 @@ public:
     genshin_calculator(QWidget *parent = nullptr);
     ~genshin_calculator();
 
+private slots:
+
+
 private:
     Ui::genshin_calculator *ui;
 };

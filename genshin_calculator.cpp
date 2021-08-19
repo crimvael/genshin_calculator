@@ -13,3 +13,4 @@ genshin_calculator::~genshin_calculator()
     delete ui;
 }
 
+
