@@ -9,14 +9,23 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    add_new_character.cpp \
+    add_new_weapon.cpp \
     main.cpp \
-    genshin_calculator.cpp
+    genshin_calculator.cpp \
+    new_char_data.cpp
 
 HEADERS += \
-    genshin_calculator.h
+    add_new_character.h \
+    add_new_weapon.h \
+    genshin_calculator.h \
+    new_char_data.h
 
 FORMS += \
-    genshin_calculator.ui
+    add_new_character.ui \
+    add_new_weapon.ui \
+    genshin_calculator.ui \
+    new_char_data.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
