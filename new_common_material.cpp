@@ -1,6 +1,5 @@
 #include "new_common_material.h"
 #include "ui_new_common_material.h"
-#include "QFile"
 
 new_common_material::new_common_material(QWidget *parent) :
     QDialog(parent),
@@ -18,4 +17,3 @@ void new_common_material::on_pushButton_clicked()
 {
     accept();
 }
-
