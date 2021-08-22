@@ -26,9 +26,44 @@ void genshin_calculator::on_pushButton_22_clicked()
 }
 
 
-void genshin_calculator::on_pushButton_19_clicked()
+void genshin_calculator::on_pushButton_7_clicked()
 {
-    new_char_data *add_new = new new_char_data(this);
+    new_common_material *add_new = new new_common_material(this);
+    add_new->show();
+}
+
+
+void genshin_calculator::on_pushButton_9_clicked()
+{
+    new_ascension_material *add_new = new new_ascension_material(this);
+    add_new->show();
+}
+
+
+void genshin_calculator::on_pushButton_11_clicked()
+{
+    new_weapon_material *add_new = new new_weapon_material(this);
+    add_new->show();
+}
+
+
+void genshin_calculator::on_pushButton_13_clicked()
+{
+    new_local_speciality *add_new = new new_local_speciality(this);
+    add_new->show();
+}
+
+
+void genshin_calculator::on_pushButton_15_clicked()
+{
+    new_talent_book *add_new = new new_talent_book(this);
+    add_new->show();
+}
+
+
+void genshin_calculator::on_pushButton_17_clicked()
+{
+    new_weekly_material *add_new = new new_weekly_material(this);
     add_new->show();
 }
 
