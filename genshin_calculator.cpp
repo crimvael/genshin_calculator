@@ -14,18 +14,6 @@ genshin_calculator::~genshin_calculator()
     delete ui;
 }
 
-void genshin_calculator::on_pushButton_clicked()
-{
-    add_new_character *add_new = new add_new_character(this);
-    add_new->show();
-}
-
-void genshin_calculator::on_pushButton_22_clicked()
-{
-    add_new_weapon *add_new = new add_new_weapon(this);
-    add_new->show();
-}
-
 void genshin_calculator::on_pushButton_7_clicked()
 {
     if (!ui->lineEdit_8->text().isEmpty())
