@@ -1,8 +1,6 @@
 #include "genshin_calculator.h"
 #include "ui_genshin_calculator.h"
 
-extern QString new_common;
-QString new_common = "";
 
 genshin_calculator::genshin_calculator(QWidget *parent)
     : QMainWindow(parent)
@@ -28,50 +26,91 @@ void genshin_calculator::on_pushButton_22_clicked()
     add_new->show();
 }
 
-
 void genshin_calculator::on_pushButton_7_clicked()
 {
-    new_common_material *add_new = new new_common_material(this);
-    add_new->show();
+    if (!ui->lineEdit_8->text().isEmpty())
+        ui->listWidget->addItem(ui->lineEdit_8->text());
+
+    ui->lineEdit_8->clear();
 }
 
-void genshin_calculator::get_new_common_material(QString item_name)
+
+void genshin_calculator::on_pushButton_8_clicked()
 {
-    new_common = item_name;
+    qDeleteAll(ui->listWidget->selectedItems());
 }
 
 
 void genshin_calculator::on_pushButton_9_clicked()
 {
-    new_ascension_material *add_new = new new_ascension_material(this);
-    add_new->show();
+    if (!ui->lineEdit_10->text().isEmpty())
+        ui->listWidget_2->addItem(ui->lineEdit_10->text());
+
+    ui->lineEdit_10->clear();
+}
+
+
+void genshin_calculator::on_pushButton_10_clicked()
+{
+    qDeleteAll(ui->listWidget_2->selectedItems());
 }
 
 
 void genshin_calculator::on_pushButton_11_clicked()
 {
-    new_weapon_material *add_new = new new_weapon_material(this);
-    add_new->show();
+    if (!ui->lineEdit_11->text().isEmpty())
+        ui->listWidget_3->addItem(ui->lineEdit_11->text());
+
+    ui->lineEdit_11->clear();
+}
+
+
+void genshin_calculator::on_pushButton_12_clicked()
+{
+    qDeleteAll(ui->listWidget_3->selectedItems());
 }
 
 
 void genshin_calculator::on_pushButton_13_clicked()
 {
-    new_local_speciality *add_new = new new_local_speciality(this);
-    add_new->show();
+    if (!ui->lineEdit_9->text().isEmpty())
+        ui->listWidget_4->addItem(ui->lineEdit_9->text());
+
+    ui->lineEdit_9->clear();
+}
+
+
+void genshin_calculator::on_pushButton_14_clicked()
+{
+    qDeleteAll(ui->listWidget_4->selectedItems());
 }
 
 
 void genshin_calculator::on_pushButton_15_clicked()
 {
-    new_talent_book *add_new = new new_talent_book(this);
-    add_new->show();
+    if (!ui->lineEdit_12->text().isEmpty())
+        ui->listWidget_5->addItem(ui->lineEdit_12->text());
+
+    ui->lineEdit_12->clear();
+}
+
+
+void genshin_calculator::on_pushButton_16_clicked()
+{
+    qDeleteAll(ui->listWidget_5->selectedItems());
 }
 
 
 void genshin_calculator::on_pushButton_17_clicked()
 {
-    new_weekly_material *add_new = new new_weekly_material(this);
-    add_new->show();
+    if (!ui->lineEdit_13->text().isEmpty())
+        ui->listWidget_6->addItem(ui->lineEdit_13->text());
+
+    ui->lineEdit_13->clear();
 }
 
+
+void genshin_calculator::on_pushButton_18_clicked()
+{
+    qDeleteAll(ui->listWidget_6->selectedItems());
+}

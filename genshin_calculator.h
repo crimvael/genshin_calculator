@@ -4,12 +4,6 @@
     #include <QMainWindow>
     #include "add_new_character.h"
     #include "add_new_weapon.h"
-    #include "new_common_material.h"
-    #include "new_ascension_material.h"
-    #include "new_weapon_material.h"
-    #include "new_local_speciality.h"
-    #include "new_talent_book.h"
-    #include "new_weekly_material.h"
 
 
     QT_BEGIN_NAMESPACE
@@ -24,7 +18,6 @@
         genshin_calculator(QWidget *parent = nullptr);
         ~genshin_calculator();
 
-        static void get_new_common_material(QString);
 
     private slots:
 
@@ -32,17 +25,30 @@
 
         void on_pushButton_22_clicked();
 
+
         void on_pushButton_7_clicked();
+
+        void on_pushButton_8_clicked();
 
         void on_pushButton_9_clicked();
 
-        void on_pushButton_11_clicked();
+        void on_pushButton_10_clicked();
 
         void on_pushButton_13_clicked();
 
+        void on_pushButton_14_clicked();
+
         void on_pushButton_15_clicked();
 
+        void on_pushButton_16_clicked();
+
         void on_pushButton_17_clicked();
+
+        void on_pushButton_18_clicked();
+
+        void on_pushButton_11_clicked();
+
+        void on_pushButton_12_clicked();
 
     private:
         Ui::genshin_calculator *ui;

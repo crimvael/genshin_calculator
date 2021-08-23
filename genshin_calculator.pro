@@ -12,35 +12,17 @@ SOURCES += \
     add_new_character.cpp \
     add_new_weapon.cpp \
     main.cpp \
-    genshin_calculator.cpp \
-    new_ascension_material.cpp \
-    new_common_material.cpp \
-    new_local_speciality.cpp \
-    new_talent_book.cpp \
-    new_weapon_material.cpp \
-    new_weekly_material.cpp
+    genshin_calculator.cpp
 
 HEADERS += \
     add_new_character.h \
     add_new_weapon.h \
-    genshin_calculator.h \
-    new_ascension_material.h \
-    new_common_material.h \
-    new_local_speciality.h \
-    new_talent_book.h \
-    new_weapon_material.h \
-    new_weekly_material.h
+    genshin_calculator.h
 
 FORMS += \
     add_new_character.ui \
     add_new_weapon.ui \
-    genshin_calculator.ui \
-    new_ascension_material.ui \
-    new_common_material.ui \
-    new_local_speciality.ui \
-    new_talent_book.ui \
-    new_weapon_material.ui \
-    new_weekly_material.ui
+    genshin_calculator.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
