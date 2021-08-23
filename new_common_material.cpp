@@ -13,10 +13,3 @@ new_common_material::~new_common_material()
 {
     delete ui;
 }
-
-void new_common_material::on_pushButton_clicked()
-{
-    new_item = ui->lineEdit->text();
-    genshin_calculator::get_new_common_material(new_item);
-    accept();
-}

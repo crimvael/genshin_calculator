@@ -205,9 +205,9 @@
         <widget class="QLineEdit" name="lineEdit">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>30</y>
-           <width>113</width>
+           <width>120</width>
            <height>21</height>
           </rect>
          </property>
@@ -215,82 +215,118 @@
           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_2">
+        <widget class="QComboBox" name="comboBox">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>70</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+         <property name="editable">
+          <bool>false</bool>
          </property>
+         <property name="currentText">
+          <string>Pyro</string>
+         </property>
+         <property name="minimumContentsLength">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Pyro</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Hydro</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Electro</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Cryo</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Anemo</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Geo</string>
+          </property>
+         </item>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_3">
+        <widget class="QComboBox" name="comboBox_2">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>110</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
+         <item>
+          <property name="text">
+           <string>Mondstadt</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Liyue</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Inazuma</string>
+          </property>
+         </item>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_4">
+        <widget class="QComboBox" name="comboBox_3">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>150</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_5">
+        <widget class="QComboBox" name="comboBox_4">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>190</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
          </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_6">
+        <widget class="QComboBox" name="comboBox_5">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>230</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_7">
+        <widget class="QComboBox" name="comboBox_6">
          <property name="geometry">
           <rect>
-           <x>170</x>
+           <x>160</x>
            <y>270</y>
-           <width>113</width>
-           <height>21</height>
+           <width>120</width>
+           <height>22</height>
           </rect>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
          </property>
         </widget>
        </widget>
@@ -913,7 +949,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
