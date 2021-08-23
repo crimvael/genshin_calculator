@@ -1,6 +1,9 @@
 #include "genshin_calculator.h"
 #include "ui_genshin_calculator.h"
 
+extern QString new_common;
+QString new_common = "";
+
 genshin_calculator::genshin_calculator(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::genshin_calculator)
@@ -30,6 +33,11 @@ void genshin_calculator::on_pushButton_7_clicked()
 {
     new_common_material *add_new = new new_common_material(this);
     add_new->show();
+}
+
+void genshin_calculator::get_new_common_material(QString item_name)
+{
+    new_common = item_name;
 }
 
 

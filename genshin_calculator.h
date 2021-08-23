@@ -24,6 +24,8 @@
         genshin_calculator(QWidget *parent = nullptr);
         ~genshin_calculator();
 
+        static void get_new_common_material(QString);
+
     private slots:
 
         void on_pushButton_clicked();

@@ -61,22 +61,12 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
         <string>Characters and weapons</string>
        </attribute>
-       <widget class="QListView" name="listView">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>40</y>
-          <width>240</width>
-          <height>491</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QFrame" name="frame_2">
         <property name="geometry">
          <rect>
@@ -304,16 +294,6 @@
          </property>
         </widget>
        </widget>
-       <widget class="QListView" name="listView_2">
-        <property name="geometry">
-         <rect>
-          <x>590</x>
-          <y>40</y>
-          <width>240</width>
-          <height>491</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QFrame" name="frame_3">
         <property name="geometry">
          <rect>
@@ -423,13 +403,26 @@
          <string>Weapons</string>
         </property>
        </widget>
-       <zorder>frame_2</zorder>
-       <zorder>listView</zorder>
-       <zorder>listView_2</zorder>
-       <zorder>frame_3</zorder>
-       <zorder>pushButton_19</zorder>
-       <zorder>label_24</zorder>
-       <zorder>label_25</zorder>
+       <widget class="QListWidget" name="listWidget_7">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>40</y>
+          <width>240</width>
+          <height>491</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QListWidget" name="listWidget_8">
+        <property name="geometry">
+         <rect>
+          <x>590</x>
+          <y>40</y>
+          <width>240</width>
+          <height>491</height>
+         </rect>
+        </property>
+       </widget>
       </widget>
       <widget class="QWidget" name="tab_6">
        <attribute name="title">

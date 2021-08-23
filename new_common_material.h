@@ -15,6 +15,8 @@ public:
     explicit new_common_material(QWidget *parent = nullptr);
     ~new_common_material();
 
+    QString new_item = "";
+
 private slots:
     void on_pushButton_clicked();
 
