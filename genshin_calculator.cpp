@@ -1,5 +1,9 @@
 #include "genshin_calculator.h"
 #include "ui_genshin_calculator.h"
+#include "QJsonDocument"
+#include "QJsonObject"
+#include "QJsonArray"
+#include "QFile"
 
 
 genshin_calculator::genshin_calculator(QWidget *parent)
@@ -16,6 +20,18 @@ genshin_calculator::~genshin_calculator()
 
 void genshin_calculator::on_pushButton_7_clicked()
 {
+
+    QString val;
+    QFile file;
+    file.setFileName("C:/Users/Oscar/Desktop/database.json");
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["materials"].toArray();
+    ui->listWidget->addItem(jsonArray[0].toString());
+
     if (!ui->lineEdit_8->text().isEmpty())
         ui->listWidget->addItem(ui->lineEdit_8->text());
 
