@@ -23,14 +23,43 @@ void genshin_calculator::on_pushButton_7_clicked()
 
     QString val;
     QFile file;
-    file.setFileName("C:/Users/Oscar/Desktop/database.json");
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    file.setFileName("C:/Users/Oscar/Desktop/genshin_calculator/database.json");
+    file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     val = file.readAll();
-    file.close();
+    //file.close();
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["common_materials"].toArray();
-    ui->listWidget->addItem(jsonArray[0].toString());
+    ui->listWidget->addItem(jsonArray[1].toString());
+
+    //QJsonValueRef ref = jsonObject.find("common_materials").value();
+    //QJsonObject m_addvalue = ref.toObject();
+    //jsonArray.append("india");
+    jsonObject.insert("common_materials", "CCC");
+    //ref=m_addvalue;
+    jsonResponse.setObject(jsonObject);
+    //file.open(QFile::WriteOnly | QFile::Text);
+    file.write(jsonResponse.toJson());
+    file.close();
+
+   /*
+    QFile file(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QJsonParseError JsonParseError;
+    QJsonDocument JsonDocument = QJsonDocument::fromJson(file.readAll(), &JsonParseError);
+    file.close();
+    QJsonObject RootObject = JsonDocument.object();
+    QJsonValueRef ref = RootObject.find("Address").value();
+    QJsonObject m_addvalue = ref.toObject();
+    m_addvalue.insert("Street","India");//set the value you want to modify
+    ref=m_addvalue; //assign the modified object to reference
+    JsonDocument.setObject(RootObject); // set to json document
+    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
+    file.write(JsonDocument.toJson());
+    file.close();
+    {"common_materials" : ["Slime", "Mask", "Arrow"]}
+    */
+
 
     if (!ui->lineEdit_8->text().isEmpty())
         ui->listWidget->addItem(ui->lineEdit_8->text());
