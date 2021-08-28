@@ -29,7 +29,7 @@ void genshin_calculator::on_pushButton_7_clicked()
     file.close();
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
-    QJsonArray jsonArray = jsonObject["materials"].toArray();
+    QJsonArray jsonArray = jsonObject["common_materials"].toArray();
     ui->listWidget->addItem(jsonArray[0].toString());
 
     if (!ui->lineEdit_8->text().isEmpty())
