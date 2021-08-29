@@ -1,11 +1,36 @@
 {
+    "ascension_materials": [
+        "juvenile jade",
+        "cleansing heart",
+        "lightning prism"
+    ],
     "common_materials": [
         "Slime",
-        "Hilichurl mask",
+        "Mask",
         "Arrow"
     ],
-    "uncommon": [
-        "uno",
-        "due"
+    "local_materials": [
+        "calla lily",
+        "silk flower",
+        "naku weed"
+    ],
+    "talent_materials": [
+        "Freedom",
+        "Resistance",
+        "Ballad",
+        "Prosperity",
+        "Diligence",
+        "Gold",
+        "Transience",
+        "Elegance",
+        "Light"
+    ],
+    "weapon_materials": [
+        "dandelion",
+        "mask"
+    ],
+    "weekly_materials": [
+        "dvalin claw",
+        "shard of a foul legacy"
     ]
 }
