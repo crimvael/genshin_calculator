@@ -33,40 +33,16 @@ void genshin_calculator::on_pushButton_7_clicked()
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget->addItem(jsonArray[i].toString());
 
-    //QJsonValueRef ref = jsonObject.find("common_materials").value();
-    //QJsonObject m_addvalue = ref.toObject();
-    jsonArray.append("india");
-    //jsonArray.push_back(jsonObject);
-    jsonObject.insert("common_materials", jsonArray);
-    //ref=m_addvalue;
-    jsonResponse.setObject(jsonObject);
-    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
-    file.write(jsonResponse.toJson());
-    file.close();
-
-   /*
-    QFile file(filepath);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    QJsonParseError JsonParseError;
-    QJsonDocument JsonDocument = QJsonDocument::fromJson(file.readAll(), &JsonParseError);
-    file.close();
-    QJsonObject RootObject = JsonDocument.object();
-    QJsonValueRef ref = RootObject.find("Address").value();
-    QJsonObject m_addvalue = ref.toObject();
-    m_addvalue.insert("Street","India");//set the value you want to modify
-    ref=m_addvalue; //assign the modified object to reference
-    JsonDocument.setObject(RootObject); // set to json document
-    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
-    file.write(JsonDocument.toJson());
-    file.close();
-    {"common_materials" : ["Slime", "Mask", "Arrow"]}
-    */
-
-
-    if (!ui->lineEdit_8->text().isEmpty())
+    if (!ui->lineEdit_8->text().isEmpty()){
+        jsonArray.append(ui->lineEdit_8->text());
+        jsonObject.insert("common_materials", jsonArray);
+        jsonResponse.setObject(jsonObject);
+        file.open(QFile::ReadWrite | QFile::Text | QFile::Truncate);
+        file.write(jsonResponse.toJson());
+        file.close();
         ui->listWidget->addItem(ui->lineEdit_8->text());
-
-    ui->lineEdit_8->clear();
+        ui->lineEdit_8->clear();
+    }
 }
 
 
