@@ -2,6 +2,10 @@
     "common_materials": [
         "Slime",
         "Hilichurl mask",
-        "Arrow",
+        "Arrow"
+    ],
+    "uncommon": [
+        "uno",
+        "due"
     ]
 }
