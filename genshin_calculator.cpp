@@ -24,21 +24,23 @@ void genshin_calculator::on_pushButton_7_clicked()
     QString val;
     QFile file;
     file.setFileName("C:/Users/Oscar/Desktop/genshin_calculator/database.json");
-    file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
     val = file.readAll();
-    //file.close();
+    file.close();
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["common_materials"].toArray();
-    ui->listWidget->addItem(jsonArray[1].toString());
+    for (int i = 0; i<jsonArray.size(); i++)
+        ui->listWidget->addItem(jsonArray[i].toString());
 
     //QJsonValueRef ref = jsonObject.find("common_materials").value();
     //QJsonObject m_addvalue = ref.toObject();
-    //jsonArray.append("india");
-    jsonObject.insert("common_materials", "CCC");
+    jsonArray.append("india");
+    //jsonArray.push_back(jsonObject);
+    jsonObject.insert("common_materials", jsonArray);
     //ref=m_addvalue;
     jsonResponse.setObject(jsonObject);
-    //file.open(QFile::WriteOnly | QFile::Text);
+    file.open(QFile::WriteOnly | QFile::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
 
