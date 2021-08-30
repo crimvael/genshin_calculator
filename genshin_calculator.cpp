@@ -544,3 +544,15 @@ void genshin_calculator::on_listWidget_7_itemSelectionChanged()
     ui->comboBox_7->setCurrentIndex(ui->comboBox_7->findText(tmp["Weekly material"].toString()));
 }
 
+
+void genshin_calculator::on_pushButton_clicked()
+{
+
+}
+
+
+void genshin_calculator::on_pushButton_2_clicked()
+{
+
+}
+
