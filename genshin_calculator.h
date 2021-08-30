@@ -43,6 +43,14 @@
 
         void on_pushButton_12_clicked();
 
+        void on_pushButton_19_clicked();
+
+        void on_pushButton_4_clicked();
+
+        void on_pushButton_3_clicked();
+
+        void on_listWidget_7_itemSelectionChanged();
+
     private:
         Ui::genshin_calculator *ui;
     };
