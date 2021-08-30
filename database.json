@@ -13,6 +13,356 @@
         "Smoldering Pearl"
     ],
     "characters": [
+        {
+            "Ascension material": "Basalt Pillar",
+            "Common material": "Samachurl Scrolls",
+            "Local speciality": "Cecilia",
+            "Name": "Albedo",
+            "Region": "Mondstadt",
+            "Talent material": "Ballad",
+            "Vision": "Geo",
+            "Weekly material": "Tusk of Monoceros Caeli"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Hilichurl Arrowheads",
+            "Local speciality": "Small Lamp Grass",
+            "Name": "Amber",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Pyro",
+            "Weekly material": "Dvalin's Sigh"
+        },
+        {
+            "Ascension material": "Cleansing Heart",
+            "Common material": "Samachurl Scrolls",
+            "Local speciality": "Philanemo Mushroom",
+            "Name": "Barbara",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Hydro",
+            "Weekly material": "Ring of Boreas"
+        },
+        {
+            "Ascension material": "Lightning Prism",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Noctilucous Jade",
+            "Name": "Beidou",
+            "Region": "Liyue",
+            "Talent material": "Gold",
+            "Vision": "Electro",
+            "Weekly material": "Dvalin's Sigh"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Noctilucous Jade",
+            "Name": "Bennet",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Pyro",
+            "Weekly material": "Dvalin's Plume"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Cor Lapis",
+            "Name": "Chongyun",
+            "Region": "Liyue",
+            "Talent material": "Diligence",
+            "Vision": "Cryo",
+            "Weekly material": "Dvalin's Sigh"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Fatui Insignia",
+            "Local speciality": "Small Lamp Grass",
+            "Name": "Diluc",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Pyro",
+            "Weekly material": "Dvalin's Plume"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Hilichurl Arrowheads",
+            "Local speciality": "Calla Lily",
+            "Name": "Diona",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Cryo",
+            "Weekly material": "Shard of a Foul Legacy"
+        },
+        {
+            "Ascension material": "Crystalline Bloom",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Dandelion Seed",
+            "Name": "Eula",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Cryo",
+            "Weekly material": "Dragon Lord's Crown"
+        },
+        {
+            "Ascension material": "Lightning Prism",
+            "Common material": "Hilichurl Arrowheads",
+            "Local speciality": "Small Lamp Grass",
+            "Name": "Fischl",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Electro",
+            "Weekly material": "Spirit Locket of Boreas"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Qingxin",
+            "Name": "Ganyu",
+            "Region": "Liyue",
+            "Talent material": "Diligence",
+            "Vision": "Cryo",
+            "Weekly material": "Shadow of the Warrior"
+        },
+        {
+            "Ascension material": "Juvenile Jade",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Silk Flower",
+            "Name": "Hu Tao",
+            "Region": "Liyue",
+            "Talent material": "Diligence",
+            "Vision": "Pyro",
+            "Weekly material": "Shard of a Foul Legacy"
+        },
+        {
+            "Ascension material": "Hurricane Seed",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Dandelion Seed",
+            "Name": "Jean",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Anemo",
+            "Weekly material": "Dvalin's Plume"
+        },
+        {
+            "Ascension material": "Marionette Core",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Sea Ganoderma",
+            "Name": "Kaedehara Kazuha",
+            "Region": "Inazuma",
+            "Talent material": "Diligence",
+            "Vision": "Anemo",
+            "Weekly material": "Gilded Scale"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Calla Lily",
+            "Name": "Kaeya",
+            "Region": "Mondstadt",
+            "Talent material": "Ballad",
+            "Vision": "Cryo",
+            "Weekly material": "Spirit Locket of Boreas"
+        },
+        {
+            "Ascension material": "Perpetual Heart",
+            "Common material": "Nobushi Handguards",
+            "Local speciality": "Sakura Bloom",
+            "Name": "Kamisato Ayaka",
+            "Region": "Inazuma",
+            "Talent material": "Elegance",
+            "Vision": "Cryo",
+            "Weekly material": "Bloodjade Branch"
+        },
+        {
+            "Ascension material": "Lightning Prism",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Cor Lapis",
+            "Name": "Keqing",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Electro",
+            "Weekly material": "Ring of Boreas"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Samachurl Scrolls",
+            "Local speciality": "Philanemo Mushroom",
+            "Name": "Klee",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Pyro",
+            "Weekly material": "Ring of Boreas"
+        },
+        {
+            "Ascension material": "Lightning Prism",
+            "Common material": "Slime",
+            "Local speciality": "Valberry",
+            "Name": "Lisa",
+            "Region": "Mondstadt",
+            "Talent material": "Ballad",
+            "Vision": "Electro",
+            "Weekly material": "Dvalin's Claw"
+        },
+        {
+            "Ascension material": "Cleansing Heart",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Philanemo Mushroom",
+            "Name": "Mona",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Hydro",
+            "Weekly material": "Ring of Boreas"
+        },
+        {
+            "Ascension material": "Basalt Pillar",
+            "Common material": "Fatui Insignia",
+            "Local speciality": "Glaze Lily",
+            "Name": "Ningguang",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Geo",
+            "Weekly material": "Spirit Locket of Boreas"
+        },
+        {
+            "Ascension material": "Basalt Pillar",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Valberry",
+            "Name": "Noelle",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Geo",
+            "Weekly material": "Dvalin's Claw"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Samachurl Scrolls",
+            "Local speciality": "Violetgrass",
+            "Name": "Qiqi",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Cryo",
+            "Weekly material": "Tail of Boreas"
+        },
+        {
+            "Ascension material": "Lightning Prism",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Wolfhook",
+            "Name": "Razor",
+            "Region": "Mondstadt",
+            "Talent material": "Resistance",
+            "Vision": "Electro",
+            "Weekly material": "Dvalin's Claw"
+        },
+        {
+            "Ascension material": "Hoarfrost Core",
+            "Common material": "Fatui Insignia",
+            "Local speciality": "Valberry",
+            "Name": "Rosaria",
+            "Region": "Mondstadt",
+            "Talent material": "Ballad",
+            "Vision": "Cryo",
+            "Weekly material": "Shadow of the Warrior"
+        },
+        {
+            "Ascension material": "Marionette Core",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Crystal Marrow",
+            "Name": "Sayu",
+            "Region": "Inazuma",
+            "Talent material": "Light",
+            "Vision": "Anemo",
+            "Weekly material": "Gilded Scale"
+        },
+        {
+            "Ascension material": "Hurricane Seed",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Windwheel Aster",
+            "Name": "Sucrose",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Anemo",
+            "Weekly material": "Spirit Locket of Boreas"
+        },
+        {
+            "Ascension material": "Cleansing Heart",
+            "Common material": "Fatui Insignia",
+            "Local speciality": "Starconch",
+            "Name": "Tartaglia",
+            "Region": "Mondstadt",
+            "Talent material": "Freedom",
+            "Vision": "Hydro",
+            "Weekly material": "Shard of a Foul Legacy"
+        },
+        {
+            "Ascension material": "Hurricane Seed",
+            "Common material": "Slime",
+            "Local speciality": "Cecilia",
+            "Name": "Venti",
+            "Region": "Mondstadt",
+            "Talent material": "Ballad",
+            "Vision": "Anemo",
+            "Weekly material": "Tail of Boreas"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Slime",
+            "Local speciality": "Jueyun Chili",
+            "Name": "Xiangling",
+            "Region": "Liyue",
+            "Talent material": "Diligence",
+            "Vision": "Pyro",
+            "Weekly material": "Dvalin's Claw"
+        },
+        {
+            "Ascension material": "Juvenile Jade",
+            "Common material": "Slime",
+            "Local speciality": "Qingxin",
+            "Name": "Xiao",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Anemo",
+            "Weekly material": "Shadow of the Warrior"
+        },
+        {
+            "Ascension material": "Cleansing Heart",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Silk Flower",
+            "Name": "Xingqiu",
+            "Region": "Liyue",
+            "Talent material": "Gold",
+            "Vision": "Hydro",
+            "Weekly material": "Tail of Boreas"
+        },
+        {
+            "Ascension material": "Everflame Seed",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Violetgrass",
+            "Name": "Xinyan",
+            "Region": "Liyue",
+            "Talent material": "Gold",
+            "Vision": "Pyro",
+            "Weekly material": "Tusk of Monoceros Caeli"
+        },
+        {
+            "Ascension material": "Juvenile Jade",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Noctilucous Jade",
+            "Name": "Yanfei",
+            "Region": "Liyue",
+            "Talent material": "Gold",
+            "Vision": "Pyro",
+            "Weekly material": "Bloodjade Branch"
+        },
+        {
+            "Ascension material": "Smoldering Pearl",
+            "Common material": "Samachurl Scrolls",
+            "Local speciality": "Naku Weed",
+            "Name": "Yoimiya",
+            "Region": "Inazuma",
+            "Talent material": "Transience",
+            "Vision": "Pyro",
+            "Weekly material": "Dragon Lord's Crown"
+        }
     ],
     "common_materials": [
         "Slime",
@@ -22,8 +372,7 @@
         "Treasure Hoarder Insignias",
         "Fatui Insignia",
         "Whopperflower Nectar",
-        "Nobushi Handguards",
-        "eeeee"
+        "Nobushi Handguards"
     ],
     "local_materials": [
         "Calla Lily",

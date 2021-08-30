@@ -14,6 +14,20 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 {
     ui->setupUi(this);
     update_comboboxes();
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray_7 = jsonObject["characters"].toArray();
+    QJsonObject tmp;
+    for (int i = 0; i<jsonArray_7.size(); i++){
+        tmp = jsonArray_7.at(i).toObject();
+        ui->listWidget_7->addItem(tmp["Name"].toString());
+    }
 }
 
 genshin_calculator::~genshin_calculator()
@@ -37,7 +51,6 @@ void genshin_calculator::update_comboboxes(){
     QJsonArray jsonArray_4 = jsonObject["local_materials"].toArray();
     QJsonArray jsonArray_5 = jsonObject["talent_materials"].toArray();
     QJsonArray jsonArray_6 = jsonObject["weekly_materials"].toArray();
-    QJsonArray jsonArray_7 = jsonObject["characters"].toArray();
     QJsonObject tmp;
     for (int i = 0; i<jsonArray.size(); i++){
         ui->listWidget->addItem(jsonArray[i].toString());
@@ -49,7 +62,6 @@ void genshin_calculator::update_comboboxes(){
     }
     for (int i = 0; i<jsonArray_3.size(); i++){
         ui->listWidget_3->addItem(jsonArray_3[i].toString());
-        ui->comboBox_4->addItem(jsonArray_3[i].toString());
     }
     for (int i = 0; i<jsonArray_4.size(); i++){
         ui->listWidget_4->addItem(jsonArray_4[i].toString());
@@ -62,10 +74,6 @@ void genshin_calculator::update_comboboxes(){
     for (int i = 0; i<jsonArray_6.size(); i++){
         ui->listWidget_6->addItem(jsonArray_6[i].toString());
         ui->comboBox_7->addItem(jsonArray_6[i].toString());
-    }
-    for (int i = 0; i<jsonArray_7.size(); i++){
-        tmp = jsonArray_7.at(i).toObject();
-        ui->listWidget_7->addItem(tmp["Name"].toString());
     }
 }
 
