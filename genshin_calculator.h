@@ -51,6 +51,8 @@
 
         void on_listWidget_7_itemSelectionChanged();
 
+        void update_comboboxes();
+
     private:
         Ui::genshin_calculator *ui;
     };

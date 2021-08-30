@@ -13,6 +13,16 @@ genshin_calculator::genshin_calculator(QWidget *parent)
     , ui(new Ui::genshin_calculator)
 {
     ui->setupUi(this);
+    update_comboboxes();
+}
+
+genshin_calculator::~genshin_calculator()
+{
+    delete ui;
+}
+
+void genshin_calculator::update_comboboxes(){
+
     QString val;
     QFile file;
     file.setFileName(filepath);
@@ -57,12 +67,6 @@ genshin_calculator::genshin_calculator(QWidget *parent)
         tmp = jsonArray_7.at(i).toObject();
         ui->listWidget_7->addItem(tmp["Name"].toString());
     }
-
-}
-
-genshin_calculator::~genshin_calculator()
-{
-    delete ui;
 }
 
 void genshin_calculator::on_pushButton_7_clicked()
@@ -90,6 +94,8 @@ void genshin_calculator::on_pushButton_7_clicked()
             ui->listWidget->addItem(jsonArray[i].toString());
         ui->lineEdit_8->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -115,6 +121,7 @@ void genshin_calculator::on_pushButton_8_clicked()
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget->addItem(jsonArray[i].toString());
 
+    update_comboboxes();
 }
 
 
@@ -143,6 +150,8 @@ void genshin_calculator::on_pushButton_9_clicked()
             ui->listWidget_2->addItem(jsonArray[i].toString());
         ui->lineEdit_10->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -167,6 +176,8 @@ void genshin_calculator::on_pushButton_10_clicked()
 
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget_2->addItem(jsonArray[i].toString());
+
+    update_comboboxes();
 }
 
 
@@ -195,6 +206,8 @@ void genshin_calculator::on_pushButton_11_clicked()
             ui->listWidget_3->addItem(jsonArray[i].toString());
         ui->lineEdit_11->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -219,6 +232,8 @@ void genshin_calculator::on_pushButton_12_clicked()
 
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget_3->addItem(jsonArray[i].toString());
+
+    update_comboboxes();
 }
 
 
@@ -247,6 +262,8 @@ void genshin_calculator::on_pushButton_13_clicked()
             ui->listWidget_4->addItem(jsonArray[i].toString());
         ui->lineEdit_9->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -271,6 +288,8 @@ void genshin_calculator::on_pushButton_14_clicked()
 
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget_4->addItem(jsonArray[i].toString());
+
+    update_comboboxes();
 }
 
 
@@ -299,6 +318,8 @@ void genshin_calculator::on_pushButton_15_clicked()
             ui->listWidget_5->addItem(jsonArray[i].toString());
         ui->lineEdit_12->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -323,6 +344,8 @@ void genshin_calculator::on_pushButton_16_clicked()
 
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget_5->addItem(jsonArray[i].toString());
+
+    update_comboboxes();
 }
 
 
@@ -351,6 +374,8 @@ void genshin_calculator::on_pushButton_17_clicked()
             ui->listWidget_6->addItem(jsonArray[i].toString());
         ui->lineEdit_13->clear();
     }
+
+    update_comboboxes();
 }
 
 
@@ -375,6 +400,8 @@ void genshin_calculator::on_pushButton_18_clicked()
 
     for (int i = 0; i<jsonArray.size(); i++)
         ui->listWidget_6->addItem(jsonArray[i].toString());
+
+    update_comboboxes();
 }
 
 void genshin_calculator::on_pushButton_19_clicked()
