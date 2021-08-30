@@ -1,18 +1,50 @@
 {
     "ascension_materials": [
-        "juvenile jade",
-        "cleansing heart",
-        "lightning prism"
+        "Basalt Pillar",
+        "Cleansing Heart",
+        "Crystalline Bloom",
+        "Everflame Seed",
+        "Hoarfrost Core",
+        "Hurricane Seed",
+        "Juvenile Jade",
+        "Lightning Prism",
+        "Marionette Core",
+        "Perpetual Heart",
+        "Smoldering Pearl"
     ],
     "common_materials": [
         "Slime",
-        "Mask",
-        "Arrow"
+        "Hilichurl Masks",
+        "Hilichurl Arrowheads",
+        "Samachurl Scrolls",
+        "Treasure Hoarder Insignias",
+        "Fatui Insignia",
+        "Whopperflower Nectar",
+        "Nobushi Handguards"
     ],
     "local_materials": [
-        "calla lily",
-        "silk flower",
-        "naku weed"
+        "Calla Lily",
+        "Cecilia",
+        "Cor Lapis",
+        "Crystal Marrow",
+        "Dandelion Seed",
+        "Dendrobium",
+        "Glaze Lily",
+        "Jueyun Chili",
+        "Naku Weed",
+        "Noctilucous Jade",
+        "Onikabuto",
+        "Philanemo Mushroom",
+        "Qingxin",
+        "Sakura Bloom",
+        "Sea Ganoderma",
+        "Silk Flower",
+        "Small Lamp Grass",
+        "Starconch",
+        "Valberry",
+        "Violetgrass",
+        "Windwheel Aster",
+        "Wolfhook"
     ],
     "talent_materials": [
         "Freedom",
@@ -26,11 +58,27 @@
         "Light"
     ],
     "weapon_materials": [
-        "dandelion",
-        "mask"
+        "Hilichurl Horns",
+        "Ley Lines",
+        "Bone Shards",
+        "Mist Grass",
+        "Sacrificial Knifes",
+        "Prisms",
+        "Chaos Parts",
+        "Different Chaos Parts"
     ],
     "weekly_materials": [
-        "dvalin claw",
-        "shard of a foul legacy"
+        "Tail of Boreas",
+        "Ring of Boreas",
+        "Spirit Locket of Boreas",
+        "Dvalin's Plume",
+        "Dvalin's Claw",
+        "Dvalin's Sigh",
+        "Tusk of Monoceros Caeli",
+        "Shard of a Foul Legacy",
+        "Shadow of the Warrior",
+        "Dragon Lord's Crown",
+        "Bloodjade Branch",
+        "Gilded Scale"
     ]
 }
