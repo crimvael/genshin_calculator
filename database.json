@@ -362,6 +362,16 @@
             "Talent material": "Transience",
             "Vision": "Pyro",
             "Weekly material": "Dragon Lord's Crown"
+        },
+        {
+            "Ascension material": "Basalt Pillar",
+            "Common material": "Slime",
+            "Local speciality": "Cor Lapis",
+            "Name": "Zhongli",
+            "Region": "Liyue",
+            "Talent material": "Gold",
+            "Vision": "Geo",
+            "Weekly material": "Tusk of Monoceros Caeli"
         }
     ],
     "common_materials": [
