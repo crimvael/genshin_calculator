@@ -37,7 +37,6 @@ void genshin_calculator::update_char_list(QJsonObject obj){
 
     ui->listWidget_7->clear();
     ui->tableWidget_2->setRowCount(0);
-    ui->tableWidget->setRowCount(0);
     QJsonObject tmp;
     QJsonArray array = obj["characters"].toArray();
     for (int i = 0; i<array.size(); i++){
@@ -60,18 +59,48 @@ void genshin_calculator::update_char_list(QJsonObject obj){
 
 void genshin_calculator::update_training_list(QJsonObject obj){
 
+    ui->tableWidget->setRowCount(0);
     QJsonObject tmp;
     QJsonArray jsonArray = obj["training"].toArray();
     for (int i = 0; i<jsonArray.size(); i++){
         tmp = jsonArray.at(i).toObject();
-        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+        ui->tableWidget->insertRow(i);
         QTableWidgetItem *item = new QTableWidgetItem(tmp["Name"].toString());
-        if (tmp["Checked"].toBool())
+        if (tmp["Check"].toBool())
             item->setCheckState(Qt::Checked);
         else
             item->setCheckState(Qt::Unchecked);
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, 0, item);
-        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, 1, new QTableWidgetItem(tmp["Current lvl"].toString()));
+        ui->tableWidget->setItem(i, 0, item);
+        QTableWidgetItem *item_2 =  new QTableWidgetItem(tmp["Current lvl"].toString());
+        QTableWidgetItem *item_3 =  new QTableWidgetItem(tmp["Target lvl"].toString());
+        QTableWidgetItem *item_4 =  new QTableWidgetItem(tmp["Phase"].toString());
+        QTableWidgetItem *item_5 =  new QTableWidgetItem(tmp["Normal attack lvl"].toString());
+        QTableWidgetItem *item_6 =  new QTableWidgetItem(tmp["Normal attack target lvl"].toString());
+        QTableWidgetItem *item_7 =  new QTableWidgetItem(tmp["Elemental skill lvl"].toString());
+        QTableWidgetItem *item_8 =  new QTableWidgetItem(tmp["Elemental skill target lvl"].toString());
+        QTableWidgetItem *item_9 =  new QTableWidgetItem(tmp["Elemental burst lvl"].toString());
+        QTableWidgetItem *item_10 =  new QTableWidgetItem(tmp["Elemental burst target lvl"].toString());
+
+        item_2->setTextAlignment(2);
+        item_3->setTextAlignment(2);
+        item_4->setTextAlignment(2);
+        item_5->setTextAlignment(2);
+        item_6->setTextAlignment(2);
+        item_7->setTextAlignment(2);
+        item_8->setTextAlignment(2);
+        item_9->setTextAlignment(2);
+        item_10->setTextAlignment(2);
+
+        ui->tableWidget->setItem(i, 0, item);
+        ui->tableWidget->setItem(i, 1, item_2);
+        ui->tableWidget->setItem(i, 2, item_3);
+        ui->tableWidget->setItem(i, 3, item_4);
+        ui->tableWidget->setItem(i, 4, item_5);
+        ui->tableWidget->setItem(i, 5, item_6);
+        ui->tableWidget->setItem(i, 6, item_7);
+        ui->tableWidget->setItem(i, 7, item_8);
+        ui->tableWidget->setItem(i, 8, item_9);
+        ui->tableWidget->setItem(i, 9, item_10);
 
     }
 }
@@ -632,22 +661,22 @@ void genshin_calculator::on_pushButton_clicked()
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray;
 
-    for (int i = 1; i < ui->tableWidget->rowCount(); i++){
+    for (int i = 0; i < ui->tableWidget->rowCount(); i++){
         QJsonObject new_char;
-        new_char.insert("Name", ui->tableWidget->item(1, i)->text());
-        if (ui->tableWidget->item(1, 1)->checkState() == 2)
+        new_char.insert("Name", ui->tableWidget->item(i, 0)->text());
+        if (ui->tableWidget->item(i, 0)->checkState() == 2)
             new_char.insert("Check", true);
-        if (ui->tableWidget->item(1, 1)->checkState() == 0)
+        if (ui->tableWidget->item(i, 0)->checkState() == 0)
             new_char.insert("Check", false);
-        new_char.insert("Current level", ui->tableWidget->item(2, i)->text());
-        new_char.insert("Target level", ui->tableWidget->item(3, i)->text());
-        new_char.insert("Phase", ui->tableWidget->item(4, i)->text());
-        new_char.insert("Normal attack lvl", ui->tableWidget->item(5, i)->text());
-        new_char.insert("Normal attack target level", ui->tableWidget->item(6, i)->text());
-        new_char.insert("Elemental skill lvl", ui->tableWidget->item(7, i)->text());
-        new_char.insert("Elemental skill target lvl", ui->tableWidget->item(8, i)->text());
-        new_char.insert("Elemental burst lvl", ui->tableWidget->item(9, i)->text());
-        new_char.insert("Elemental burst target lvl", ui->tableWidget->item(10, i)->text());
+        new_char.insert("Current lvl", ui->tableWidget->item(i, 1)->text());
+        new_char.insert("Target lvl", ui->tableWidget->item(i, 2)->text());
+        new_char.insert("Phase", ui->tableWidget->item(i, 3)->text());
+        new_char.insert("Normal attack lvl", ui->tableWidget->item(i, 4)->text());
+        new_char.insert("Normal attack target lvl", ui->tableWidget->item(i, 5)->text());
+        new_char.insert("Elemental skill lvl", ui->tableWidget->item(i, 6)->text());
+        new_char.insert("Elemental skill target lvl", ui->tableWidget->item(i, 7)->text());
+        new_char.insert("Elemental burst lvl", ui->tableWidget->item(i, 8)->text());
+        new_char.insert("Elemental burst target lvl", ui->tableWidget->item(i, 9)->text());
         jsonArray.append(new_char);
     }
 
@@ -656,6 +685,8 @@ void genshin_calculator::on_pushButton_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
+
+    update_training_list(jsonObject);
 
 }
 
