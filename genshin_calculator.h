@@ -2,6 +2,8 @@
     #define GENSHIN_CALCULATOR_H
 
     #include <QMainWindow>
+    #include "QTableWidget"
+    #include "QJsonObject"
 
 
     QT_BEGIN_NAMESPACE
@@ -51,6 +53,8 @@
 
         void update_comboboxes();
 
+        void update_training_list(QJsonObject);
+
         void update_char_list(QJsonObject);
 
         void on_pushButton_19_clicked();
@@ -58,6 +62,8 @@
         void on_pushButton_24_clicked();
 
         void on_pushButton_23_clicked();
+
+        void on_pushButton_clicked();
 
     private:
         Ui::genshin_calculator *ui;

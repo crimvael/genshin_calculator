@@ -1138,7 +1138,7 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>1161</width>
+        <width>1160</width>
         <height>591</height>
        </rect>
       </property>
@@ -1155,7 +1155,7 @@
           <x>10</x>
           <y>10</y>
           <width>1131</width>
-          <height>541</height>
+          <height>505</height>
          </rect>
         </property>
         <property name="editTriggers">
@@ -1214,6 +1214,19 @@
           <string>Burst target level</string>
          </property>
         </column>
+       </widget>
+       <widget class="QPushButton" name="pushButton">
+        <property name="geometry">
+         <rect>
+          <x>535</x>
+          <y>525</y>
+          <width>90</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Save</string>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_10">

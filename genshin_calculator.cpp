@@ -39,7 +39,6 @@ void genshin_calculator::update_char_list(QJsonObject obj){
     ui->tableWidget_2->setRowCount(0);
     ui->tableWidget->setRowCount(0);
     QJsonObject tmp;
-    QJsonArray jsonArray = obj["training"].toArray();
     QJsonArray array = obj["characters"].toArray();
     for (int i = 0; i<array.size(); i++){
         tmp = array.at(i).toObject();
@@ -54,6 +53,15 @@ void genshin_calculator::update_char_list(QJsonObject obj){
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 6, new QTableWidgetItem(tmp["Talent material"].toString()));
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 7, new QTableWidgetItem(tmp["Weekly material"].toString()));
     }
+
+    update_training_list(obj);
+
+}
+
+void genshin_calculator::update_training_list(QJsonObject obj){
+
+    QJsonObject tmp;
+    QJsonArray jsonArray = obj["training"].toArray();
     for (int i = 0; i<jsonArray.size(); i++){
         tmp = jsonArray.at(i).toObject();
         ui->tableWidget->insertRow(ui->tableWidget->rowCount());
@@ -416,7 +424,7 @@ void genshin_calculator::on_pushButton_16_clicked()
     update_comboboxes();
 }
 
-//add weekly material
+// add weekly material
 void genshin_calculator::on_pushButton_17_clicked()
 {
     if (!ui->lineEdit_13->text().isEmpty()){
@@ -497,7 +505,7 @@ void genshin_calculator::on_pushButton_19_clicked()
         // add new training entry
         QJsonObject new_training;
         new_char.insert("Name", ui->lineEdit->text());
-        new_char.insert("Check", 0);
+        new_char.insert("Check", false);
         new_char.insert("Current level", 1);
         new_char.insert("Target level", 90);
         new_char.insert("Normal attack lvl", 1);
@@ -611,3 +619,43 @@ void genshin_calculator::on_listWidget_7_itemSelectionChanged()
     ui->comboBox_6->setCurrentIndex(ui->comboBox_6->findText(tmp["Talent material"].toString()));
     ui->comboBox_7->setCurrentIndex(ui->comboBox_7->findText(tmp["Weekly material"].toString()));
 }
+
+void genshin_calculator::on_pushButton_clicked()
+{
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray;
+
+    for (int i = 1; i < ui->tableWidget->rowCount(); i++){
+        QJsonObject new_char;
+        new_char.insert("Name", ui->tableWidget->item(1, i)->text());
+        if (ui->tableWidget->item(1, 1)->checkState() == 2)
+            new_char.insert("Check", true);
+        if (ui->tableWidget->item(1, 1)->checkState() == 0)
+            new_char.insert("Check", false);
+        new_char.insert("Current level", ui->tableWidget->item(2, i)->text());
+        new_char.insert("Target level", ui->tableWidget->item(3, i)->text());
+        new_char.insert("Phase", ui->tableWidget->item(4, i)->text());
+        new_char.insert("Normal attack lvl", ui->tableWidget->item(5, i)->text());
+        new_char.insert("Normal attack target level", ui->tableWidget->item(6, i)->text());
+        new_char.insert("Elemental skill lvl", ui->tableWidget->item(7, i)->text());
+        new_char.insert("Elemental skill target lvl", ui->tableWidget->item(8, i)->text());
+        new_char.insert("Elemental burst lvl", ui->tableWidget->item(9, i)->text());
+        new_char.insert("Elemental burst target lvl", ui->tableWidget->item(10, i)->text());
+        jsonArray.append(new_char);
+    }
+
+    jsonObject.insert("training", jsonArray);
+    jsonResponse.setObject(jsonObject);
+    file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
+    file.write(jsonResponse.toJson());
+    file.close();
+
+}
+
