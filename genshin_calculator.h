@@ -43,8 +43,6 @@
 
         void on_pushButton_12_clicked();
 
-        void on_pushButton_19_clicked();
-
         void on_pushButton_4_clicked();
 
         void on_pushButton_3_clicked();
@@ -53,9 +51,17 @@
 
         void update_comboboxes();
 
+        void update_char_list(QJsonArray*);
+
         void on_pushButton_clicked();
 
         void on_pushButton_2_clicked();
+
+        void on_pushButton_19_clicked();
+
+        void on_pushButton_24_clicked();
+
+        void on_pushButton_23_clicked();
 
     private:
         Ui::genshin_calculator *ui;

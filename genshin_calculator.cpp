@@ -14,6 +14,7 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 {
     ui->setupUi(this);
     update_comboboxes();
+    ui->tableWidget_2->horizontalHeader()->setStretchLastSection(true);
     QString val;
     QFile file;
     file.setFileName(filepath);
@@ -23,16 +24,32 @@ genshin_calculator::genshin_calculator(QWidget *parent)
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray_7 = jsonObject["characters"].toArray();
-    QJsonObject tmp;
-    for (int i = 0; i<jsonArray_7.size(); i++){
-        tmp = jsonArray_7.at(i).toObject();
-        ui->listWidget_7->addItem(tmp["Name"].toString());
-    }
+    update_char_list(&jsonArray_7);
 }
 
 genshin_calculator::~genshin_calculator()
 {
     delete ui;
+}
+
+void genshin_calculator::update_char_list(QJsonArray *array){
+
+    ui->listWidget_7->clear();
+    ui->tableWidget_2->setRowCount(0);
+    QJsonObject tmp;
+    for (int i = 0; i<array->size(); i++){
+        tmp = array->at(i).toObject();
+        ui->listWidget_7->addItem(tmp["Name"].toString());
+        ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 0, new QTableWidgetItem(tmp["Name"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 1, new QTableWidgetItem(tmp["Vision"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 2, new QTableWidgetItem(tmp["Region"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 3, new QTableWidgetItem(tmp["Common material"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 4, new QTableWidgetItem(tmp["Ascension material"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 5, new QTableWidgetItem(tmp["Local speciality"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 6, new QTableWidgetItem(tmp["Talent material"].toString()));
+        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 7, new QTableWidgetItem(tmp["Weekly material"].toString()));
+    }
 }
 
 void genshin_calculator::update_comboboxes(){
@@ -47,11 +64,19 @@ void genshin_calculator::update_comboboxes(){
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["common_materials"].toArray();
     QJsonArray jsonArray_2 = jsonObject["ascension_materials"].toArray();
-    QJsonArray jsonArray_3 = jsonObject["weapon_materials"].toArray();
+    QJsonArray jsonArray_3 = jsonObject["elite_materials"].toArray();
     QJsonArray jsonArray_4 = jsonObject["local_materials"].toArray();
     QJsonArray jsonArray_5 = jsonObject["talent_materials"].toArray();
     QJsonArray jsonArray_6 = jsonObject["weekly_materials"].toArray();
+    QJsonArray jsonArray_7 = jsonObject["weapon_materials"].toArray();
     QJsonObject tmp;
+    ui->listWidget->clear();
+    ui->listWidget_2->clear();
+    ui->listWidget_3->clear();
+    ui->listWidget_4->clear();
+    ui->listWidget_5->clear();
+    ui->listWidget_6->clear();
+    ui->listWidget_9->clear();
     for (int i = 0; i<jsonArray.size(); i++){
         ui->listWidget->addItem(jsonArray[i].toString());
         ui->comboBox_3->addItem(jsonArray[i].toString());
@@ -75,8 +100,12 @@ void genshin_calculator::update_comboboxes(){
         ui->listWidget_6->addItem(jsonArray_6[i].toString());
         ui->comboBox_7->addItem(jsonArray_6[i].toString());
     }
+    for (int i = 0; i<jsonArray_7.size(); i++){
+        ui->listWidget_9->addItem(jsonArray_7[i].toString());
+    }
 }
 
+// add common material
 void genshin_calculator::on_pushButton_7_clicked()
 {
     if (!ui->lineEdit_8->text().isEmpty()){
@@ -97,16 +126,13 @@ void genshin_calculator::on_pushButton_7_clicked()
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget->addItem(jsonArray[i].toString());
         ui->lineEdit_8->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove common material
 void genshin_calculator::on_pushButton_8_clicked()
 {
     QString val;
@@ -124,15 +150,11 @@ void genshin_calculator::on_pushButton_8_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
-
+// add ascension material
 void genshin_calculator::on_pushButton_9_clicked()
 {
     if (!ui->lineEdit_10->text().isEmpty()){
@@ -153,16 +175,13 @@ void genshin_calculator::on_pushButton_9_clicked()
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_2->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget_2->addItem(jsonArray[i].toString());
         ui->lineEdit_10->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove ascension material
 void genshin_calculator::on_pushButton_10_clicked()
 {
     QString val;
@@ -180,15 +199,11 @@ void genshin_calculator::on_pushButton_10_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget_2->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget_2->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
-
+// add elite material
 void genshin_calculator::on_pushButton_11_clicked()
 {
     if (!ui->lineEdit_11->text().isEmpty()){
@@ -201,24 +216,21 @@ void genshin_calculator::on_pushButton_11_clicked()
         file.close();
         QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
         QJsonObject jsonObject = jsonResponse.object();
-        QJsonArray jsonArray = jsonObject["weapon_materials"].toArray();
+        QJsonArray jsonArray = jsonObject["elite_materials"].toArray();
         jsonArray.append(ui->lineEdit_11->text());
-        jsonObject.insert("weapon_materials", jsonArray);
+        jsonObject.insert("elite_materials", jsonArray);
         jsonResponse.setObject(jsonObject);
         file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_3->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget_3->addItem(jsonArray[i].toString());
         ui->lineEdit_11->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove elite material
 void genshin_calculator::on_pushButton_12_clicked()
 {
     QString val;
@@ -229,22 +241,67 @@ void genshin_calculator::on_pushButton_12_clicked()
     file.close();
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
-    QJsonArray jsonArray = jsonObject["weapon_materials"].toArray();
+    QJsonArray jsonArray = jsonObject["elite_materials"].toArray();
     jsonArray.removeAt(ui->listWidget_3->currentRow());
+    jsonObject.insert("elite_materials", jsonArray);
+    jsonResponse.setObject(jsonObject);
+    file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
+    file.write(jsonResponse.toJson());
+    file.close();
+
+    update_comboboxes();
+}
+
+// add weapon ascension material
+void genshin_calculator::on_pushButton_24_clicked()
+{
+    if (!ui->lineEdit_14->text().isEmpty()){
+
+        QString val;
+        QFile file;
+        file.setFileName(filepath);
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject jsonObject = jsonResponse.object();
+        QJsonArray jsonArray = jsonObject["weapon_materials"].toArray();
+        jsonArray.append(ui->lineEdit_14->text());
+        jsonObject.insert("weapon_materials", jsonArray);
+        jsonResponse.setObject(jsonObject);
+        file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
+        file.write(jsonResponse.toJson());
+        file.close();
+
+        ui->lineEdit_14->clear();
+    }
+
+    update_comboboxes();
+}
+
+// remove weapon ascension material
+void genshin_calculator::on_pushButton_23_clicked()
+{
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["weapon_materials"].toArray();
+    jsonArray.removeAt(ui->listWidget_9->currentRow());
     jsonObject.insert("weapon_materials", jsonArray);
     jsonResponse.setObject(jsonObject);
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget_3->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget_3->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
-
+// add local speciality
 void genshin_calculator::on_pushButton_13_clicked()
 {
     if (!ui->lineEdit_9->text().isEmpty()){
@@ -265,16 +322,13 @@ void genshin_calculator::on_pushButton_13_clicked()
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_4->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget_4->addItem(jsonArray[i].toString());
         ui->lineEdit_9->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove local speciality
 void genshin_calculator::on_pushButton_14_clicked()
 {
     QString val;
@@ -292,15 +346,11 @@ void genshin_calculator::on_pushButton_14_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget_4->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget_4->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
-
+// add talent material
 void genshin_calculator::on_pushButton_15_clicked()
 {
     if (!ui->lineEdit_12->text().isEmpty()){
@@ -321,16 +371,13 @@ void genshin_calculator::on_pushButton_15_clicked()
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_5->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget_5->addItem(jsonArray[i].toString());
         ui->lineEdit_12->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove talent materia
 void genshin_calculator::on_pushButton_16_clicked()
 {
     QString val;
@@ -348,15 +395,11 @@ void genshin_calculator::on_pushButton_16_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget_5->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget_5->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
-
+//add weekly material
 void genshin_calculator::on_pushButton_17_clicked()
 {
     if (!ui->lineEdit_13->text().isEmpty()){
@@ -377,16 +420,13 @@ void genshin_calculator::on_pushButton_17_clicked()
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_6->clear();
-        for (int i = 0; i<jsonArray.size(); i++)
-            ui->listWidget_6->addItem(jsonArray[i].toString());
         ui->lineEdit_13->clear();
     }
 
     update_comboboxes();
 }
 
-
+// remove weekly material
 void genshin_calculator::on_pushButton_18_clicked()
 {
     QString val;
@@ -404,14 +444,11 @@ void genshin_calculator::on_pushButton_18_clicked()
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
-    ui->listWidget_6->clear();
-
-    for (int i = 0; i<jsonArray.size(); i++)
-        ui->listWidget_6->addItem(jsonArray[i].toString());
 
     update_comboboxes();
 }
 
+// add new character data
 void genshin_calculator::on_pushButton_19_clicked()
 {
     if (!ui->lineEdit->text().isEmpty()){
@@ -448,11 +485,13 @@ void genshin_calculator::on_pushButton_19_clicked()
             tmp = jsonArray.at(i).toObject();
             ui->listWidget_7->addItem(tmp["Name"].toString());
         }
+
         ui->lineEdit->clear();
+        update_char_list(&jsonArray);
     }
 }
 
-
+// remove character data
 void genshin_calculator::on_pushButton_4_clicked()
 {
     QString val;
@@ -477,10 +516,12 @@ void genshin_calculator::on_pushButton_4_clicked()
         tmp = jsonArray.at(i).toObject();
         ui->listWidget_7->addItem(tmp["Name"].toString());
     }
+
     ui->lineEdit->clear();
+    update_char_list(&jsonArray);
 }
 
-
+// edit character data
 void genshin_calculator::on_pushButton_3_clicked()
 {
     if(ui->listWidget_7->count() > 0){
@@ -516,11 +557,13 @@ void genshin_calculator::on_pushButton_3_clicked()
             tmp = jsonArray.at(i).toObject();
             ui->listWidget_7->addItem(tmp["Name"].toString());
         }
+
         ui->lineEdit->clear();
+        update_char_list(&jsonArray);
     }
 }
 
-
+// select character
 void genshin_calculator::on_listWidget_7_itemSelectionChanged()
 {
     QString val;
@@ -555,4 +598,3 @@ void genshin_calculator::on_pushButton_2_clicked()
 {
 
 }
-

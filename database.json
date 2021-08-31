@@ -384,6 +384,16 @@
         "Whopperflower Nectar",
         "Nobushi Handguards"
     ],
+    "elite_materials": [
+        "Hilichurl Horns",
+        "Ley Lines",
+        "Bone Shards",
+        "Mist Grass",
+        "Sacrificial Knifes",
+        "Prisms",
+        "Chaos Parts",
+        "Different Chaos Parts"
+    ],
     "local_materials": [
         "Calla Lily",
         "Cecilia",
@@ -420,14 +430,15 @@
         "Light"
     ],
     "weapon_materials": [
-        "Hilichurl Horns",
-        "Ley Lines",
-        "Bone Shards",
-        "Mist Grass",
-        "Sacrificial Knifes",
-        "Prisms",
-        "Chaos Parts",
-        "Different Chaos Parts"
+        "Decarabian",
+        "Boreal Wolf",
+        "Dandelion Gladiator",
+        "Guyun",
+        "Mist Veiled Elixir",
+        "Aerosiderite",
+        "Distant Sea",
+        "Narukami",
+        "Mask"
     ],
     "weekly_materials": [
         "Tail of Boreas",
