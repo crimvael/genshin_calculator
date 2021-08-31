@@ -45,7 +45,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -61,7 +61,7 @@
        </rect>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_5">
        <attribute name="title">
@@ -1149,33 +1149,26 @@
        <attribute name="title">
         <string>Characters</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_2">
-        <property name="geometry">
-         <rect>
-          <x>1020</x>
-          <y>130</y>
-          <width>101</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Remove</string>
-        </property>
-       </widget>
        <widget class="QTableWidget" name="tableWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>951</width>
+          <width>1131</width>
           <height>541</height>
          </rect>
         </property>
-        <row>
+        <property name="editTriggers">
+         <set>QAbstractItemView::DoubleClicked</set>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <column>
          <property name="text">
-          <string>Albedo</string>
+          <string>Name</string>
          </property>
-        </row>
+        </column>
         <column>
          <property name="text">
           <string>Level</string>
@@ -1221,19 +1214,6 @@
           <string>Burst target level</string>
          </property>
         </column>
-       </widget>
-       <widget class="QPushButton" name="pushButton">
-        <property name="geometry">
-         <rect>
-          <x>1020</x>
-          <y>80</y>
-          <width>101</width>
-          <height>41</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Add</string>
-        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_10">

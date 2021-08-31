@@ -51,11 +51,7 @@
 
         void update_comboboxes();
 
-        void update_char_list(QJsonArray*);
-
-        void on_pushButton_clicked();
-
-        void on_pushButton_2_clicked();
+        void update_char_list(QJsonObject);
 
         void on_pushButton_19_clicked();
 

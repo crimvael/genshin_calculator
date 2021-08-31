@@ -4,6 +4,7 @@
 #include "QJsonObject"
 #include "QJsonArray"
 #include "QFile"
+#include "QStringList"
 
 extern QString filepath;
 QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
@@ -14,6 +15,7 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 {
     ui->setupUi(this);
     update_comboboxes();
+    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
     ui->tableWidget_2->horizontalHeader()->setStretchLastSection(true);
     QString val;
     QFile file;
@@ -23,8 +25,7 @@ genshin_calculator::genshin_calculator(QWidget *parent)
     file.close();
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
-    QJsonArray jsonArray_7 = jsonObject["characters"].toArray();
-    update_char_list(&jsonArray_7);
+    update_char_list(jsonObject);
 }
 
 genshin_calculator::~genshin_calculator()
@@ -32,13 +33,16 @@ genshin_calculator::~genshin_calculator()
     delete ui;
 }
 
-void genshin_calculator::update_char_list(QJsonArray *array){
+void genshin_calculator::update_char_list(QJsonObject obj){
 
     ui->listWidget_7->clear();
     ui->tableWidget_2->setRowCount(0);
+    ui->tableWidget->setRowCount(0);
     QJsonObject tmp;
-    for (int i = 0; i<array->size(); i++){
-        tmp = array->at(i).toObject();
+    QJsonArray jsonArray = obj["training"].toArray();
+    QJsonArray array = obj["characters"].toArray();
+    for (int i = 0; i<array.size(); i++){
+        tmp = array.at(i).toObject();
         ui->listWidget_7->addItem(tmp["Name"].toString());
         ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 0, new QTableWidgetItem(tmp["Name"].toString()));
@@ -49,6 +53,18 @@ void genshin_calculator::update_char_list(QJsonArray *array){
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 5, new QTableWidgetItem(tmp["Local speciality"].toString()));
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 6, new QTableWidgetItem(tmp["Talent material"].toString()));
         ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 7, new QTableWidgetItem(tmp["Weekly material"].toString()));
+    }
+    for (int i = 0; i<jsonArray.size(); i++){
+        tmp = jsonArray.at(i).toObject();
+        ui->tableWidget->insertRow(ui->tableWidget->rowCount());
+        QTableWidgetItem *item = new QTableWidgetItem(tmp["Name"].toString());
+        if (tmp["Checked"].toBool())
+            item->setCheckState(Qt::Checked);
+        else
+            item->setCheckState(Qt::Unchecked);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, 0, item);
+        ui->tableWidget->setItem(ui->tableWidget->rowCount()-1, 1, new QTableWidgetItem(tmp["Current lvl"].toString()));
+
     }
 }
 
@@ -69,6 +85,7 @@ void genshin_calculator::update_comboboxes(){
     QJsonArray jsonArray_5 = jsonObject["talent_materials"].toArray();
     QJsonArray jsonArray_6 = jsonObject["weekly_materials"].toArray();
     QJsonArray jsonArray_7 = jsonObject["weapon_materials"].toArray();
+    QJsonArray jsonArray_8 = jsonObject["characters"].toArray();
     QJsonObject tmp;
     ui->listWidget->clear();
     ui->listWidget_2->clear();
@@ -462,6 +479,9 @@ void genshin_calculator::on_pushButton_19_clicked()
         QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
         QJsonObject jsonObject = jsonResponse.object();
         QJsonArray jsonArray = jsonObject["characters"].toArray();
+        QJsonArray jsonArray_2 = jsonObject["training"].toArray();
+
+        // add new database entry
         QJsonObject new_char;
         new_char.insert("Name", ui->lineEdit->text());
         new_char.insert("Vision", ui->comboBox->currentText());
@@ -474,20 +494,28 @@ void genshin_calculator::on_pushButton_19_clicked()
         jsonArray.append(new_char);
         jsonObject.insert("characters", jsonArray);
 
+        // add new training entry
+        QJsonObject new_training;
+        new_char.insert("Name", ui->lineEdit->text());
+        new_char.insert("Check", 0);
+        new_char.insert("Current level", 1);
+        new_char.insert("Target level", 90);
+        new_char.insert("Normal attack lvl", 1);
+        new_char.insert("Normal attack target level", 8);
+        new_char.insert("Elemental skill lvl", 1);
+        new_char.insert("Elemental skill target lvl", 8);
+        new_char.insert("Elemental burst lvl", 1);
+        new_char.insert("Elemental burst target lvl", 8);
+        jsonArray_2.append(new_char);
+        jsonObject.insert("training", jsonArray_2);
+
         jsonResponse.setObject(jsonObject);
         file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_7->clear();
-        QJsonObject tmp;
-        for (int i = 0; i<jsonArray.size(); i++){
-            tmp = jsonArray.at(i).toObject();
-            ui->listWidget_7->addItem(tmp["Name"].toString());
-        }
-
         ui->lineEdit->clear();
-        update_char_list(&jsonArray);
+        update_char_list(jsonObject);
     }
 }
 
@@ -503,22 +531,18 @@ void genshin_calculator::on_pushButton_4_clicked()
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["characters"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["training"].toArray();
     jsonArray.removeAt(ui->listWidget_7->currentRow());
+    jsonArray_2.removeAt(ui->listWidget_7->currentRow());
     jsonObject.insert("characters", jsonArray);
+    jsonObject.insert("training", jsonArray_2);
     jsonResponse.setObject(jsonObject);
     file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
     file.write(jsonResponse.toJson());
     file.close();
 
-    ui->listWidget_7->clear();
-    QJsonObject tmp;
-    for (int i = 0; i<jsonArray.size(); i++){
-        tmp = jsonArray.at(i).toObject();
-        ui->listWidget_7->addItem(tmp["Name"].toString());
-    }
-
     ui->lineEdit->clear();
-    update_char_list(&jsonArray);
+    update_char_list(jsonObject);
 }
 
 // edit character data
@@ -534,6 +558,8 @@ void genshin_calculator::on_pushButton_3_clicked()
         QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
         QJsonObject jsonObject = jsonResponse.object();
         QJsonArray jsonArray = jsonObject["characters"].toArray();
+        QJsonArray jsonArray_2 = jsonObject["training"].toArray();
+
         QJsonObject new_char;
         new_char.insert("Name", ui->lineEdit->text());
         new_char.insert("Vision", ui->comboBox->currentText());
@@ -546,20 +572,19 @@ void genshin_calculator::on_pushButton_3_clicked()
         jsonArray.replace(ui->listWidget_7->currentRow(), new_char);
         jsonObject.insert("characters", jsonArray);
 
+
+        QJsonObject tmp = jsonArray_2.at(ui->listWidget_7->currentRow()).toObject();
+        tmp.insert("Name", ui->lineEdit->text());
+        jsonArray_2.replace(ui->listWidget_7->currentRow(), tmp);
+        jsonObject.insert("training", jsonArray_2);
+
         jsonResponse.setObject(jsonObject);
         file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
         file.write(jsonResponse.toJson());
         file.close();
 
-        ui->listWidget_7->clear();
-        QJsonObject tmp;
-        for (int i = 0; i<jsonArray.size(); i++){
-            tmp = jsonArray.at(i).toObject();
-            ui->listWidget_7->addItem(tmp["Name"].toString());
-        }
-
         ui->lineEdit->clear();
-        update_char_list(&jsonArray);
+        update_char_list(jsonObject);
     }
 }
 
@@ -585,16 +610,4 @@ void genshin_calculator::on_listWidget_7_itemSelectionChanged()
     ui->comboBox_5->setCurrentIndex(ui->comboBox_5->findText(tmp["Local speciality"].toString()));
     ui->comboBox_6->setCurrentIndex(ui->comboBox_6->findText(tmp["Talent material"].toString()));
     ui->comboBox_7->setCurrentIndex(ui->comboBox_7->findText(tmp["Weekly material"].toString()));
-}
-
-
-void genshin_calculator::on_pushButton_clicked()
-{
-
-}
-
-
-void genshin_calculator::on_pushButton_2_clicked()
-{
-
 }
