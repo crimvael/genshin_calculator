@@ -10,7 +10,8 @@
         "Lightning Prism",
         "Marionette Core",
         "Perpetual Heart",
-        "Smoldering Pearl"
+        "Smoldering Pearl",
+        "Storm Beads"
     ],
     "characters": [
         {
@@ -372,6 +373,26 @@
             "Talent material": "Gold",
             "Vision": "Geo",
             "Weekly material": "Tusk of Monoceros Caeli"
+        },
+        {
+            "Ascension material": "Storm Beads",
+            "Common material": "Hilichurl Masks",
+            "Local speciality": "Dendrobium",
+            "Name": "Kujou Sara",
+            "Region": "Inazuma",
+            "Talent material": "Elegance",
+            "Vision": "Electro",
+            "Weekly material": "Ashen Heart"
+        },
+        {
+            "Ascension material": "Storm Beads",
+            "Common material": "Nobushi Handguards",
+            "Local speciality": "Amakumo Fruit",
+            "Name": "Raiden Shogun",
+            "Region": "Inazuma",
+            "Talent material": "Light",
+            "Vision": "Electro",
+            "Weekly material": "Molten Moment"
         }
     ],
     "common_materials": [
@@ -382,7 +403,8 @@
         "Treasure Hoarder Insignias",
         "Fatui Insignia",
         "Whopperflower Nectar",
-        "Nobushi Handguards"
+        "Nobushi Handguards",
+        "Spectral Cores"
     ],
     "elite_materials": [
         "Hilichurl Horns",
@@ -416,7 +438,8 @@
         "Valberry",
         "Violetgrass",
         "Windwheel Aster",
-        "Wolfhook"
+        "Wolfhook",
+        "Amakumo Fruit"
     ],
     "talent_materials": [
         "Freedom",
@@ -587,8 +610,8 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
-            "Current lvl": "1",
+            "Check": true,
+            "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -596,7 +619,7 @@
             "Name": "Jean",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "1",
             "Target lvl": "90"
         },
         {
@@ -897,6 +920,32 @@
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "40",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Kujou Sara",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "2",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "60",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Raiden Shogun",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "3",
+            "Target lvl": "90"
         }
     ],
     "weapon_materials": [
@@ -922,6 +971,9 @@
         "Shadow of the Warrior",
         "Dragon Lord's Crown",
         "Bloodjade Branch",
-        "Gilded Scale"
+        "Gilded Scale",
+        "Molten Moment",
+        "Hellfire Butterfly",
+        "Ashen Heart"
     ]
 }
