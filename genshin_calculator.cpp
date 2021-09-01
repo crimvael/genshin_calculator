@@ -33,6 +33,10 @@ genshin_calculator::~genshin_calculator()
     delete ui;
 }
 
+void genshin_calculator::calculate(){
+
+}
+
 void genshin_calculator::update_char_list(QJsonObject obj){
 
     ui->listWidget_7->clear();
@@ -43,14 +47,14 @@ void genshin_calculator::update_char_list(QJsonObject obj){
         tmp = array.at(i).toObject();
         ui->listWidget_7->addItem(tmp["Name"].toString());
         ui->tableWidget_2->insertRow(ui->tableWidget_2->rowCount());
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 0, new QTableWidgetItem(tmp["Name"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 1, new QTableWidgetItem(tmp["Vision"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 2, new QTableWidgetItem(tmp["Region"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 3, new QTableWidgetItem(tmp["Common material"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 4, new QTableWidgetItem(tmp["Ascension material"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 5, new QTableWidgetItem(tmp["Local speciality"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 6, new QTableWidgetItem(tmp["Talent material"].toString()));
-        ui->tableWidget_2->setItem(ui->tableWidget_2->rowCount()-1, 7, new QTableWidgetItem(tmp["Weekly material"].toString()));
+        ui->tableWidget_2->setItem(i, 0, new QTableWidgetItem(tmp["Name"].toString()));
+        ui->tableWidget_2->setItem(i, 1, new QTableWidgetItem(tmp["Vision"].toString()));
+        ui->tableWidget_2->setItem(i, 2, new QTableWidgetItem(tmp["Region"].toString()));
+        ui->tableWidget_2->setItem(i, 3, new QTableWidgetItem(tmp["Common material"].toString()));
+        ui->tableWidget_2->setItem(i, 4, new QTableWidgetItem(tmp["Ascension material"].toString()));
+        ui->tableWidget_2->setItem(i, 5, new QTableWidgetItem(tmp["Local speciality"].toString()));
+        ui->tableWidget_2->setItem(i, 6, new QTableWidgetItem(tmp["Talent material"].toString()));
+        ui->tableWidget_2->setItem(i, 7, new QTableWidgetItem(tmp["Weekly material"].toString()));
     }
 
     update_training_list(obj);
@@ -91,7 +95,6 @@ void genshin_calculator::update_training_list(QJsonObject obj){
         item_9->setTextAlignment(2);
         item_10->setTextAlignment(2);
 
-        ui->tableWidget->setItem(i, 0, item);
         ui->tableWidget->setItem(i, 1, item_2);
         ui->tableWidget->setItem(i, 2, item_3);
         ui->tableWidget->setItem(i, 3, item_4);

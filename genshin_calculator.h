@@ -65,6 +65,8 @@
 
         void on_pushButton_clicked();
 
+        void calculate();
+
     private:
         Ui::genshin_calculator *ui;
     };
