@@ -15,8 +15,10 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 {
     ui->setupUi(this);
     update_comboboxes();
-    ui->tableWidget->horizontalHeader()->setStretchLastSection(true);
-    ui->tableWidget_2->horizontalHeader()->setStretchLastSection(true);
+    for (int i = 1; i<ui->tableWidget->columnCount(); i++){
+        ui->tableWidget->resizeColumnToContents(i);
+        ui->tableWidget->resizeRowToContents(i);
+    }
     QString val;
     QFile file;
     file.setFileName(filepath);
@@ -26,6 +28,7 @@ genshin_calculator::genshin_calculator(QWidget *parent)
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     update_char_list(jsonObject);
+    calculate();
 }
 
 genshin_calculator::~genshin_calculator()
@@ -34,6 +37,48 @@ genshin_calculator::~genshin_calculator()
 }
 
 void genshin_calculator::calculate(){
+
+    ui->tableWidget_4->resizeRowsToContents();
+    ui->tableWidget_4->resizeColumnsToContents();
+    ui->tableWidget_5->resizeRowsToContents();
+    ui->tableWidget_5->resizeColumnsToContents();
+    ui->tableWidget_6->resizeRowsToContents();
+    ui->tableWidget_6->resizeColumnsToContents();
+    ui->tableWidget_7->resizeRowsToContents();
+    ui->tableWidget_7->resizeColumnsToContents();
+    ui->tableWidget_8->resizeRowsToContents();
+    ui->tableWidget_8->resizeColumnsToContents();
+    ui->tableWidget_9->resizeRowsToContents();
+    ui->tableWidget_9->resizeColumnsToContents();
+    ui->tableWidget_10->resizeRowsToContents();
+    ui->tableWidget_10->resizeColumnsToContents();
+    ui->tableWidget_11->resizeRowsToContents();
+    ui->tableWidget_11->resizeColumnsToContents();
+    ui->tableWidget_12->resizeRowsToContents();
+    ui->tableWidget_12->resizeColumnsToContents();
+
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["common_materials"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["talent_materials"].toArray();
+
+    for (int i=0; i<jsonArray.size(); i++) {
+        ui->tableWidget_8->insertRow(i);
+        ui->tableWidget_9->insertRow(i);
+        ui->tableWidget_10->insertRow(i);
+        ui->tableWidget_12->insertRow(i);
+
+        ui->tableWidget_8->setItem(i, 0, new QTableWidgetItem(jsonArray_2[i].toString()));
+        ui->tableWidget_9->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
+        ui->tableWidget_10->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
+        ui->tableWidget_12->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
+    }
 
 }
 
@@ -85,15 +130,15 @@ void genshin_calculator::update_training_list(QJsonObject obj){
         QTableWidgetItem *item_9 =  new QTableWidgetItem(tmp["Elemental burst lvl"].toString());
         QTableWidgetItem *item_10 =  new QTableWidgetItem(tmp["Elemental burst target lvl"].toString());
 
-        item_2->setTextAlignment(2);
-        item_3->setTextAlignment(2);
-        item_4->setTextAlignment(2);
-        item_5->setTextAlignment(2);
-        item_6->setTextAlignment(2);
-        item_7->setTextAlignment(2);
-        item_8->setTextAlignment(2);
-        item_9->setTextAlignment(2);
-        item_10->setTextAlignment(2);
+        item_2->setTextAlignment(Qt::AlignCenter);
+        item_3->setTextAlignment(Qt::AlignCenter);
+        item_4->setTextAlignment(Qt::AlignCenter);
+        item_5->setTextAlignment(Qt::AlignCenter);
+        item_6->setTextAlignment(Qt::AlignCenter);
+        item_7->setTextAlignment(Qt::AlignCenter);
+        item_8->setTextAlignment(Qt::AlignCenter);
+        item_9->setTextAlignment(Qt::AlignCenter);
+        item_10->setTextAlignment(Qt::AlignCenter);
 
         ui->tableWidget->setItem(i, 1, item_2);
         ui->tableWidget->setItem(i, 2, item_3);

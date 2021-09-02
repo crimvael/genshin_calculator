@@ -37,8 +37,8 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>1241</width>
-      <height>681</height>
+      <width>1246</width>
+      <height>680</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -1299,9 +1299,18 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>551</width>
-        <height>271</height>
+        <width>412</width>
+        <height>218</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
@@ -1457,14 +1466,26 @@
      <widget class="QTableWidget" name="tableWidget_5">
       <property name="geometry">
        <rect>
-        <x>580</x>
+        <x>433</x>
         <y>10</y>
-        <width>241</width>
-        <height>141</height>
+        <width>168</width>
+        <height>218</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <column>
        <property name="text">
@@ -1492,14 +1513,26 @@
      <widget class="QTableWidget" name="tableWidget_6">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>160</y>
-        <width>241</width>
-        <height>121</height>
+        <x>610</x>
+        <y>10</y>
+        <width>186</width>
+        <height>218</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <column>
        <property name="text">
@@ -1527,20 +1560,32 @@
      <widget class="QTableWidget" name="tableWidget_7">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>290</y>
-        <width>451</width>
-        <height>211</height>
+        <x>810</x>
+        <y>10</y>
+        <width>269</width>
+        <height>171</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>451</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <row>
        <property name="text">
@@ -1656,18 +1701,33 @@
      <widget class="QTableWidget" name="tableWidget_8">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>10</y>
-        <width>391</width>
-        <height>271</height>
+        <x>280</x>
+        <y>240</y>
+        <width>241</width>
+        <height>241</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="sizeAdjustPolicy">
+       <enum>QAbstractScrollArea::AdjustIgnored</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
       </property>
-      <row>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <column>
        <property name="text">
-        <string>Freedom</string>
+        <string>Talent books</string>
        </property>
        <property name="font">
         <font>
@@ -1675,95 +1735,7 @@
          <bold>true</bold>
         </font>
        </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Resistance</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Ballad</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Prosperity</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Diligence</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Gold</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Transience</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Elegance</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>Light</string>
-       </property>
-       <property name="font">
-        <font>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-      </row>
+      </column>
       <column>
        <property name="text">
         <string>★★★★</string>
@@ -1801,26 +1773,32 @@
      <widget class="QTableWidget" name="tableWidget_9">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>290</y>
-        <width>341</width>
-        <height>211</height>
+        <x>10</x>
+        <y>240</y>
+        <width>254</width>
+        <height>241</height>
        </rect>
       </property>
       <property name="minimumSize">
        <size>
-        <width>341</width>
-        <height>211</height>
+        <width>0</width>
+        <height>0</height>
        </size>
       </property>
       <property name="maximumSize">
        <size>
-        <width>341</width>
-        <height>211</height>
+        <width>1280</width>
+        <height>720</height>
        </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <attribute name="horizontalHeaderCascadingSectionResizes">
        <bool>false</bool>
@@ -1876,14 +1854,26 @@
      <widget class="QTableWidget" name="tableWidget_10">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>290</y>
-        <width>411</width>
-        <height>211</height>
+        <x>550</x>
+        <y>240</y>
+        <width>238</width>
+        <height>241</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <attribute name="horizontalHeaderStretchLastSection">
        <bool>false</bool>
@@ -1936,14 +1926,26 @@
      <widget class="QTableWidget" name="tableWidget_11">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>510</y>
-        <width>251</width>
-        <height>121</height>
+        <x>1060</x>
+        <y>500</y>
+        <width>141</width>
+        <height>123</height>
        </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
       </property>
       <property name="editTriggers">
        <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
       </property>
       <row>
        <property name="text">
@@ -1978,9 +1980,92 @@
         </font>
        </property>
       </row>
+      <row>
+       <property name="text">
+        <string>Total</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </row>
       <column>
        <property name="text">
         <string>Total mora</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>240</y>
+        <width>231</width>
+        <height>241</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>1280</width>
+        <height>720</height>
+       </size>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Total materials</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>★★★</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>★★</string>
+       </property>
+       <property name="font">
+        <font>
+         <weight>75</weight>
+         <bold>true</bold>
+        </font>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>★</string>
        </property>
        <property name="font">
         <font>
