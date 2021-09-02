@@ -19,24 +19,6 @@ genshin_calculator::genshin_calculator(QWidget *parent)
         ui->tableWidget->resizeColumnToContents(i);
         ui->tableWidget->resizeRowToContents(i);
     }
-    QString val;
-    QFile file;
-    file.setFileName(filepath);
-    file.open(QIODevice::ReadOnly | QIODevice::Text);
-    val = file.readAll();
-    file.close();
-    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
-    QJsonObject jsonObject = jsonResponse.object();
-    update_char_list(jsonObject);
-    calculate();
-}
-
-genshin_calculator::~genshin_calculator()
-{
-    delete ui;
-}
-
-void genshin_calculator::calculate(){
 
     ui->tableWidget_4->resizeRowsToContents();
     ui->tableWidget_4->resizeColumnsToContents();
@@ -78,6 +60,65 @@ void genshin_calculator::calculate(){
         ui->tableWidget_9->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
         ui->tableWidget_10->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
         ui->tableWidget_12->setItem(i, 0, new QTableWidgetItem(jsonArray[i].toString()));
+    }
+
+    update_char_list(jsonObject);
+    calculate();
+}
+
+genshin_calculator::~genshin_calculator()
+{
+    delete ui;
+}
+
+void genshin_calculator::calculate(){
+
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+
+    hero_wit(val);
+
+}
+
+void genshin_calculator::hero_wit(QString val){
+
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["training"].toArray();
+
+    QJsonObject tmp;
+    int quantity[] = {0,0,0,0,0,0,0};
+
+    for (int i=0; i<jsonArray.size(); i++) {
+        tmp = jsonArray.at(i).toObject();
+        if (tmp["Check"].toBool()){
+            int curr = tmp["Current lvl"].toString().toInt();
+            int targ = tmp["Target lvl"].toString().toInt();
+            if (curr < 20 && curr < targ)
+                quantity[0]++;
+            if (curr < 40 && curr < targ)
+                quantity[1]++;
+            if (curr < 50 && curr < targ)
+                quantity[2]++;
+            if (curr < 60 && curr < targ)
+                quantity[3]++;
+            if (curr < 70 && curr < targ)
+                quantity[4]++;
+            if (curr < 80 && curr < targ)
+                quantity[5]++;
+            if (curr < 90 && curr < targ)
+                quantity[6]++;
+        }
+    }
+
+    for (int i=0; i<quantity; i++ ) {
+        QTableWidgetItem *item =  new QTableWidgetItem(QString::number(quantity[i]));
+        item->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_4->setItem(i, 1, item);
     }
 
 }
@@ -735,6 +776,7 @@ void genshin_calculator::on_pushButton_clicked()
     file.close();
 
     update_training_list(jsonObject);
+    calculate();
 
 }
 

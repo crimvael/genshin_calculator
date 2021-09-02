@@ -67,6 +67,8 @@
 
         void calculate();
 
+        void hero_wit(QString);
+
     private:
         Ui::genshin_calculator *ui;
     };
