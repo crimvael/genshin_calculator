@@ -92,6 +92,7 @@ void genshin_calculator::hero_wit(QString val){
 
     QJsonObject tmp;
     int quantity[] = {0,0,0,0,0,0,0};
+    int needed[] = {7,29,29,43,60,81,171};
 
     for (int i=0; i<jsonArray.size(); i++) {
         tmp = jsonArray.at(i).toObject();
@@ -115,10 +116,16 @@ void genshin_calculator::hero_wit(QString val){
         }
     }
 
-    for (int i=0; i<quantity; i++ ) {
+    for (int i=0; i < 7; i++ ) {
         QTableWidgetItem *item =  new QTableWidgetItem(QString::number(quantity[i]));
         item->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_4->setItem(i, 1, item);
+        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(quantity[i]*needed[i]));
+        item_2->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_4->setItem(i, 2, item_2);
+        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(quantity[i]*needed[i]*4000));
+        item_3->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_4->setItem(i, 3, item_3);
     }
 
 }
