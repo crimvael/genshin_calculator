@@ -4,7 +4,6 @@
 #include "QJsonObject"
 #include "QJsonArray"
 #include "QFile"
-#include "QStringList"
 
 extern QString filepath;
 QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
@@ -73,6 +72,9 @@ genshin_calculator::~genshin_calculator()
 
 void genshin_calculator::calculate(){
 
+    ui->tableWidget_5->setRowCount(0);
+    ui->tableWidget_6->setRowCount(0);
+
     QString val;
     QFile file;
     file.setFileName(filepath);
@@ -80,15 +82,17 @@ void genshin_calculator::calculate(){
     val = file.readAll();
     file.close();
 
-    hero_wit(val);
+    ascension(val);
+    talent(val);
 
 }
 
-void genshin_calculator::hero_wit(QString val){
+void genshin_calculator::ascension(QString val){
 
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["training"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
 
     QJsonObject tmp;
     int quantity[] = {0,0,0,0,0,0,0};
@@ -97,6 +101,11 @@ void genshin_calculator::hero_wit(QString val){
     for (int i=0; i<jsonArray.size(); i++) {
         tmp = jsonArray.at(i).toObject();
         if (tmp["Check"].toBool()){
+            int local_needed = 0;
+            int ascen_needed = 0;
+            int stones_needed[] = {0,0,0,0};
+            int common_needed[] = {0,0,0};
+            int phase = tmp["Phase"].toString().toInt();
             int curr = tmp["Current lvl"].toString().toInt();
             int targ = tmp["Target lvl"].toString().toInt();
             if (curr < 20 && curr < targ)
@@ -113,21 +122,226 @@ void genshin_calculator::hero_wit(QString val){
                 quantity[5]++;
             if (curr < 90 && curr < targ)
                 quantity[6]++;
+
+            if (phase < 1){
+                local_needed+=3;
+                stones_needed[3] +=1;
+                common_needed[2] +=3;
+            }
+            if (phase < 2){
+                local_needed+=10;
+                ascen_needed+=2;
+                stones_needed[2] +=3;
+                common_needed[2] +=15;
+            }
+            if (phase < 3){
+                local_needed+=20;
+                ascen_needed+=4;
+                stones_needed[2] +=6;
+                common_needed[1] +=12;
+            }
+            if (phase < 4){
+                local_needed+=30;
+                ascen_needed+=8;
+                stones_needed[1] +=18;
+            }
+            if (phase < 5){
+                local_needed+=45;
+                ascen_needed+=12;
+                stones_needed[1] +=6;
+                common_needed[0] +=12;
+            }
+            if (phase < 6){
+                local_needed+=60;
+                ascen_needed+=20;
+                stones_needed[0] +=6;
+                common_needed[0] +=24;
+            }
+
+            if (local_needed > 0){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    bool already_exist = false;
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                        for (int i=0; i<ui->tableWidget_5->rowCount(); i++)
+                            if (ui->tableWidget_5->item(i, 0)->text() == tmp2["Local speciality"].toString()){
+                                already_exist = true;
+                                row = i;
+                            }
+
+                        if (already_exist){
+                            local_needed += ui->tableWidget_5->item(row, 1)->text().toInt();
+                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(local_needed));
+                            item->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_5->setItem(ui->tableWidget_5->rowCount()-1, 1, item);
+                        }
+                        else{
+                            ui->tableWidget_5->insertRow(ui->tableWidget_5->rowCount());
+                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Local speciality"].toString());
+                            ui->tableWidget_5->setItem(ui->tableWidget_5->rowCount()-1, 0, item);
+                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(local_needed));
+                            item_2->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_5->setItem(ui->tableWidget_5->rowCount()-1, 1, item_2);
+                        }
+                    }
+                }
+            }
+
+            if (ascen_needed > 0){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    bool already_exist = false;
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+
+                        for (int i=0; i<ui->tableWidget_6->rowCount(); i++)
+                            if (ui->tableWidget_6->item(i, 0)->text() == tmp2["Ascension material"].toString()){
+                                already_exist = true;
+                                row = i;
+                            }
+
+                        if (already_exist){
+                            ascen_needed += ui->tableWidget_6->item(row, 1)->text().toInt();
+                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(ascen_needed));
+                            item->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_6->setItem(ui->tableWidget_6->rowCount()-1, 1, item);
+                        }
+                        else{
+                            ui->tableWidget_6->insertRow(ui->tableWidget_6->rowCount());
+                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Ascension material"].toString());
+                            ui->tableWidget_6->setItem(ui->tableWidget_6->rowCount()-1, 0, item);
+                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(ascen_needed));
+                            item_2->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_6->setItem(ui->tableWidget_6->rowCount()-1, 1, item_2);
+                        }
+                    }
+                }
+            }
+
+            if (phase < 6){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                        for (int i=0; i<ui->tableWidget_7->rowCount(); i++)
+                            if (ui->tableWidget_7->verticalHeaderItem(i)->text() == tmp2["Vision"].toString())
+                                row = i;
+
+                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                            stones_needed[3] += ui->tableWidget_7->item(row, 3)->text().toInt();
+                        if (ui->tableWidget_9->item(row, 2) != nullptr)
+                            stones_needed[2] += ui->tableWidget_7->item(row, 2)->text().toInt();
+                        if (ui->tableWidget_9->item(row, 1) != nullptr)
+                            stones_needed[1] += ui->tableWidget_7->item(row, 1)->text().toInt();
+                        if (ui->tableWidget_9->item(row, 0) != nullptr)
+                            stones_needed[0] += ui->tableWidget_7->item(row, 0)->text().toInt();
+                        QTableWidgetItem *item =  new QTableWidgetItem(QString::number(stones_needed[3]));
+                        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(stones_needed[2]));
+                        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(stones_needed[1]));
+                        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(stones_needed[0]));
+                        item->setTextAlignment(Qt::AlignCenter);
+                        item_2->setTextAlignment(Qt::AlignCenter);
+                        item_3->setTextAlignment(Qt::AlignCenter);
+                        item_4->setTextAlignment(Qt::AlignCenter);
+                        if (stones_needed[3] > 0)
+                            ui->tableWidget_7->setItem(row, 3, item);
+                        if (stones_needed[2] > 0)
+                            ui->tableWidget_7->setItem(row, 2, item_2);
+                        if (stones_needed[1] > 0)
+                            ui->tableWidget_7->setItem(row, 1, item_3);
+                        if (stones_needed[0] > 0)
+                            ui->tableWidget_7->setItem(row, 0, item_4);
+                    }
+                }
+            }
+
+            if (phase < 6){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                        for (int i=0; i<ui->tableWidget_9->rowCount(); i++)
+                            if (ui->tableWidget_9->item(i, 0)->text() == tmp2["Common material"].toString())
+                                row = i;
+
+                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                            common_needed[2] += ui->tableWidget_9->item(row, 3)->text().toInt();
+                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                            common_needed[1] += ui->tableWidget_9->item(row, 2)->text().toInt();
+                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                            common_needed[0] += ui->tableWidget_9->item(row, 1)->text().toInt();
+                        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
+                        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
+                        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
+                        item_2->setTextAlignment(Qt::AlignCenter);
+                        item_3->setTextAlignment(Qt::AlignCenter);
+                        item_4->setTextAlignment(Qt::AlignCenter);
+                        if (common_needed[2] > 0)
+                            ui->tableWidget_9->setItem(row, 3, item_2);
+                        if (common_needed[1] > 0)
+                            ui->tableWidget_9->setItem(row, 2, item_3);
+                        if (common_needed[0] > 0)
+                            ui->tableWidget_9->setItem(row, 1, item_4);
+                    }
+                }
+            }
+
         }
     }
 
+    int total_wit = 0;
+    int total_mora = 0;
     for (int i=0; i < 7; i++ ) {
+        // quantity
         QTableWidgetItem *item =  new QTableWidgetItem(QString::number(quantity[i]));
         item->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_4->setItem(i, 1, item);
+        // needed
         QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(quantity[i]*needed[i]));
         item_2->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_4->setItem(i, 2, item_2);
+        total_wit += quantity[i]*needed[i];
+        // mora cost
         QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(quantity[i]*needed[i]*4000));
         item_3->setTextAlignment(Qt::AlignCenter);
         ui->tableWidget_4->setItem(i, 3, item_3);
+        total_mora += quantity[i]*needed[i]*4000;
+        // total mora cost
+        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(total_mora));
+        item_4->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_4->setItem(i, 4, item_4);
     }
 
+    QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(total_wit));
+    item_5->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_4->setItem(7, 2, item_5);
+
+    QTableWidgetItem *item_6 =  new QTableWidgetItem(QString::number(total_mora));
+    item_6->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_4->setItem(7, 3, item_6);
+
+    QTableWidgetItem *item_7 =  new QTableWidgetItem(QString::number(total_mora));
+    item_7->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_4->setItem(7, 4, item_7);
+
+}
+
+void genshin_calculator::talent(QString val){
+
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["training"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
+
+    QJsonObject tmp;
+    for (int i=0; i<jsonArray.size(); i++) {
+        tmp = jsonArray.at(i).toObject();
+        int needed[] = {0,0,0};
+        if (tmp["Check"].toBool())
+            if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack lvl target"].toString().toInt() >= 2))
+                needed[2] += 3;
+    }
 }
 
 void genshin_calculator::update_char_list(QJsonObject obj){

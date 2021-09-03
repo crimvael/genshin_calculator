@@ -67,7 +67,9 @@
 
         void calculate();
 
-        void hero_wit(QString);
+        void ascension(QString);
+
+        void talent(QString);
 
     private:
         Ui::genshin_calculator *ui;
