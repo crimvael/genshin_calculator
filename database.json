@@ -110,7 +110,7 @@
             "Local speciality": "Small Lamp Grass",
             "Name": "Fischl",
             "Region": "Mondstadt",
-            "Talent material": "Resistance",
+            "Talent material": "Ballad",
             "Vision": "Electro",
             "Weekly material": "Spirit Locket of Boreas"
         },
@@ -475,7 +475,7 @@
             "Elemental skill target lvl": "8",
             "Name": "Amber",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "6",
+            "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -488,7 +488,7 @@
             "Elemental skill target lvl": "8",
             "Name": "Barbara",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "6",
+            "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -509,7 +509,7 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "8",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Bennet",
@@ -651,7 +651,7 @@
         {
             "Check": true,
             "Current lvl": "80",
-            "Elemental burst lvl": "6",
+            "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
@@ -796,7 +796,7 @@
             "Current lvl": "90",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "6",
+            "Elemental skill lvl": "7",
             "Elemental skill target lvl": "8",
             "Name": "Sucrose",
             "Normal attack lvl": "6",
@@ -812,7 +812,7 @@
             "Elemental skill lvl": "8",
             "Elemental skill target lvl": "8",
             "Name": "Tartaglia",
-            "Normal attack lvl": "8",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -833,7 +833,7 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "6",
+            "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",

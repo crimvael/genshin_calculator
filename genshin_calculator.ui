@@ -38,7 +38,7 @@
       <x>20</x>
       <y>20</y>
       <width>1246</width>
-      <height>680</height>
+      <height>678</height>
      </rect>
     </property>
     <property name="autoFillBackground">
@@ -2137,7 +2137,7 @@
         <x>290</x>
         <y>250</y>
         <width>241</width>
-        <height>241</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -2212,7 +2212,7 @@
         <x>20</x>
         <y>250</y>
         <width>254</width>
-        <height>241</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="minimumSize">
@@ -2296,7 +2296,7 @@
         <x>560</x>
         <y>250</y>
         <width>238</width>
-        <height>241</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -2369,9 +2369,9 @@
       <property name="geometry">
        <rect>
         <x>1080</x>
-        <y>500</y>
+        <y>472</y>
         <width>141</width>
-        <height>123</height>
+        <height>148</height>
        </rect>
       </property>
       <property name="maximumSize">
@@ -2405,13 +2405,18 @@
       </row>
       <row>
        <property name="text">
-        <string>Talent 1-8</string>
+        <string>Talent 1-6</string>
        </property>
        <property name="font">
         <font>
          <weight>50</weight>
          <bold>false</bold>
         </font>
+       </property>
+      </row>
+      <row>
+       <property name="text">
+        <string>Talent 7-8</string>
        </property>
       </row>
       <row>
@@ -2454,7 +2459,7 @@
         <x>820</x>
         <y>250</y>
         <width>231</width>
-        <height>241</height>
+        <height>301</height>
        </rect>
       </property>
       <property name="maximumSize">

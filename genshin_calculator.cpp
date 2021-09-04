@@ -74,6 +74,26 @@ void genshin_calculator::calculate(){
 
     ui->tableWidget_5->setRowCount(0);
     ui->tableWidget_6->setRowCount(0);
+    for (int i=0; i<ui->tableWidget_7->rowCount(); i++) {
+        for (int j=0; j<ui->tableWidget_7->columnCount(); j++) {
+            ui->tableWidget_7->setItem(i, j, nullptr);
+        }
+    }
+    for (int i=0; i<ui->tableWidget_9->rowCount(); i++) {
+        for (int j=1; j<ui->tableWidget_9->columnCount(); j++) {
+            ui->tableWidget_9->setItem(i, j, nullptr);
+        }
+    }
+    for (int i=0; i<ui->tableWidget_8->rowCount(); i++) {
+        for (int j=1; j<ui->tableWidget_8->columnCount(); j++) {
+            ui->tableWidget_8->setItem(i, j, nullptr);
+        }
+    }
+    for (int i=0; i<ui->tableWidget_10->rowCount(); i++) {
+        for (int j=1; j<ui->tableWidget_10->columnCount(); j++) {
+            ui->tableWidget_10->setItem(i, j, nullptr);
+        }
+    }
 
     QString val;
     QFile file;
@@ -84,6 +104,19 @@ void genshin_calculator::calculate(){
 
     ascension(val);
     talent(val);
+
+    for (int i=0; i<ui->tableWidget_12->rowCount(); i++) {
+        for (int j=1; j<ui->tableWidget_12->columnCount(); j++) {
+            int a = 0, b = 0;
+            if (ui->tableWidget_9->item(i, j) != nullptr)
+                a += ui->tableWidget_9->item(i, j)->text().toInt();
+            if (ui->tableWidget_10->item(i, j) != nullptr)
+                b += ui->tableWidget_10->item(i, j)->text().toInt();
+            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(a+b));
+            item->setTextAlignment(Qt::AlignCenter);
+            ui->tableWidget_12->setItem(i, j, item);
+        }
+    }
 
 }
 
@@ -98,6 +131,7 @@ void genshin_calculator::ascension(QString val){
     int quantity[] = {0,0,0,0,0,0,0};
     int needed[] = {7,29,29,43,60,81,171};
 
+    int ascen_mora = 0;
     for (int i=0; i<jsonArray.size(); i++) {
         tmp = jsonArray.at(i).toObject();
         if (tmp["Check"].toBool()){
@@ -127,35 +161,41 @@ void genshin_calculator::ascension(QString val){
                 local_needed+=3;
                 stones_needed[3] +=1;
                 common_needed[2] +=3;
+                ascen_mora += 20000;
             }
             if (phase < 2){
                 local_needed+=10;
                 ascen_needed+=2;
                 stones_needed[2] +=3;
                 common_needed[2] +=15;
+                ascen_mora += 40000;
             }
             if (phase < 3){
                 local_needed+=20;
                 ascen_needed+=4;
                 stones_needed[2] +=6;
                 common_needed[1] +=12;
+                ascen_mora += 60000;
             }
             if (phase < 4){
                 local_needed+=30;
                 ascen_needed+=8;
                 stones_needed[1] +=18;
+                ascen_mora += 80000;
             }
             if (phase < 5){
                 local_needed+=45;
                 ascen_needed+=12;
                 stones_needed[1] +=6;
                 common_needed[0] +=12;
+                ascen_mora += 100000;
             }
             if (phase < 6){
                 local_needed+=60;
                 ascen_needed+=20;
                 stones_needed[0] +=6;
                 common_needed[0] +=24;
+                ascen_mora += 120000;
             }
 
             if (local_needed > 0){
@@ -228,13 +268,13 @@ void genshin_calculator::ascension(QString val){
                             if (ui->tableWidget_7->verticalHeaderItem(i)->text() == tmp2["Vision"].toString())
                                 row = i;
 
-                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                        if (ui->tableWidget_7->item(row, 3) != nullptr)
                             stones_needed[3] += ui->tableWidget_7->item(row, 3)->text().toInt();
-                        if (ui->tableWidget_9->item(row, 2) != nullptr)
+                        if (ui->tableWidget_7->item(row, 2) != nullptr)
                             stones_needed[2] += ui->tableWidget_7->item(row, 2)->text().toInt();
-                        if (ui->tableWidget_9->item(row, 1) != nullptr)
+                        if (ui->tableWidget_7->item(row, 1) != nullptr)
                             stones_needed[1] += ui->tableWidget_7->item(row, 1)->text().toInt();
-                        if (ui->tableWidget_9->item(row, 0) != nullptr)
+                        if (ui->tableWidget_7->item(row, 0) != nullptr)
                             stones_needed[0] += ui->tableWidget_7->item(row, 0)->text().toInt();
                         QTableWidgetItem *item =  new QTableWidgetItem(QString::number(stones_needed[3]));
                         QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(stones_needed[2]));
@@ -267,9 +307,9 @@ void genshin_calculator::ascension(QString val){
 
                         if (ui->tableWidget_9->item(row, 3) != nullptr)
                             common_needed[2] += ui->tableWidget_9->item(row, 3)->text().toInt();
-                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                        if (ui->tableWidget_9->item(row, 2) != nullptr)
                             common_needed[1] += ui->tableWidget_9->item(row, 2)->text().toInt();
-                        if (ui->tableWidget_9->item(row, 3) != nullptr)
+                        if (ui->tableWidget_9->item(row, 1) != nullptr)
                             common_needed[0] += ui->tableWidget_9->item(row, 1)->text().toInt();
                         QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
                         QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
@@ -286,7 +326,6 @@ void genshin_calculator::ascension(QString val){
                     }
                 }
             }
-
         }
     }
 
@@ -325,6 +364,9 @@ void genshin_calculator::ascension(QString val){
     item_7->setTextAlignment(Qt::AlignCenter);
     ui->tableWidget_4->setItem(7, 4, item_7);
 
+    QTableWidgetItem *item_8 =  new QTableWidgetItem(QString::number(ui->tableWidget_4->item(7, 4)->text().toInt() + ascen_mora));
+    item_8->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_11->setItem(0, 0, item_8);
 }
 
 void genshin_calculator::talent(QString val){
@@ -335,13 +377,228 @@ void genshin_calculator::talent(QString val){
     QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
 
     QJsonObject tmp;
+    int mora_1_6 = 0;
+    int mora_7_8 = 0;
+    int mora_9_10 = 0;
     for (int i=0; i<jsonArray.size(); i++) {
         tmp = jsonArray.at(i).toObject();
         int needed[] = {0,0,0};
-        if (tmp["Check"].toBool())
-            if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack lvl target"].toString().toInt() >= 2))
+        int common_needed[] = {0,0,0};
+        if (tmp["Check"].toBool()){
+            if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack target lvl"].toString().toInt() >= 2)){
                 needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 3) && (tmp["Normal attack target lvl"].toString().toInt() >= 3)){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 4) && (tmp["Normal attack target lvl"].toString().toInt() >= 4)){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 5) && (tmp["Normal attack target lvl"].toString().toInt() >= 5)){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 6) && (tmp["Normal attack target lvl"].toString().toInt() >= 6)){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 7) && (tmp["Normal attack target lvl"].toString().toInt() >= 7)){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 8) && (tmp["Normal attack target lvl"].toString().toInt() >= 8)){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 9) && (tmp["Normal attack target lvl"].toString().toInt() >= 9)){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+            }
+            if ((tmp["Normal attack lvl"].toString().toInt() < 10) && (tmp["Normal attack target lvl"].toString().toInt() >= 10)){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+            }
+
+
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 2) && (tmp["Elemental skill target lvl"].toString().toInt() >= 2)){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 3) && (tmp["Elemental skill target lvl"].toString().toInt() >= 3)){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 4) && (tmp["Elemental skill target lvl"].toString().toInt() >= 4)){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 5) && (tmp["Elemental skill target lvl"].toString().toInt() >= 5)){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 6) && (tmp["Elemental skill target lvl"].toString().toInt() >= 6)){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 7) && (tmp["Elemental skill target lvl"].toString().toInt() >= 7)){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 8) && (tmp["Elemental skill target lvl"].toString().toInt() >= 8)){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 9) && (tmp["Elemental skill target lvl"].toString().toInt() >= 9)){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+            }
+            if ((tmp["Elemental skill lvl"].toString().toInt() < 10) && (tmp["Elemental skill target lvl"].toString().toInt() >= 10)){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+            }
+
+
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 2) && (tmp["Elemental burst target lvl"].toString().toInt() >= 2)){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 3) && (tmp["Elemental burst target lvl"].toString().toInt() >= 3)){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 4) && (tmp["Elemental burst target lvl"].toString().toInt() >= 4)){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 5) && (tmp["Elemental burst target lvl"].toString().toInt() >= 5)){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 6) && (tmp["Elemental burst target lvl"].toString().toInt() >= 6)){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 7) && (tmp["Elemental burst target lvl"].toString().toInt() >= 7)){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 8) && (tmp["Elemental burst target lvl"].toString().toInt() >= 8)){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 9) && (tmp["Elemental burst target lvl"].toString().toInt() >= 9)){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+            }
+            if ((tmp["Elemental burst lvl"].toString().toInt() < 10) && (tmp["Elemental burst target lvl"].toString().toInt() >= 10)){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+            }
+
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_8->rowCount(); i++)
+                        if (ui->tableWidget_8->item(i, 0)->text() == tmp2["Talent material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_8->item(row, 3) != nullptr)
+                        needed[2] += ui->tableWidget_8->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 2) != nullptr)
+                        needed[1] += ui->tableWidget_8->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 1) != nullptr)
+                        needed[0] += ui->tableWidget_8->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (needed[2] > 0)
+                        ui->tableWidget_8->setItem(row, 3, item_2);
+                    if (needed[1] > 0)
+                        ui->tableWidget_8->setItem(row, 2, item_3);
+                    if (needed[0] > 0)
+                        ui->tableWidget_8->setItem(row, 1, item_4);
+                }
+            }
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_10->rowCount(); i++)
+                        if (ui->tableWidget_10->item(i, 0)->text() == tmp2["Common material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_10->item(row, 3) != nullptr)
+                        common_needed[2] += ui->tableWidget_10->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 2) != nullptr)
+                        common_needed[1] += ui->tableWidget_10->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 1) != nullptr)
+                        common_needed[0] += ui->tableWidget_10->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (common_needed[2] > 0)
+                        ui->tableWidget_10->setItem(row, 3, item_2);
+                    if (common_needed[1] > 0)
+                        ui->tableWidget_10->setItem(row, 2, item_3);
+                    if (common_needed[0] > 0)
+                        ui->tableWidget_10->setItem(row, 1, item_4);
+                }
+            }
+        }
     }
+
+    QTableWidgetItem *item =  new QTableWidgetItem(QString::number(mora_1_6));
+    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(mora_7_8));
+    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(mora_9_10));
+    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(mora_1_6 + mora_7_8 + mora_9_10 + ui->tableWidget_11->item(0, 0)->text().toInt()));
+    item->setTextAlignment(Qt::AlignCenter);
+    item_2->setTextAlignment(Qt::AlignCenter);
+    item_3->setTextAlignment(Qt::AlignCenter);
+    item_4->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_11->setItem(1, 0, item);
+    ui->tableWidget_11->setItem(2, 0, item_2);
+    ui->tableWidget_11->setItem(3, 0, item_3);
+    ui->tableWidget_11->setItem(4, 0, item_4);
 }
 
 void genshin_calculator::update_char_list(QJsonObject obj){
