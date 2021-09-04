@@ -63,6 +63,29 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 
     update_char_list(jsonObject);
     calculate();
+
+    ui->tableWidget->resizeColumnsToContents();
+    ui->tableWidget->resizeRowsToContents();
+    ui->tableWidget_2->resizeColumnsToContents();
+    ui->tableWidget_2->resizeRowsToContents();
+    ui->tableWidget_4->resizeRowsToContents();
+    ui->tableWidget_4->resizeColumnsToContents();
+    ui->tableWidget_5->resizeRowsToContents();
+    ui->tableWidget_5->resizeColumnsToContents();
+    ui->tableWidget_6->resizeRowsToContents();
+    ui->tableWidget_6->resizeColumnsToContents();
+    ui->tableWidget_7->resizeRowsToContents();
+    ui->tableWidget_7->resizeColumnsToContents();
+    ui->tableWidget_8->resizeRowsToContents();
+    ui->tableWidget_8->resizeColumnsToContents();
+    ui->tableWidget_9->resizeRowsToContents();
+    ui->tableWidget_9->resizeColumnsToContents();
+    ui->tableWidget_10->resizeRowsToContents();
+    ui->tableWidget_10->resizeColumnsToContents();
+    ui->tableWidget_11->resizeRowsToContents();
+    ui->tableWidget_11->resizeColumnsToContents();
+    ui->tableWidget_12->resizeRowsToContents();
+    ui->tableWidget_12->resizeColumnsToContents();
 }
 
 genshin_calculator::~genshin_calculator()
