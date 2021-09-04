@@ -112,9 +112,11 @@ void genshin_calculator::calculate(){
                 a += ui->tableWidget_9->item(i, j)->text().toInt();
             if (ui->tableWidget_10->item(i, j) != nullptr)
                 b += ui->tableWidget_10->item(i, j)->text().toInt();
-            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(a+b));
-            item->setTextAlignment(Qt::AlignCenter);
-            ui->tableWidget_12->setItem(i, j, item);
+            if (a+b > 0){
+                QTableWidgetItem *item =  new QTableWidgetItem(QString::number(a+b));
+                item->setTextAlignment(Qt::AlignCenter);
+                ui->tableWidget_12->setItem(i, j, item);
+            }
         }
     }
 
