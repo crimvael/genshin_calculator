@@ -493,8 +493,8 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
-            "Current lvl": "40",
+            "Check": true,
+            "Current lvl": "50",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -519,7 +519,7 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
+            "Check": true,
             "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
@@ -636,7 +636,7 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
+            "Check": true,
             "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
@@ -688,14 +688,14 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
+            "Check": true,
             "Current lvl": "80",
-            "Elemental burst lvl": "1",
+            "Elemental burst lvl": "2",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "2",
             "Elemental skill target lvl": "8",
             "Name": "Lisa",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "2",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -870,7 +870,7 @@
             "Target lvl": "90"
         },
         {
-            "Check": false,
+            "Check": true,
             "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",

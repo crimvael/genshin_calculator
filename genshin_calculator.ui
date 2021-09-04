@@ -45,7 +45,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2134,7 +2134,7 @@
      <widget class="QTableWidget" name="tableWidget_8">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>340</x>
         <y>250</y>
         <width>241</width>
         <height>301</height>
@@ -2211,7 +2211,7 @@
        <rect>
         <x>20</x>
         <y>250</y>
-        <width>254</width>
+        <width>291</width>
         <height>301</height>
        </rect>
       </property>
@@ -2293,9 +2293,9 @@
      <widget class="QTableWidget" name="tableWidget_10">
       <property name="geometry">
        <rect>
-        <x>560</x>
+        <x>600</x>
         <y>250</y>
-        <width>238</width>
+        <width>291</width>
         <height>301</height>
        </rect>
       </property>
@@ -2368,8 +2368,8 @@
      <widget class="QTableWidget" name="tableWidget_11">
       <property name="geometry">
        <rect>
-        <x>1080</x>
-        <y>472</y>
+        <x>1100</x>
+        <y>480</y>
         <width>141</width>
         <height>148</height>
        </rect>
@@ -2456,9 +2456,9 @@
      <widget class="QTableWidget" name="tableWidget_12">
       <property name="geometry">
        <rect>
-        <x>820</x>
+        <x>910</x>
         <y>250</y>
-        <width>231</width>
+        <width>281</width>
         <height>301</height>
        </rect>
       </property>
