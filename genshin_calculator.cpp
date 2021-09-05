@@ -41,8 +41,9 @@ genshin_calculator::genshin_calculator(QWidget *parent)
     update_char_list(jsonObject);
     calculate();
 
-    ui->tableWidget->resizeColumnsToContents();
+
     ui->tableWidget->resizeRowsToContents();
+    ui->tableWidget->resizeColumnsToContents();
     ui->tableWidget_2->resizeColumnsToContents();
     ui->tableWidget_2->resizeRowsToContents();
     ui->tableWidget_4->resizeRowsToContents();
@@ -247,7 +248,7 @@ void genshin_calculator::ascension(QString val){
                             ascen_needed += ui->tableWidget_6->item(row, 1)->text().toInt();
                             QTableWidgetItem *item =  new QTableWidgetItem(QString::number(ascen_needed));
                             item->setTextAlignment(Qt::AlignCenter);
-                            ui->tableWidget_6->setItem(ui->tableWidget_6->rowCount()-1, 1, item);
+                            ui->tableWidget_6->setItem(row, 1, item);
                         }
                         else{
                             ui->tableWidget_6->insertRow(ui->tableWidget_6->rowCount());
@@ -691,7 +692,6 @@ void genshin_calculator::update_comboboxes(){
     QJsonArray jsonArray_5 = jsonObject["talent_materials"].toArray();
     QJsonArray jsonArray_6 = jsonObject["weekly_materials"].toArray();
     QJsonArray jsonArray_7 = jsonObject["weapon_materials"].toArray();
-    QJsonArray jsonArray_8 = jsonObject["characters"].toArray();
     QJsonObject tmp;
     ui->listWidget->clear();
     ui->listWidget_2->clear();

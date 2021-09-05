@@ -45,7 +45,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -92,6 +92,11 @@
             <height>531</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>15</pointsize>
+           </font>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
           </property>
@@ -111,40 +116,96 @@
            <property name="text">
             <string>Name</string>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
           </column>
           <column>
            <property name="text">
             <string>Vision</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
           </column>
           <column>
            <property name="text">
             <string>Region</string>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
           </column>
           <column>
            <property name="text">
             <string>Common material</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
           </column>
           <column>
            <property name="text">
             <string>Ascension material</string>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
           </column>
           <column>
            <property name="text">
             <string>Local speciality</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
           </column>
           <column>
            <property name="text">
             <string>Talent book</string>
            </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
+           </property>
           </column>
           <column>
            <property name="text">
             <string>Weekly boss</string>
+           </property>
+           <property name="font">
+            <font>
+             <pointsize>15</pointsize>
+             <weight>75</weight>
+             <bold>true</bold>
+            </font>
            </property>
           </column>
          </widget>
@@ -224,6 +285,11 @@
             <width>240</width>
             <height>511</height>
            </rect>
+          </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
           </property>
          </widget>
          <widget class="QFrame" name="frame_2">
@@ -1154,9 +1220,17 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>1501</width>
+          <width>1221</width>
           <height>611</height>
          </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>15</pointsize>
+         </font>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::DoubleClicked</set>
@@ -1171,50 +1245,120 @@
          <property name="text">
           <string>Name</string>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
           <string>Level</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Target level</string>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
           <string>Phase</string>
          </property>
-        </column>
-        <column>
-         <property name="text">
-          <string>Normal attack level</string>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>Normal attack target level</string>
+          <string>Norm. atk lvl</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Norm. atk target</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Skill level</string>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
-          <string>Skill target level</string>
+          <string>Skill target</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </column>
         <column>
          <property name="text">
           <string>Burst level</string>
          </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
+         </property>
         </column>
         <column>
          <property name="text">
-          <string>Burst target level</string>
+          <string>Burst target</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>15</pointsize>
+           <weight>75</weight>
+           <bold>true</bold>
+          </font>
          </property>
         </column>
        </widget>
