@@ -14,29 +14,6 @@ genshin_calculator::genshin_calculator(QWidget *parent)
 {
     ui->setupUi(this);
     update_comboboxes();
-    for (int i = 1; i<ui->tableWidget->columnCount(); i++){
-        ui->tableWidget->resizeColumnToContents(i);
-        ui->tableWidget->resizeRowToContents(i);
-    }
-
-    ui->tableWidget_4->resizeRowsToContents();
-    ui->tableWidget_4->resizeColumnsToContents();
-    ui->tableWidget_5->resizeRowsToContents();
-    ui->tableWidget_5->resizeColumnsToContents();
-    ui->tableWidget_6->resizeRowsToContents();
-    ui->tableWidget_6->resizeColumnsToContents();
-    ui->tableWidget_7->resizeRowsToContents();
-    ui->tableWidget_7->resizeColumnsToContents();
-    ui->tableWidget_8->resizeRowsToContents();
-    ui->tableWidget_8->resizeColumnsToContents();
-    ui->tableWidget_9->resizeRowsToContents();
-    ui->tableWidget_9->resizeColumnsToContents();
-    ui->tableWidget_10->resizeRowsToContents();
-    ui->tableWidget_10->resizeColumnsToContents();
-    ui->tableWidget_11->resizeRowsToContents();
-    ui->tableWidget_11->resizeColumnsToContents();
-    ui->tableWidget_12->resizeRowsToContents();
-    ui->tableWidget_12->resizeColumnsToContents();
 
     QString val;
     QFile file;

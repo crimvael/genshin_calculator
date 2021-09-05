@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>1600</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -18,14 +18,14 @@
   </property>
   <property name="minimumSize">
    <size>
-    <width>1280</width>
-    <height>720</height>
+    <width>1600</width>
+    <height>800</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1280</width>
-    <height>720</height>
+    <width>1600</width>
+    <height>800</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -37,15 +37,15 @@
      <rect>
       <x>20</x>
       <y>20</y>
-      <width>1246</width>
-      <height>678</height>
+      <width>1561</width>
+      <height>761</height>
      </rect>
     </property>
     <property name="autoFillBackground">
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -56,7 +56,7 @@
        <rect>
         <x>10</x>
         <y>9</y>
-        <width>1211</width>
+        <width>1531</width>
         <height>631</height>
        </rect>
       </property>
@@ -72,7 +72,7 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>1181</width>
+          <width>1501</width>
           <height>581</height>
          </rect>
         </property>
@@ -88,7 +88,7 @@
            <rect>
             <x>10</x>
             <y>10</y>
-            <width>1151</width>
+            <width>1471</width>
             <height>531</height>
            </rect>
           </property>
@@ -1138,8 +1138,8 @@
        <rect>
         <x>10</x>
         <y>10</y>
-        <width>1210</width>
-        <height>631</height>
+        <width>1530</width>
+        <height>701</height>
        </rect>
       </property>
       <property name="currentIndex">
@@ -1154,8 +1154,8 @@
          <rect>
           <x>10</x>
           <y>10</y>
-          <width>1181</width>
-          <height>541</height>
+          <width>1501</width>
+          <height>611</height>
          </rect>
         </property>
         <property name="editTriggers">
@@ -1221,8 +1221,8 @@
        <widget class="QPushButton" name="pushButton">
         <property name="geometry">
          <rect>
-          <x>560</x>
-          <y>560</y>
+          <x>720</x>
+          <y>630</y>
           <width>90</width>
           <height>31</height>
          </rect>
@@ -2368,8 +2368,8 @@
      <widget class="QTableWidget" name="tableWidget_11">
       <property name="geometry">
        <rect>
-        <x>1100</x>
-        <y>480</y>
+        <x>1360</x>
+        <y>540</y>
         <width>141</width>
         <height>148</height>
        </rect>
@@ -2458,7 +2458,7 @@
        <rect>
         <x>910</x>
         <y>250</y>
-        <width>281</width>
+        <width>331</width>
         <height>301</height>
        </rect>
       </property>
