@@ -1053,6 +1053,11 @@
             <height>591</height>
            </rect>
           </property>
+          <property name="font">
+           <font>
+            <pointsize>12</pointsize>
+           </font>
+          </property>
          </widget>
          <widget class="QLabel" name="label_25">
           <property name="geometry">
