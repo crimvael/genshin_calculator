@@ -79,6 +79,7 @@ void genshin_calculator::refresh_items(){
     for (int i = 0; i<jsonArray.size(); i++){
         ui->listWidget->addItem(jsonArray[i].toString());
         ui->comboBox_3->addItem(jsonArray[i].toString());
+        ui->comboBox_9->addItem(jsonArray[i].toString());
     }
     for (int i = 0; i<jsonArray_2.size(); i++){
         ui->listWidget_2->addItem(jsonArray_2[i].toString());
@@ -86,6 +87,7 @@ void genshin_calculator::refresh_items(){
     }
     for (int i = 0; i<jsonArray_3.size(); i++){
         ui->listWidget_3->addItem(jsonArray_3[i].toString());
+        ui->comboBox_10->addItem(jsonArray_3[i].toString());
     }
     for (int i = 0; i<jsonArray_4.size(); i++){
         ui->listWidget_4->addItem(jsonArray_4[i].toString());
@@ -101,6 +103,7 @@ void genshin_calculator::refresh_items(){
     }
     for (int i = 0; i<jsonArray_7.size(); i++){
         ui->listWidget_9->addItem(jsonArray_7[i].toString());
+        ui->comboBox_12->addItem(jsonArray_7[i].toString());
     }
 }
 
@@ -683,9 +686,9 @@ void genshin_calculator::update_char_list(){
         ui->tableWidget_2->setItem(i, 5, item_6);
         ui->tableWidget_2->setItem(i, 6, item_7);
         ui->tableWidget_2->setItem(i, 7, item_8);
-
-
     }
+
+    resize_layouts();
 }
 
 void genshin_calculator::update_training_list(){
@@ -748,6 +751,122 @@ void genshin_calculator::update_training_list(){
         ui->tableWidget->setItem(i, 9, item_10);
 
     }
+
+    resize_layouts();
+}
+
+void genshin_calculator::update_weapon_list(){
+
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject obj = jsonResponse.object();
+
+    ui->listWidget_8->clear();
+    ui->tableWidget_13->setRowCount(0);
+    QJsonObject tmp;
+    QJsonArray array = obj["weapons"].toArray();
+    for (int i = 0; i<array.size(); i++){
+        tmp = array.at(i).toObject();
+        ui->listWidget_8->addItem(tmp["Name"].toString());
+        ui->tableWidget_13->insertRow(ui->tableWidget_13->rowCount());
+
+        QTableWidgetItem *item = new QTableWidgetItem(tmp["Name"].toString());
+        QTableWidgetItem *item_2 = new QTableWidgetItem(tmp["Type"].toString());
+        if (tmp["Rarity"].toString() == "*****"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_13->setItem(i, 2, item_3);
+        }
+        if (tmp["Rarity"].toString() == "****"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_13->setItem(i, 2, item_3);
+        }
+        if (tmp["Rarity"].toString() == "***"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_13->setItem(i, 2, item_3);
+        }
+        QTableWidgetItem *item_4 = new QTableWidgetItem(tmp["Common material"].toString());
+        QTableWidgetItem *item_5 = new QTableWidgetItem(tmp["Elite material"].toString());
+        QTableWidgetItem *item_6 = new QTableWidgetItem(tmp["Weapon material"].toString());
+
+        item->setTextAlignment(Qt::AlignVCenter);
+        item_2->setTextAlignment(Qt::AlignVCenter);
+        item_4->setTextAlignment(Qt::AlignVCenter);
+        item_5->setTextAlignment(Qt::AlignVCenter);
+        item_6->setTextAlignment(Qt::AlignVCenter);
+
+        ui->tableWidget_13->setItem(i, 0, item);
+        ui->tableWidget_13->setItem(i, 1, item_2);
+        ui->tableWidget_13->setItem(i, 3, item_4);
+        ui->tableWidget_13->setItem(i, 4, item_5);
+        ui->tableWidget_13->setItem(i, 5, item_6);
+    }
+
+    resize_layouts();
+}
+
+void genshin_calculator::update_weapon_training_list(){
+
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject obj = jsonResponse.object();
+
+    ui->tableWidget_3->setRowCount(0);
+    QJsonObject tmp;
+    QJsonArray jsonArray = obj["weapon_training"].toArray();
+    for (int i = 0; i<jsonArray.size(); i++){
+        tmp = jsonArray.at(i).toObject();
+        ui->tableWidget_3->insertRow(i);
+        QTableWidgetItem *item = new QTableWidgetItem(tmp["Name"].toString());
+        if (tmp["Check"].toBool())
+            item->setCheckState(Qt::Checked);
+        else
+            item->setCheckState(Qt::Unchecked);
+        ui->tableWidget_3->setItem(i, 0, item);
+        QTableWidgetItem *item_2 =  new QTableWidgetItem(tmp["Type"].toString());
+        if (tmp["Rarity"].toString() == "*****"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_3->setItem(i, 2, item_3);
+        }
+        if (tmp["Rarity"].toString() == "****"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_3->setItem(i, 2, item_3);
+        }
+        if (tmp["Rarity"].toString() == "***"){
+            QTableWidgetItem *item_3 = new QTableWidgetItem("★★★");
+            item_3->setTextAlignment(Qt::AlignVCenter);
+            ui->tableWidget_3->setItem(i, 2, item_3);
+        }
+        QTableWidgetItem *item_4 = new QTableWidgetItem(QString::number(tmp["Current level"].toInt()));
+        QTableWidgetItem *item_5 = new QTableWidgetItem(QString::number(tmp["Target level"].toInt()));
+        QTableWidgetItem *item_6 = new QTableWidgetItem(QString::number(tmp["Phase"].toInt()));
+
+        item_2->setTextAlignment(Qt::AlignCenter);
+        item_4->setTextAlignment(Qt::AlignCenter);
+        item_5->setTextAlignment(Qt::AlignCenter);
+        item_6->setTextAlignment(Qt::AlignCenter);
+
+        ui->tableWidget_3->setItem(i, 1, item_2);
+        ui->tableWidget_3->setItem(i, 3, item_4);
+        ui->tableWidget_3->setItem(i, 4, item_5);
+        ui->tableWidget_3->setItem(i, 5, item_6);
+    }
+
+    resize_layouts();
 }
 
 void genshin_calculator::resize_layouts(){
@@ -756,7 +875,8 @@ void genshin_calculator::resize_layouts(){
     ui->tableWidget->resizeRowsToContents();
     ui->tableWidget_2->resizeColumnsToContents();
     ui->tableWidget_2->resizeRowsToContents();
-
+    ui->tableWidget_3->resizeColumnsToContents();
+    ui->tableWidget_3->resizeRowsToContents();
     ui->tableWidget_4->resizeColumnsToContents();
     ui->tableWidget_4->resizeRowsToContents();
     ui->tableWidget_5->resizeColumnsToContents();
@@ -775,6 +895,8 @@ void genshin_calculator::resize_layouts(){
     ui->tableWidget_11->resizeRowsToContents();
     ui->tableWidget_12->resizeColumnsToContents();
     ui->tableWidget_12->resizeRowsToContents();
+    ui->tableWidget_13->resizeColumnsToContents();
+    ui->tableWidget_13->resizeRowsToContents();
 
 }
 
@@ -1042,6 +1164,7 @@ void genshin_calculator::on_pushButton_19_clicked()
         QJsonObject new_training;
         new_training.insert("Name", ui->lineEdit->text());
         new_training.insert("Check", false);
+        new_training.insert("Phase", 1);
         new_training.insert("Current level", 1);
         new_training.insert("Target level", 90);
         new_training.insert("Normal attack lvl", 1);
@@ -1199,5 +1322,92 @@ void genshin_calculator::on_pushButton_clicked()
     update_training_list();
     calculate();
 
+}
+
+// add new weapon data
+void genshin_calculator::on_pushButton_20_clicked()
+{
+    if (!ui->lineEdit_2->text().isEmpty()){
+
+        QString val;
+        QFile file;
+        file.setFileName(filepath);
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject jsonObject = jsonResponse.object();
+        QJsonArray jsonArray = jsonObject["weapons"].toArray();
+        QJsonArray jsonArray_2 = jsonObject["weapon_training"].toArray();
+
+        // add new database entry
+        QJsonObject new_char;
+        new_char.insert("Name", ui->lineEdit_2->text());
+        new_char.insert("Type", ui->comboBox_11->currentText());
+        if (ui->comboBox_8->currentText() == "★★★★★")
+            new_char.insert("Rarity", "*****");
+        if (ui->comboBox_8->currentText() == "★★★★")
+            new_char.insert("Rarity", "****");
+        if (ui->comboBox_8->currentText() == "★★★")
+            new_char.insert("Rarity", "***");
+        new_char.insert("Common material", ui->comboBox_9->currentText());
+        new_char.insert("Elite material", ui->comboBox_10->currentText());
+        new_char.insert("Weapon material", ui->comboBox_12->currentText());
+        jsonArray.append(new_char);
+        jsonObject.insert("weapons", jsonArray);
+
+        // add new training entry
+        QJsonObject new_training;
+        new_training.insert("Check", false);
+        new_training.insert("Name", ui->lineEdit_2->text());
+        new_training.insert("Type", ui->comboBox_11->currentText());
+        if (ui->comboBox_8->currentText() == "★★★★★")
+            new_training.insert("Rarity", "*****");
+        if (ui->comboBox_8->currentText() == "★★★★")
+            new_training.insert("Rarity", "****");
+        if (ui->comboBox_8->currentText() == "★★★")
+            new_training.insert("Rarity", "***");
+        new_training.insert("Phase", 1);
+        new_training.insert("Current level", 80);
+        new_training.insert("Target level", 90);
+        jsonArray_2.append(new_training);
+        jsonObject.insert("weapon_training", jsonArray_2);
+
+        jsonResponse.setObject(jsonObject);
+        file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
+        file.write(jsonResponse.toJson());
+        file.close();
+
+        ui->lineEdit_2->clear();
+        update_weapon_list();
+        update_weapon_training_list();
+    }
+}
+
+// remove weapon data
+void genshin_calculator::on_pushButton_6_clicked()
+{
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["weapons"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["weapon_training"].toArray();
+    jsonArray.removeAt(ui->listWidget_8->currentRow());
+    jsonArray_2.removeAt(ui->listWidget_8->currentRow());
+    jsonObject.insert("weapons", jsonArray);
+    jsonObject.insert("weapon_training", jsonArray_2);
+    jsonResponse.setObject(jsonObject);
+    file.open(QIODevice::ReadWrite | QIODevice::Text | QFile::Truncate);
+    file.write(jsonResponse.toJson());
+    file.close();
+
+    ui->lineEdit_2->clear();
+    update_weapon_list();
+    update_weapon_training_list();
 }
 

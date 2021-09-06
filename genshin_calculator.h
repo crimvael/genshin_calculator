@@ -61,6 +61,10 @@
 
         void update_char_list();
 
+        void update_weapon_list();
+
+        void update_weapon_training_list();
+
         void on_pushButton_19_clicked();
 
         void on_pushButton_24_clicked();
@@ -76,6 +80,10 @@
         void talent(QString);
 
         void resize_layouts();
+
+        void on_pushButton_20_clicked();
+
+        void on_pushButton_6_clicked();
 
     private:
         Ui::genshin_calculator *ui;
