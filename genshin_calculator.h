@@ -21,6 +21,12 @@
 
     private slots:
 
+        void refresh_items();
+
+        void add_new_material(int);
+
+        void remove_material(int);
+
         void on_pushButton_7_clicked();
 
         void on_pushButton_8_clicked();
@@ -51,11 +57,9 @@
 
         void on_listWidget_7_itemSelectionChanged();
 
-        void update_comboboxes();
+        void update_training_list();
 
-        void update_training_list(QJsonObject);
-
-        void update_char_list(QJsonObject);
+        void update_char_list();
 
         void on_pushButton_19_clicked();
 
@@ -70,6 +74,8 @@
         void ascension(QString);
 
         void talent(QString);
+
+        void resize_layouts();
 
     private:
         Ui::genshin_calculator *ui;
