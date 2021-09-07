@@ -960,8 +960,25 @@
         "Mask"
     ],
     "weapon_training": [
+        {
+            "Check": true,
+            "Current level": "1",
+            "Name": "werwrwe",
+            "Phase": "1",
+            "Rarity": "*****",
+            "Target level": "90",
+            "Type": "Sword"
+        }
     ],
     "weapons": [
+        {
+            "Common material": "Slime",
+            "Elite material": "Hilichurl Horns",
+            "Name": "werwrwe",
+            "Rarity": "*****",
+            "Type": "Sword",
+            "Weapon material": "Decarabian"
+        }
     ],
     "weekly_materials": [
         "Tail of Boreas",
