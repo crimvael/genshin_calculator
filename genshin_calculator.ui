@@ -45,7 +45,7 @@
      <bool>false</bool>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -2118,7 +2118,7 @@
          <rect>
           <x>10</x>
           <y>20</y>
-          <width>661</width>
+          <width>545</width>
           <height>301</height>
          </rect>
         </property>
@@ -2130,7 +2130,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -2160,7 +2160,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2172,7 +2172,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2184,7 +2184,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2196,7 +2196,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2208,7 +2208,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2220,7 +2220,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2232,7 +2232,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2244,7 +2244,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2259,7 +2259,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2271,7 +2271,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2283,7 +2283,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2295,7 +2295,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
           </font>
          </property>
         </column>
@@ -2305,7 +2305,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2635,9 +2635,9 @@
        <widget class="QTableWidget" name="tableWidget_10">
         <property name="geometry">
          <rect>
-          <x>690</x>
+          <x>600</x>
           <y>360</y>
-          <width>361</width>
+          <width>311</width>
           <height>301</height>
          </rect>
         </property>
@@ -2649,7 +2649,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -2673,7 +2673,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2685,7 +2685,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2697,7 +2697,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2709,7 +2709,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2719,9 +2719,9 @@
        <widget class="QTableWidget" name="tableWidget_8">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>330</x>
           <y>360</y>
-          <width>301</width>
+          <width>261</width>
           <height>301</height>
          </rect>
         </property>
@@ -2733,7 +2733,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -2757,7 +2757,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2769,7 +2769,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2781,7 +2781,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2793,7 +2793,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2803,9 +2803,9 @@
        <widget class="QTableWidget" name="tableWidget_12">
         <property name="geometry">
          <rect>
-          <x>1070</x>
+          <x>920</x>
           <y>360</y>
-          <width>401</width>
+          <width>321</width>
           <height>301</height>
          </rect>
         </property>
@@ -2817,7 +2817,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -2841,7 +2841,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2853,7 +2853,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2865,7 +2865,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2877,7 +2877,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2889,7 +2889,7 @@
          <rect>
           <x>10</x>
           <y>360</y>
-          <width>361</width>
+          <width>311</width>
           <height>301</height>
          </rect>
         </property>
@@ -2907,7 +2907,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -2934,7 +2934,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2946,7 +2946,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2958,7 +2958,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2970,7 +2970,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -2980,9 +2980,9 @@
        <widget class="QTableWidget" name="tableWidget_5">
         <property name="geometry">
          <rect>
-          <x>680</x>
+          <x>560</x>
           <y>20</y>
-          <width>225</width>
+          <width>189</width>
           <height>301</height>
          </rect>
         </property>
@@ -2994,7 +2994,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -3015,7 +3015,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3027,7 +3027,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3037,9 +3037,9 @@
        <widget class="QTableWidget" name="tableWidget_6">
         <property name="geometry">
          <rect>
-          <x>910</x>
+          <x>760</x>
           <y>20</y>
-          <width>251</width>
+          <width>209</width>
           <height>301</height>
          </rect>
         </property>
@@ -3051,7 +3051,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -3072,7 +3072,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3084,7 +3084,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3094,9 +3094,9 @@
        <widget class="QTableWidget" name="tableWidget_7">
         <property name="geometry">
          <rect>
-          <x>1170</x>
+          <x>1230</x>
           <y>20</y>
-          <width>341</width>
+          <width>291</width>
           <height>231</height>
          </rect>
         </property>
@@ -3114,7 +3114,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -3135,7 +3135,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3147,7 +3147,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3159,7 +3159,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3171,7 +3171,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3183,7 +3183,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3195,7 +3195,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3207,7 +3207,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3219,7 +3219,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3231,7 +3231,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3243,7 +3243,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3442,22 +3442,69 @@
          </property>
         </item>
        </widget>
-      </widget>
-      <widget class="QWidget" name="tab_7">
-       <attribute name="title">
-        <string>Weapons</string>
-       </attribute>
-      </widget>
-      <widget class="QWidget" name="tab_8">
-       <attribute name="title">
-        <string>Mora</string>
-       </attribute>
+       <widget class="QTableWidget" name="tableWidget_14">
+        <property name="geometry">
+         <rect>
+          <x>980</x>
+          <y>20</y>
+          <width>234</width>
+          <height>301</height>
+         </rect>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>1280</width>
+          <height>720</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>10</pointsize>
+         </font>
+        </property>
+        <property name="verticalScrollBarPolicy">
+         <enum>Qt::ScrollBarAlwaysOff</enum>
+        </property>
+        <property name="editTriggers">
+         <set>QAbstractItemView::NoEditTriggers</set>
+        </property>
+        <property name="selectionMode">
+         <enum>QAbstractItemView::NoSelection</enum>
+        </property>
+        <property name="selectionBehavior">
+         <enum>QAbstractItemView::SelectRows</enum>
+        </property>
+        <column>
+         <property name="text">
+          <string>Weekly boss materials</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+        </column>
+        <column>
+         <property name="text">
+          <string>Needed</string>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+        </column>
+       </widget>
        <widget class="QTableWidget" name="tableWidget_11">
         <property name="geometry">
          <rect>
-          <x>100</x>
-          <y>60</y>
-          <width>171</width>
+          <x>1290</x>
+          <y>410</y>
+          <width>211</width>
           <height>181</height>
          </rect>
         </property>
@@ -3469,7 +3516,7 @@
         </property>
         <property name="font">
          <font>
-          <pointsize>12</pointsize>
+          <pointsize>10</pointsize>
          </font>
         </property>
         <property name="verticalScrollBarPolicy">
@@ -3490,7 +3537,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3502,7 +3549,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3514,7 +3561,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
           </font>
          </property>
         </row>
@@ -3524,7 +3571,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3536,7 +3583,7 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
@@ -3548,13 +3595,23 @@
          </property>
          <property name="font">
           <font>
-           <pointsize>12</pointsize>
+           <pointsize>10</pointsize>
            <weight>50</weight>
            <bold>false</bold>
           </font>
          </property>
         </column>
        </widget>
+      </widget>
+      <widget class="QWidget" name="tab_7">
+       <attribute name="title">
+        <string>Weapons</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="tab_8">
+       <attribute name="title">
+        <string>Mora</string>
+       </attribute>
       </widget>
      </widget>
     </widget>

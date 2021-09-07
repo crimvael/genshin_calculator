@@ -111,6 +111,7 @@ void genshin_calculator::calculate(){
 
     ui->tableWidget_5->setRowCount(0);
     ui->tableWidget_6->setRowCount(0);
+    ui->tableWidget_14->setRowCount(0);
     for (int i=0; i<ui->tableWidget_7->rowCount(); i++) {
         for (int j=0; j<ui->tableWidget_7->columnCount(); j++) {
             ui->tableWidget_7->setItem(i, j, nullptr);
@@ -424,6 +425,7 @@ void genshin_calculator::talent(QString val){
         tmp = jsonArray.at(i).toObject();
         int needed[] = {0,0,0};
         int common_needed[] = {0,0,0};
+        int weekly = 0;
         if (tmp["Check"].toBool()){
             if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack target lvl"].toString().toInt() >= 2)){
                 needed[2] += 3;
@@ -454,21 +456,25 @@ void genshin_calculator::talent(QString val){
                 needed[0] += 4;
                 common_needed[0] += 4;
                 mora_7_8 += 120000;
+                weekly++;
             }
             if ((tmp["Normal attack lvl"].toString().toInt() < 8) && (tmp["Normal attack target lvl"].toString().toInt() >= 8)){
                 needed[0] += 6;
                 common_needed[0] += 6;
                 mora_7_8 += 260000;
+                weekly++;
             }
             if ((tmp["Normal attack lvl"].toString().toInt() < 9) && (tmp["Normal attack target lvl"].toString().toInt() >= 9)){
                 needed[0] += 12;
                 common_needed[0] += 9;
                 mora_9_10 += 450000;
+                weekly+=2;
             }
             if ((tmp["Normal attack lvl"].toString().toInt() < 10) && (tmp["Normal attack target lvl"].toString().toInt() >= 10)){
                 needed[0] += 16;
                 common_needed[0] += 12;
                 mora_9_10 += 700000;
+                weekly+=2;
             }
 
 
@@ -501,21 +507,25 @@ void genshin_calculator::talent(QString val){
                 needed[0] += 4;
                 common_needed[0] += 4;
                 mora_7_8 += 120000;
+                weekly++;
             }
             if ((tmp["Elemental skill lvl"].toString().toInt() < 8) && (tmp["Elemental skill target lvl"].toString().toInt() >= 8)){
                 needed[0] += 6;
                 common_needed[0] += 6;
                 mora_7_8 += 260000;
+                weekly++;
             }
             if ((tmp["Elemental skill lvl"].toString().toInt() < 9) && (tmp["Elemental skill target lvl"].toString().toInt() >= 9)){
                 needed[0] += 12;
                 common_needed[0] += 9;
                 mora_9_10 += 450000;
+                weekly+=2;
             }
             if ((tmp["Elemental skill lvl"].toString().toInt() < 10) && (tmp["Elemental skill target lvl"].toString().toInt() >= 10)){
                 needed[0] += 16;
                 common_needed[0] += 12;
                 mora_9_10 += 700000;
+                weekly+=2;
             }
 
 
@@ -548,23 +558,57 @@ void genshin_calculator::talent(QString val){
                 needed[0] += 4;
                 common_needed[0] += 4;
                 mora_7_8 += 120000;
+                weekly++;
             }
             if ((tmp["Elemental burst lvl"].toString().toInt() < 8) && (tmp["Elemental burst target lvl"].toString().toInt() >= 8)){
                 needed[0] += 6;
                 common_needed[0] += 6;
                 mora_7_8 += 260000;
+                weekly++;
             }
             if ((tmp["Elemental burst lvl"].toString().toInt() < 9) && (tmp["Elemental burst target lvl"].toString().toInt() >= 9)){
                 needed[0] += 12;
                 common_needed[0] += 9;
                 mora_9_10 += 450000;
+                weekly+=2;
             }
             if ((tmp["Elemental burst lvl"].toString().toInt() < 10) && (tmp["Elemental burst target lvl"].toString().toInt() >= 10)){
                 needed[0] += 16;
                 common_needed[0] += 12;
                 mora_9_10 += 700000;
+                weekly+=2;
             }
 
+            if (weekly > 0){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    bool already_exist = false;
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+
+                        for (int i=0; i<ui->tableWidget_14->rowCount(); i++)
+                            if (ui->tableWidget_14->item(i, 0)->text() == tmp2["Weekly material"].toString()){
+                                already_exist = true;
+                                row = i;
+                            }
+
+                        if (already_exist){
+                            weekly += ui->tableWidget_14->item(row, 1)->text().toInt();
+                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(weekly));
+                            item->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(row, 1, item);
+                        }
+                        else{
+                            ui->tableWidget_14->insertRow(ui->tableWidget_14->rowCount());
+                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Weekly material"].toString());
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 0, item);
+                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(weekly));
+                            item_2->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 1, item_2);
+                        }
+                    }
+                }
+            }
 
             for (int i=0; i<jsonArray_2.size(); i++) {
 
@@ -897,6 +941,9 @@ void genshin_calculator::resize_layouts(){
     ui->tableWidget_12->resizeRowsToContents();
     ui->tableWidget_13->resizeColumnsToContents();
     ui->tableWidget_13->resizeRowsToContents();
+    ui->tableWidget_14->resizeColumnsToContents();
+    ui->tableWidget_14->resizeRowsToContents();
+
 
 }
 
