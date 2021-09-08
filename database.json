@@ -611,7 +611,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "50",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -619,7 +619,7 @@
             "Name": "Jean",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "3",
+            "Phase": "5",
             "Target lvl": "90"
         },
         {
@@ -960,25 +960,8 @@
         "Mask"
     ],
     "weapon_training": [
-        {
-            "Check": true,
-            "Current level": "1",
-            "Name": "werwrwe",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Sword"
-        }
     ],
     "weapons": [
-        {
-            "Common material": "Slime",
-            "Elite material": "Hilichurl Horns",
-            "Name": "werwrwe",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Decarabian"
-        }
     ],
     "weekly_materials": [
         "Tail of Boreas",
