@@ -693,58 +693,128 @@ void genshin_calculator::calculate_weapons(QString val){
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
     QJsonArray jsonArray = jsonObject["weapon_training"].toArray();
-    QJsonArray jsonArray_2 = jsonObject["weapons"].toArray();
+    //QJsonArray jsonArray_2 = jsonObject["weapons"].toArray();
 
     QJsonObject tmp;
     int quantity[] = {0,0,0,0,0,0,0};
+    int quantity2[] = {0,0,0,0,0,0,0};
+    int quantity3[] = {0,0,0,0,0,0,0};
     int needed_5[] = {12,63,63,93,130,175,372};
-    int needed_4[] = {8,41,42,62,687,117,248};
+    int needed_4[] = {8,41,42,62,87,117,248};
     int needed_3[] = {6,28,28,41,58,77,164};
 
-    int ascen_mora = 0;
+    //int ascen_mora = 0;
     for (int i=0; i<jsonArray.size(); i++) {
         tmp = jsonArray.at(i).toObject();
         if (tmp["Check"].toBool()){
-            int phase = tmp["Phase"].toString().toInt();
+            //int phase = tmp["Phase"].toString().toInt();
             int curr = tmp["Current level"].toString().toInt();
             int targ = tmp["Target level"].toString().toInt();
-            if (curr < 20 && curr < targ)
-                quantity[0]++;
-            if (curr < 40 && curr < targ)
-                quantity[1]++;
-            if (curr < 50 && curr < targ)
-                quantity[2]++;
-            if (curr < 60 && curr < targ)
-                quantity[3]++;
-            if (curr < 70 && curr < targ)
-                quantity[4]++;
-            if (curr < 80 && curr < targ)
-                quantity[5]++;
-            if (curr < 90 && curr < targ)
-                quantity[6]++;
+            if (curr < 20 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[0]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[0]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[0]++;
+            }
+            if (curr < 40 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[1]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[1]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[1]++;
+            }
+            if (curr < 50 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[2]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[2]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[2]++;
+            }
+            if (curr < 60 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[3]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[3]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[3]++;
+            }
+            if (curr < 70 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[4]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[4]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[4]++;
+            }
+            if (curr < 80 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[5]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[5]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[5]++;
+            }
+            if (curr < 90 && curr < targ){
+                if (tmp["Rarity"] == "*****")
+                    quantity[6]++;
+                if (tmp["Rarity"] == "****")
+                    quantity2[6]++;
+                if (tmp["Rarity"] == "***")
+                    quantity3[6]++;
+            }
         }
     }
 
-    int total_wit = 0;
     int total_mora = 0;
+    int total_ore = 0;
+    int total_ore2 = 0;
+    int total_ore3 = 0;
     for (int i=0; i < 7; i++ ) {
-        if(tmp["Rarity"].toString() == "*****"){
-            // needed
-            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(quantity[i]) + " x " + QString::number(needed_5[i]) + " = " + QString::number(quantity[i]*needed_5[i]));
-            item_2->setTextAlignment(Qt::AlignCenter);
-            ui->tableWidget_15->setItem(i, 1, item_2);
-            //total_wit += quantity[i]*needed[i];
-        }
-        // mora cost
-        //QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(quantity[i]*needed[i]*1000));
-        //item_3->setTextAlignment(Qt::AlignCenter);
-        //ui->tableWidget_15->setItem(i, 3, item_3);
-        //total_mora += quantity[i]*needed[i]*1000;
-        // total mora cost
-        //QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(total_mora));
-        //item_4->setTextAlignment(Qt::AlignCenter);
-        //ui->tableWidget_15->setItem(i, 4, item_4);
+        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(quantity[i]) + " x " + QString::number(needed_5[i]) + " = " + QString::number(quantity[i]*needed_5[i]));
+        item_2->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_15->setItem(i, 1, item_2);
+        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(quantity2[i]) + " x " + QString::number(needed_4[i]) + " = " + QString::number(quantity2[i]*needed_4[i]));
+        item_3->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_15->setItem(i, 2, item_3);
+        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(quantity3[i]) + " x " + QString::number(needed_3[i]) + " = " + QString::number(quantity3[i]*needed_3[i]));
+        item_4->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_15->setItem(i, 3, item_4);
+
+        total_mora += quantity[i]*needed_5[i]*1000;
+        total_mora += quantity2[i]*needed_4[i]*1000;
+        total_mora += quantity3[i]*needed_3[i]*1000;
+
+        total_ore += quantity[i]*needed_5[i];
+        total_ore2 += quantity2[i]*needed_4[i];
+        total_ore3 += quantity3[i]*needed_3[i];
+
+        QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(quantity[i]*needed_5[i]*1000 + quantity2[i]*needed_4[i]*1000 + quantity3[i]*needed_3[i]*1000));
+        item_5->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_15->setItem(i, 4, item_5);
+        QTableWidgetItem *item_6 =  new QTableWidgetItem(QString::number(total_mora));
+        item_6->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_15->setItem(i, 5, item_6);
     }
+
+    QTableWidgetItem *item_6 =  new QTableWidgetItem(QString::number(total_ore));
+    item_6->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_15->setItem(7, 1, item_6);
+    QTableWidgetItem *item_7 =  new QTableWidgetItem(QString::number(total_ore2));
+    item_7->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_15->setItem(7, 2, item_7);
+    QTableWidgetItem *item_8 =  new QTableWidgetItem(QString::number(total_ore3));
+    item_8->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_15->setItem(7, 3, item_8);
+    QTableWidgetItem *item_9 =  new QTableWidgetItem(QString::number(total_mora));
+    item_9->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_15->setItem(7, 4, item_9);
+    QTableWidgetItem *item_10 =  new QTableWidgetItem(QString::number(total_mora));
+    item_10->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_15->setItem(7, 5, item_10);
 /*
     QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(total_wit));
     item_5->setTextAlignment(Qt::AlignCenter);
@@ -1584,5 +1654,78 @@ void genshin_calculator::on_pushButton_22_clicked()
 
     update_weapon_training_list();
     calculate();
+}
+
+
+void genshin_calculator::on_listWidget_8_itemSelectionChanged()
+{
+    QString val;
+    QFile file;
+    file.setFileName(filepath);
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    val = file.readAll();
+    file.close();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["weapons"].toArray();
+    QJsonObject tmp;
+    tmp = jsonArray.at(ui->listWidget_8->currentRow()).toObject();
+    ui->lineEdit_2->setText(tmp["Name"].toString());
+    ui->comboBox_11->setCurrentIndex(ui->comboBox_11->findText(tmp["Type"].toString()));
+    if (tmp["Rarity"] == "*****")
+        ui->comboBox_8->setCurrentIndex(ui->comboBox_8->findText("★★★★★"));
+    if (tmp["Rarity"] == "****")
+        ui->comboBox_8->setCurrentIndex(ui->comboBox_8->findText("★★★★"));
+    if (tmp["Rarity"] == "***")
+        ui->comboBox_8->setCurrentIndex(ui->comboBox_8->findText("★★★"));
+    ui->comboBox_12->setCurrentIndex(ui->comboBox_12->findText(tmp["Weapon material"].toString()));
+    ui->comboBox_10->setCurrentIndex(ui->comboBox_10->findText(tmp["Elite material"].toString()));
+    ui->comboBox_9->setCurrentIndex(ui->comboBox_9->findText(tmp["Common material"].toString()));
+}
+
+
+void genshin_calculator::on_pushButton_5_clicked()
+{
+    if(ui->listWidget_7->count() > 0){
+        QString val;
+        QFile file;
+        file.setFileName(filepath);
+        file.open(QIODevice::ReadOnly | QIODevice::Text);
+        val = file.readAll();
+        file.close();
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject jsonObject = jsonResponse.object();
+        QJsonArray jsonArray = jsonObject["weapons"].toArray();
+        QJsonArray jsonArray_2 = jsonObject["weapon_training"].toArray();
+
+        QJsonObject new_char;
+        new_char.insert("Name", ui->lineEdit_2->text());
+        new_char.insert("Type", ui->comboBox_11->currentText());
+        if (ui->comboBox_8->currentText() == "★★★★★")
+            new_char.insert("Rarity", "*****");
+        if (ui->comboBox_8->currentText() == "★★★★")
+            new_char.insert("Rarity", "****");
+        if (ui->comboBox_8->currentText() == "★★★")
+            new_char.insert("Rarity", "***");
+        new_char.insert("Weapon material", ui->comboBox_12->currentText());
+        new_char.insert("Elite material", ui->comboBox_10->currentText());
+        new_char.insert("Common material", ui->comboBox_9->currentText());
+        jsonArray.replace(ui->listWidget_8->currentRow(), new_char);
+        jsonObject.insert("weapons", jsonArray);
+
+
+        QJsonObject tmp = jsonArray_2.at(ui->listWidget_8->currentRow()).toObject();
+        tmp.insert("Name", ui->lineEdit_2->text());
+        jsonArray_2.replace(ui->listWidget_8->currentRow(), tmp);
+        jsonObject.insert("weapon_training", jsonArray_2);
+
+        jsonResponse.setObject(jsonObject);
+        file.open(QIODevice::ReadWrite | QIODevice::Text| QFile::Truncate);
+        file.write(jsonResponse.toJson());
+        file.close();
+
+        ui->lineEdit_2->clear();
+        update_weapon_list();
+    }
 }
 

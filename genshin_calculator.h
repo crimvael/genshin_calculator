@@ -89,6 +89,10 @@
 
         void calculate_weapons(QString);
 
+        void on_listWidget_8_itemSelectionChanged();
+
+        void on_pushButton_5_clicked();
+
     private:
         Ui::genshin_calculator *ui;
     };
