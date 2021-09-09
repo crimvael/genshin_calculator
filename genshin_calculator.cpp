@@ -1365,10 +1365,10 @@ void genshin_calculator::on_pushButton_19_clicked()
         new_training.insert("Name", ui->lineEdit->text());
         new_training.insert("Check", false);
         new_training.insert("Phase", QString::number(1));
-        new_training.insert("Current level", QString::number(1));
-        new_training.insert("Target level", QString::number(90));
+        new_training.insert("Current lvl", QString::number(1));
+        new_training.insert("Target lvl", QString::number(90));
         new_training.insert("Normal attack lvl", QString::number(1));
-        new_training.insert("Normal attack target level", QString::number(8));
+        new_training.insert("Normal attack target lvl", QString::number(8));
         new_training.insert("Elemental skill lvl", QString::number(1));
         new_training.insert("Elemental skill target lvl", QString::number(8));
         new_training.insert("Elemental burst lvl", QString::number(1));
