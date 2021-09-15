@@ -224,7 +224,7 @@ void genshin_calculator::ascension(QString val){
             if (phase < 4){
                 local_needed+=30;
                 ascen_needed+=8;
-                stones_needed[1] +=18;
+                stones_needed[1] +=3;
                 ascen_mora += 80000;
             }
             if (phase < 5){
