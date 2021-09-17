@@ -647,7 +647,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "50",
+            "Current lvl": "60",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -655,7 +655,7 @@
             "Name": "Kaeya",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "2",
+            "Phase": "3",
             "Target lvl": "90"
         },
         {
@@ -881,7 +881,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "50",
+            "Current lvl": "60",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -889,7 +889,7 @@
             "Name": "Xinyan",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "2",
+            "Phase": "3",
             "Target lvl": "90"
         },
         {
@@ -933,7 +933,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "50",
+            "Current lvl": "60",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
