@@ -777,7 +777,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "20",
+            "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -785,7 +785,7 @@
             "Name": "Rosaria",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "1",
+            "Phase": "2",
             "Target lvl": "90"
         },
         {
