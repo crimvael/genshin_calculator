@@ -530,7 +530,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "60",
+            "Current lvl": "70",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -933,7 +933,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "60",
+            "Current lvl": "70",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -959,7 +959,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "60",
+            "Current lvl": "70",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -967,7 +967,7 @@
             "Name": "Aloy",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "4",
+            "Phase": "5",
             "Target lvl": "90"
         }
     ],
