@@ -6,7 +6,7 @@
 #include "QFile"
 
 extern QString filepath;
-QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
+QString filepath = "C:/Users/Secernato/Documents/Qt projects/genshin_calculator/database.json";
 
 genshin_calculator::genshin_calculator(QWidget *parent)
     : QMainWindow(parent)
