@@ -11,7 +11,8 @@
         "Marionette Core",
         "Perpetual Heart",
         "Smoldering Pearl",
-        "Storm Beads"
+        "Storm Beads",
+        "Dew of Repudiation"
     ],
     "characters": [
         {
@@ -403,6 +404,26 @@
             "Talent material": "Freedom",
             "Vision": "Cryo",
             "Weekly material": "Molten Moment"
+        },
+        {
+            "Ascension material": "Dew of Repudiation",
+            "Common material": "Spectral Cores",
+            "Local speciality": "Sango Pearl",
+            "Name": "Sangonomiya Kokomi",
+            "Region": "Inazuma",
+            "Talent material": "Transience",
+            "Vision": "Hydro",
+            "Weekly material": "Hellfire Butterfly"
+        },
+        {
+            "Ascension material": "Smoldering Pearl",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Fluorescent Fungus",
+            "Name": "Thoma",
+            "Region": "Inazuma",
+            "Talent material": "Transience",
+            "Vision": "Pyro",
+            "Weekly material": "Hellfire Butterfly"
         }
     ],
     "common_materials": [
@@ -424,7 +445,8 @@
         "Sacrificial Knifes",
         "Prisms",
         "Chaos Parts",
-        "Different Chaos Parts"
+        "Different Chaos Parts",
+        "Concealed"
     ],
     "local_materials": [
         "Calla Lily",
@@ -449,7 +471,9 @@
         "Violetgrass",
         "Windwheel Aster",
         "Wolfhook",
-        "Amakumo Fruit"
+        "Amakumo Fruit",
+        "Sango Pearl",
+        "Fluorescent Fungus"
     ],
     "talent_materials": [
         "Freedom",
@@ -480,12 +504,12 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "6",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Amber",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -504,7 +528,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "70",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -512,7 +536,7 @@
             "Name": "Beidou",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "5",
+            "Phase": "6",
             "Target lvl": "90"
         },
         {
@@ -521,16 +545,16 @@
             "Elemental burst lvl": "8",
             "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Bennet",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
         {
             "Check": true,
-            "Current lvl": "70",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -538,7 +562,7 @@
             "Name": "Chongyun",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "5",
+            "Phase": "6",
             "Target lvl": "90"
         },
         {
@@ -558,12 +582,12 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "6",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Diona",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -621,7 +645,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -647,7 +671,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -660,9 +684,9 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "8",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Kamisato Ayaka",
@@ -699,7 +723,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "2",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "2",
@@ -712,14 +736,14 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "1",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Mona",
             "Normal attack lvl": "1",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -790,7 +814,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "8",
@@ -818,12 +842,12 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "8",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "8",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Tartaglia",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -844,12 +868,12 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "8",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Xiangling",
             "Normal attack lvl": "8",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -881,7 +905,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "70",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -896,18 +920,18 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "6",
-            "Elemental burst target lvl": "8",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "6",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Yanfei",
             "Normal attack lvl": "6",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
@@ -933,7 +957,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "70",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -946,7 +970,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
@@ -959,7 +983,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "70",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -967,7 +991,33 @@
             "Name": "Aloy",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "5",
+            "Phase": "6",
+            "Target lvl": "90"
+        },
+        {
+            "Check": false,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Sangonomiya Kokomi",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "1",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "40",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Thoma",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "2",
             "Target lvl": "90"
         }
     ],
