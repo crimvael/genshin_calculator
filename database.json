@@ -528,7 +528,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -554,7 +554,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -801,7 +801,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -957,7 +957,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -965,7 +965,7 @@
             "Name": "Kujou Sara",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "5",
+            "Phase": "6",
             "Target lvl": "90"
         },
         {
@@ -1009,7 +1009,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "40",
+            "Current lvl": "80",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -1017,7 +1017,7 @@
             "Name": "Thoma",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "2",
+            "Phase": "5",
             "Target lvl": "90"
         }
     ],
