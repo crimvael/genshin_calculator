@@ -12,7 +12,8 @@
         "Perpetual Heart",
         "Smoldering Pearl",
         "Storm Beads",
-        "Dew of Repudiation"
+        "Dew of Repudiation",
+        "Riftborn Regalia"
     ],
     "characters": [
         {
@@ -424,6 +425,26 @@
             "Talent material": "Transience",
             "Vision": "Pyro",
             "Weekly material": "Hellfire Butterfly"
+        },
+        {
+            "Ascension material": "Riftborn Regalia",
+            "Common material": "Slime",
+            "Local speciality": "Onikabuto",
+            "Name": "Arataki Itto",
+            "Region": "Inazuma",
+            "Talent material": "Elegance",
+            "Vision": "Geo",
+            "Weekly material": "Ashen Heart"
+        },
+        {
+            "Ascension material": "Perpetual Heart",
+            "Common material": "Spectral Cores",
+            "Local speciality": "Sango Pearl",
+            "Name": "Gorou",
+            "Region": "Inazuma",
+            "Talent material": "Light",
+            "Vision": "Geo",
+            "Weekly material": "Molten Moment"
         }
     ],
     "common_materials": [
@@ -593,15 +614,15 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
-            "Elemental burst lvl": "4",
+            "Current lvl": "90",
+            "Elemental burst lvl": "5",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "5",
             "Elemental skill target lvl": "8",
             "Name": "Eula",
-            "Normal attack lvl": "4",
+            "Normal attack lvl": "5",
             "Normal attack target lvl": "8",
-            "Phase": "5",
+            "Phase": "6",
             "Target lvl": "90"
         },
         {
@@ -646,12 +667,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "1",
+            "Elemental burst lvl": "5",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "5",
             "Elemental skill target lvl": "8",
             "Name": "Jean",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "5",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -672,12 +693,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "2",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "2",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Kaeya",
-            "Normal attack lvl": "2",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -724,12 +745,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "2",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "2",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Lisa",
-            "Normal attack lvl": "2",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -737,12 +758,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "2",
+            "Elemental burst lvl": "5",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "2",
+            "Elemental skill lvl": "5",
             "Elemental skill target lvl": "8",
             "Name": "Mona",
-            "Normal attack lvl": "2",
+            "Normal attack lvl": "5",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -802,12 +823,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "2",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "2",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Rosaria",
-            "Normal attack lvl": "2",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -1016,6 +1037,32 @@
             "Elemental skill target lvl": "8",
             "Name": "Thoma",
             "Normal attack lvl": "2",
+            "Normal attack target lvl": "8",
+            "Phase": "5",
+            "Target lvl": "90"
+        },
+        {
+            "Check": false,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Arataki Itto",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "1",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "80",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Gorou",
+            "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
             "Phase": "5",
             "Target lvl": "90"
