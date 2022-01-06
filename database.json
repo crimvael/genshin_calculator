@@ -13,7 +13,8 @@
         "Smoldering Pearl",
         "Storm Beads",
         "Dew of Repudiation",
-        "Riftborn Regalia"
+        "Riftborn Regalia",
+        "Dragonheir's False Fin"
     ],
     "characters": [
         {
@@ -455,6 +456,16 @@
             "Talent material": "Diligence",
             "Vision": "Geo",
             "Weekly material": "Ashen Heart"
+        },
+        {
+            "Ascension material": "Dragonheir's False Fin",
+            "Common material": "Whopperflower Nectar",
+            "Local speciality": "Qingxin",
+            "Name": "Shenhe",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Cryo",
+            "Weekly material": "Hellfire Butterfly"
         }
     ],
     "common_materials": [
@@ -1088,6 +1099,19 @@
             "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
+            "Target lvl": "90"
+        },
+        {
+            "Check": false,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Shenhe",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "1",
             "Target lvl": "90"
         }
     ],
