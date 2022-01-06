@@ -910,7 +910,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "1",
+            "Current lvl": "40",
             "Elemental burst lvl": "1",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "1",
@@ -918,7 +918,7 @@
             "Name": "Xiao",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "1",
             "Target lvl": "90"
         },
         {
@@ -1015,12 +1015,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "2",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "2",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Aloy",
-            "Normal attack lvl": "2",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
@@ -1041,9 +1041,9 @@
         {
             "Check": true,
             "Current lvl": "80",
-            "Elemental burst lvl": "5",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "5",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Thoma",
             "Normal attack lvl": "6",
@@ -1079,15 +1079,15 @@
         },
         {
             "Check": true,
-            "Current lvl": "1",
-            "Elemental burst lvl": "1",
+            "Current lvl": "80",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Yun Jin",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "6",
             "Target lvl": "90"
         }
     ],
