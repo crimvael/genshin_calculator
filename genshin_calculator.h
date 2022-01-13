@@ -93,6 +93,10 @@
 
         void on_pushButton_5_clicked();
 
+        void all_talent_10(QString val);
+
+        void all_talent_9(QString val);
+
     private:
         Ui::genshin_calculator *ui;
     };

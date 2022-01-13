@@ -6,8 +6,8 @@
 #include "QFile"
 
 extern QString filepath;
-QString filepath = "C:/Users/Secernato/Documents/Qt projects/genshin_calculator/database.json";
-//QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
+//QString filepath = "C:/Users/Secernato/Documents/Qt projects/genshin_calculator/database.json";
+QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
 
 genshin_calculator::genshin_calculator(QWidget *parent)
     : QMainWindow(parent)
@@ -416,277 +416,290 @@ void genshin_calculator::ascension(QString val){
 
 void genshin_calculator::talent(QString val){
 
-    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
-    QJsonObject jsonObject = jsonResponse.object();
-    QJsonArray jsonArray = jsonObject["training"].toArray();
-    QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
+    if (ui->radioButton->isChecked())
+        all_talent_10(val);
+    if (ui->radioButton_2->isChecked())
+        all_talent_9(val);
+    else {
+        QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+        QJsonObject jsonObject = jsonResponse.object();
+        QJsonArray jsonArray = jsonObject["training"].toArray();
+        QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
 
-    QJsonObject tmp;
-    int mora_1_6 = 0;
-    int mora_7_8 = 0;
-    int mora_9_10 = 0;
-    for (int i=0; i<jsonArray.size(); i++) {
-        tmp = jsonArray.at(i).toObject();
-        int needed[] = {0,0,0};
-        int common_needed[] = {0,0,0};
-        int weekly = 0;
-        if (tmp["Check"].toBool()){
-            if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack target lvl"].toString().toInt() >= 2)){
-                needed[2] += 3;
-                common_needed[2] += 6;
-                mora_1_6 += 12500;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 3) && (tmp["Normal attack target lvl"].toString().toInt() >= 3)){
-                needed[1] += 2;
-                common_needed[1] += 3;
-                mora_1_6 += 17500;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 4) && (tmp["Normal attack target lvl"].toString().toInt() >= 4)){
-                needed[1] += 4;
-                common_needed[1] += 4;
-                mora_1_6 += 25000;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 5) && (tmp["Normal attack target lvl"].toString().toInt() >= 5)){
-                needed[1] += 6;
-                common_needed[1] += 6;
-                mora_1_6 += 30000;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 6) && (tmp["Normal attack target lvl"].toString().toInt() >= 6)){
-                needed[1] += 9;
-                common_needed[1] += 9;
-                mora_1_6 += 37500;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 7) && (tmp["Normal attack target lvl"].toString().toInt() >= 7)){
-                needed[0] += 4;
-                common_needed[0] += 4;
-                mora_7_8 += 120000;
-                weekly++;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 8) && (tmp["Normal attack target lvl"].toString().toInt() >= 8)){
-                needed[0] += 6;
-                common_needed[0] += 6;
-                mora_7_8 += 260000;
-                weekly++;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 9) && (tmp["Normal attack target lvl"].toString().toInt() >= 9)){
-                needed[0] += 12;
-                common_needed[0] += 9;
-                mora_9_10 += 450000;
-                weekly+=2;
-            }
-            if ((tmp["Normal attack lvl"].toString().toInt() < 10) && (tmp["Normal attack target lvl"].toString().toInt() >= 10)){
-                needed[0] += 16;
-                common_needed[0] += 12;
-                mora_9_10 += 700000;
-                weekly+=2;
-            }
-
-
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 2) && (tmp["Elemental skill target lvl"].toString().toInt() >= 2)){
-                needed[2] += 3;
-                common_needed[2] += 6;
-                mora_1_6 += 12500;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 3) && (tmp["Elemental skill target lvl"].toString().toInt() >= 3)){
-                needed[1] += 2;
-                common_needed[1] += 3;
-                mora_1_6 += 17500;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 4) && (tmp["Elemental skill target lvl"].toString().toInt() >= 4)){
-                needed[1] += 4;
-                common_needed[1] += 4;
-                mora_1_6 += 25000;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 5) && (tmp["Elemental skill target lvl"].toString().toInt() >= 5)){
-                needed[1] += 6;
-                common_needed[1] += 6;
-                mora_1_6 += 30000;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 6) && (tmp["Elemental skill target lvl"].toString().toInt() >= 6)){
-                needed[1] += 9;
-                common_needed[1] += 9;
-                mora_1_6 += 37500;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 7) && (tmp["Elemental skill target lvl"].toString().toInt() >= 7)){
-                needed[0] += 4;
-                common_needed[0] += 4;
-                mora_7_8 += 120000;
-                weekly++;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 8) && (tmp["Elemental skill target lvl"].toString().toInt() >= 8)){
-                needed[0] += 6;
-                common_needed[0] += 6;
-                mora_7_8 += 260000;
-                weekly++;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 9) && (tmp["Elemental skill target lvl"].toString().toInt() >= 9)){
-                needed[0] += 12;
-                common_needed[0] += 9;
-                mora_9_10 += 450000;
-                weekly+=2;
-            }
-            if ((tmp["Elemental skill lvl"].toString().toInt() < 10) && (tmp["Elemental skill target lvl"].toString().toInt() >= 10)){
-                needed[0] += 16;
-                common_needed[0] += 12;
-                mora_9_10 += 700000;
-                weekly+=2;
-            }
+        QJsonObject tmp;
+        int mora_1_6 = 0;
+        int mora_7_8 = 0;
+        int mora_9_10 = 0;
+        int crown = 0;
+        for (int i=0; i<jsonArray.size(); i++) {
+            tmp = jsonArray.at(i).toObject();
+            int needed[] = {0,0,0};
+            int common_needed[] = {0,0,0};
+            int weekly = 0;
+            if (tmp["Check"].toBool()){
+                if ((tmp["Normal attack lvl"].toString().toInt() < 2) && (tmp["Normal attack target lvl"].toString().toInt() >= 2)){
+                    needed[2] += 3;
+                    common_needed[2] += 6;
+                    mora_1_6 += 12500;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 3) && (tmp["Normal attack target lvl"].toString().toInt() >= 3)){
+                    needed[1] += 2;
+                    common_needed[1] += 3;
+                    mora_1_6 += 17500;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 4) && (tmp["Normal attack target lvl"].toString().toInt() >= 4)){
+                    needed[1] += 4;
+                    common_needed[1] += 4;
+                    mora_1_6 += 25000;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 5) && (tmp["Normal attack target lvl"].toString().toInt() >= 5)){
+                    needed[1] += 6;
+                    common_needed[1] += 6;
+                    mora_1_6 += 30000;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 6) && (tmp["Normal attack target lvl"].toString().toInt() >= 6)){
+                    needed[1] += 9;
+                    common_needed[1] += 9;
+                    mora_1_6 += 37500;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 7) && (tmp["Normal attack target lvl"].toString().toInt() >= 7)){
+                    needed[0] += 4;
+                    common_needed[0] += 4;
+                    mora_7_8 += 120000;
+                    weekly++;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 8) && (tmp["Normal attack target lvl"].toString().toInt() >= 8)){
+                    needed[0] += 6;
+                    common_needed[0] += 6;
+                    mora_7_8 += 260000;
+                    weekly++;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 9) && (tmp["Normal attack target lvl"].toString().toInt() >= 9)){
+                    needed[0] += 12;
+                    common_needed[0] += 9;
+                    mora_9_10 += 450000;
+                    weekly+=2;
+                }
+                if ((tmp["Normal attack lvl"].toString().toInt() < 10) && (tmp["Normal attack target lvl"].toString().toInt() >= 10)){
+                    needed[0] += 16;
+                    common_needed[0] += 12;
+                    mora_9_10 += 700000;
+                    weekly+=2;
+                    crown++;
+                }
 
 
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 2) && (tmp["Elemental burst target lvl"].toString().toInt() >= 2)){
-                needed[2] += 3;
-                common_needed[2] += 6;
-                mora_1_6 += 12500;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 3) && (tmp["Elemental burst target lvl"].toString().toInt() >= 3)){
-                needed[1] += 2;
-                common_needed[1] += 3;
-                mora_1_6 += 17500;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 4) && (tmp["Elemental burst target lvl"].toString().toInt() >= 4)){
-                needed[1] += 4;
-                common_needed[1] += 4;
-                mora_1_6 += 25000;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 5) && (tmp["Elemental burst target lvl"].toString().toInt() >= 5)){
-                needed[1] += 6;
-                common_needed[1] += 6;
-                mora_1_6 += 30000;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 6) && (tmp["Elemental burst target lvl"].toString().toInt() >= 6)){
-                needed[1] += 9;
-                common_needed[1] += 9;
-                mora_1_6 += 37500;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 7) && (tmp["Elemental burst target lvl"].toString().toInt() >= 7)){
-                needed[0] += 4;
-                common_needed[0] += 4;
-                mora_7_8 += 120000;
-                weekly++;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 8) && (tmp["Elemental burst target lvl"].toString().toInt() >= 8)){
-                needed[0] += 6;
-                common_needed[0] += 6;
-                mora_7_8 += 260000;
-                weekly++;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 9) && (tmp["Elemental burst target lvl"].toString().toInt() >= 9)){
-                needed[0] += 12;
-                common_needed[0] += 9;
-                mora_9_10 += 450000;
-                weekly+=2;
-            }
-            if ((tmp["Elemental burst lvl"].toString().toInt() < 10) && (tmp["Elemental burst target lvl"].toString().toInt() >= 10)){
-                needed[0] += 16;
-                common_needed[0] += 12;
-                mora_9_10 += 700000;
-                weekly+=2;
-            }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 2) && (tmp["Elemental skill target lvl"].toString().toInt() >= 2)){
+                    needed[2] += 3;
+                    common_needed[2] += 6;
+                    mora_1_6 += 12500;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 3) && (tmp["Elemental skill target lvl"].toString().toInt() >= 3)){
+                    needed[1] += 2;
+                    common_needed[1] += 3;
+                    mora_1_6 += 17500;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 4) && (tmp["Elemental skill target lvl"].toString().toInt() >= 4)){
+                    needed[1] += 4;
+                    common_needed[1] += 4;
+                    mora_1_6 += 25000;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 5) && (tmp["Elemental skill target lvl"].toString().toInt() >= 5)){
+                    needed[1] += 6;
+                    common_needed[1] += 6;
+                    mora_1_6 += 30000;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 6) && (tmp["Elemental skill target lvl"].toString().toInt() >= 6)){
+                    needed[1] += 9;
+                    common_needed[1] += 9;
+                    mora_1_6 += 37500;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 7) && (tmp["Elemental skill target lvl"].toString().toInt() >= 7)){
+                    needed[0] += 4;
+                    common_needed[0] += 4;
+                    mora_7_8 += 120000;
+                    weekly++;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 8) && (tmp["Elemental skill target lvl"].toString().toInt() >= 8)){
+                    needed[0] += 6;
+                    common_needed[0] += 6;
+                    mora_7_8 += 260000;
+                    weekly++;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 9) && (tmp["Elemental skill target lvl"].toString().toInt() >= 9)){
+                    needed[0] += 12;
+                    common_needed[0] += 9;
+                    mora_9_10 += 450000;
+                    weekly+=2;
+                }
+                if ((tmp["Elemental skill lvl"].toString().toInt() < 10) && (tmp["Elemental skill target lvl"].toString().toInt() >= 10)){
+                    needed[0] += 16;
+                    common_needed[0] += 12;
+                    mora_9_10 += 700000;
+                    weekly+=2;
+                    crown++;
+                }
 
-            if (weekly > 0){
-                for (int i=0; i<jsonArray_2.size(); i++) {
-                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
-                    bool already_exist = false;
-                    int row = 0;
-                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
 
-                        for (int i=0; i<ui->tableWidget_14->rowCount(); i++)
-                            if (ui->tableWidget_14->item(i, 0)->text() == tmp2["Weekly material"].toString()){
-                                already_exist = true;
-                                row = i;
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 2) && (tmp["Elemental burst target lvl"].toString().toInt() >= 2)){
+                    needed[2] += 3;
+                    common_needed[2] += 6;
+                    mora_1_6 += 12500;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 3) && (tmp["Elemental burst target lvl"].toString().toInt() >= 3)){
+                    needed[1] += 2;
+                    common_needed[1] += 3;
+                    mora_1_6 += 17500;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 4) && (tmp["Elemental burst target lvl"].toString().toInt() >= 4)){
+                    needed[1] += 4;
+                    common_needed[1] += 4;
+                    mora_1_6 += 25000;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 5) && (tmp["Elemental burst target lvl"].toString().toInt() >= 5)){
+                    needed[1] += 6;
+                    common_needed[1] += 6;
+                    mora_1_6 += 30000;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 6) && (tmp["Elemental burst target lvl"].toString().toInt() >= 6)){
+                    needed[1] += 9;
+                    common_needed[1] += 9;
+                    mora_1_6 += 37500;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 7) && (tmp["Elemental burst target lvl"].toString().toInt() >= 7)){
+                    needed[0] += 4;
+                    common_needed[0] += 4;
+                    mora_7_8 += 120000;
+                    weekly++;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 8) && (tmp["Elemental burst target lvl"].toString().toInt() >= 8)){
+                    needed[0] += 6;
+                    common_needed[0] += 6;
+                    mora_7_8 += 260000;
+                    weekly++;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 9) && (tmp["Elemental burst target lvl"].toString().toInt() >= 9)){
+                    needed[0] += 12;
+                    common_needed[0] += 9;
+                    mora_9_10 += 450000;
+                    weekly+=2;
+                }
+                if ((tmp["Elemental burst lvl"].toString().toInt() < 10) && (tmp["Elemental burst target lvl"].toString().toInt() >= 10)){
+                    needed[0] += 16;
+                    common_needed[0] += 12;
+                    mora_9_10 += 700000;
+                    weekly+=2;
+                    crown++;
+                }
+
+                if (weekly > 0){
+                    for (int i=0; i<jsonArray_2.size(); i++) {
+                        QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                        bool already_exist = false;
+                        int row = 0;
+                        if (tmp["Name"].toString() == tmp2["Name"].toString()){
+
+                            for (int i=0; i<ui->tableWidget_14->rowCount(); i++)
+                                if (ui->tableWidget_14->item(i, 0)->text() == tmp2["Weekly material"].toString()){
+                                    already_exist = true;
+                                    row = i;
+                                }
+
+                            if (already_exist){
+                                weekly += ui->tableWidget_14->item(row, 1)->text().toInt();
+                                QTableWidgetItem *item =  new QTableWidgetItem(QString::number(weekly));
+                                item->setTextAlignment(Qt::AlignCenter);
+                                ui->tableWidget_14->setItem(row, 1, item);
                             }
-
-                        if (already_exist){
-                            weekly += ui->tableWidget_14->item(row, 1)->text().toInt();
-                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(weekly));
-                            item->setTextAlignment(Qt::AlignCenter);
-                            ui->tableWidget_14->setItem(row, 1, item);
-                        }
-                        else{
-                            ui->tableWidget_14->insertRow(ui->tableWidget_14->rowCount());
-                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Weekly material"].toString());
-                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 0, item);
-                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(weekly));
-                            item_2->setTextAlignment(Qt::AlignCenter);
-                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 1, item_2);
+                            else{
+                                ui->tableWidget_14->insertRow(ui->tableWidget_14->rowCount());
+                                QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Weekly material"].toString());
+                                ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 0, item);
+                                QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(weekly));
+                                item_2->setTextAlignment(Qt::AlignCenter);
+                                ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 1, item_2);
+                            }
                         }
                     }
                 }
-            }
 
-            for (int i=0; i<jsonArray_2.size(); i++) {
+                for (int i=0; i<jsonArray_2.size(); i++) {
 
-                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
-                int row = 0;
-                if (tmp["Name"].toString() == tmp2["Name"].toString()){
-                    for (int i=0; i<ui->tableWidget_8->rowCount(); i++)
-                        if (ui->tableWidget_8->item(i, 0)->text() == tmp2["Talent material"].toString())
-                            row = i;
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                        for (int i=0; i<ui->tableWidget_8->rowCount(); i++)
+                            if (ui->tableWidget_8->item(i, 0)->text() == tmp2["Talent material"].toString())
+                                row = i;
 
-                    if (ui->tableWidget_8->item(row, 3) != nullptr)
-                        needed[2] += ui->tableWidget_8->item(row, 3)->text().toInt();
-                    if (ui->tableWidget_8->item(row, 2) != nullptr)
-                        needed[1] += ui->tableWidget_8->item(row, 2)->text().toInt();
-                    if (ui->tableWidget_8->item(row, 1) != nullptr)
-                        needed[0] += ui->tableWidget_8->item(row, 1)->text().toInt();
-                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(needed[2]));
-                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(needed[1]));
-                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(needed[0]));
-                    item_2->setTextAlignment(Qt::AlignCenter);
-                    item_3->setTextAlignment(Qt::AlignCenter);
-                    item_4->setTextAlignment(Qt::AlignCenter);
-                    if (needed[2] > 0)
-                        ui->tableWidget_8->setItem(row, 3, item_2);
-                    if (needed[1] > 0)
-                        ui->tableWidget_8->setItem(row, 2, item_3);
-                    if (needed[0] > 0)
-                        ui->tableWidget_8->setItem(row, 1, item_4);
+                        if (ui->tableWidget_8->item(row, 3) != nullptr)
+                            needed[2] += ui->tableWidget_8->item(row, 3)->text().toInt();
+                        if (ui->tableWidget_8->item(row, 2) != nullptr)
+                            needed[1] += ui->tableWidget_8->item(row, 2)->text().toInt();
+                        if (ui->tableWidget_8->item(row, 1) != nullptr)
+                            needed[0] += ui->tableWidget_8->item(row, 1)->text().toInt();
+                        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(needed[2]));
+                        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(needed[1]));
+                        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(needed[0]));
+                        item_2->setTextAlignment(Qt::AlignCenter);
+                        item_3->setTextAlignment(Qt::AlignCenter);
+                        item_4->setTextAlignment(Qt::AlignCenter);
+                        if (needed[2] > 0)
+                            ui->tableWidget_8->setItem(row, 3, item_2);
+                        if (needed[1] > 0)
+                            ui->tableWidget_8->setItem(row, 2, item_3);
+                        if (needed[0] > 0)
+                            ui->tableWidget_8->setItem(row, 1, item_4);
+                    }
                 }
-            }
 
-            for (int i=0; i<jsonArray_2.size(); i++) {
-                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
-                int row = 0;
-                if (tmp["Name"].toString() == tmp2["Name"].toString()){
-                    for (int i=0; i<ui->tableWidget_10->rowCount(); i++)
-                        if (ui->tableWidget_10->item(i, 0)->text() == tmp2["Common material"].toString())
-                            row = i;
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                        for (int i=0; i<ui->tableWidget_10->rowCount(); i++)
+                            if (ui->tableWidget_10->item(i, 0)->text() == tmp2["Common material"].toString())
+                                row = i;
 
-                    if (ui->tableWidget_10->item(row, 3) != nullptr)
-                        common_needed[2] += ui->tableWidget_10->item(row, 3)->text().toInt();
-                    if (ui->tableWidget_10->item(row, 2) != nullptr)
-                        common_needed[1] += ui->tableWidget_10->item(row, 2)->text().toInt();
-                    if (ui->tableWidget_10->item(row, 1) != nullptr)
-                        common_needed[0] += ui->tableWidget_10->item(row, 1)->text().toInt();
-                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
-                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
-                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
-                    item_2->setTextAlignment(Qt::AlignCenter);
-                    item_3->setTextAlignment(Qt::AlignCenter);
-                    item_4->setTextAlignment(Qt::AlignCenter);
-                    if (common_needed[2] > 0)
-                        ui->tableWidget_10->setItem(row, 3, item_2);
-                    if (common_needed[1] > 0)
-                        ui->tableWidget_10->setItem(row, 2, item_3);
-                    if (common_needed[0] > 0)
-                        ui->tableWidget_10->setItem(row, 1, item_4);
+                        if (ui->tableWidget_10->item(row, 3) != nullptr)
+                            common_needed[2] += ui->tableWidget_10->item(row, 3)->text().toInt();
+                        if (ui->tableWidget_10->item(row, 2) != nullptr)
+                            common_needed[1] += ui->tableWidget_10->item(row, 2)->text().toInt();
+                        if (ui->tableWidget_10->item(row, 1) != nullptr)
+                            common_needed[0] += ui->tableWidget_10->item(row, 1)->text().toInt();
+                        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
+                        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
+                        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
+                        item_2->setTextAlignment(Qt::AlignCenter);
+                        item_3->setTextAlignment(Qt::AlignCenter);
+                        item_4->setTextAlignment(Qt::AlignCenter);
+                        if (common_needed[2] > 0)
+                            ui->tableWidget_10->setItem(row, 3, item_2);
+                        if (common_needed[1] > 0)
+                            ui->tableWidget_10->setItem(row, 2, item_3);
+                        if (common_needed[0] > 0)
+                            ui->tableWidget_10->setItem(row, 1, item_4);
+                    }
                 }
             }
         }
-    }
 
-    QTableWidgetItem *item =  new QTableWidgetItem(QString::number(mora_1_6));
-    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(mora_7_8));
-    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(mora_9_10));
-    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(mora_1_6 + mora_7_8 + mora_9_10 + ui->tableWidget_11->item(0, 0)->text().toInt()));
-    item->setTextAlignment(Qt::AlignCenter);
-    item_2->setTextAlignment(Qt::AlignCenter);
-    item_3->setTextAlignment(Qt::AlignCenter);
-    item_4->setTextAlignment(Qt::AlignCenter);
-    ui->tableWidget_11->setItem(1, 0, item);
-    ui->tableWidget_11->setItem(2, 0, item_2);
-    ui->tableWidget_11->setItem(3, 0, item_3);
-    ui->tableWidget_11->setItem(4, 0, item_4);
+        QTableWidgetItem *item =  new QTableWidgetItem(QString::number(mora_1_6));
+        QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(mora_7_8));
+        QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(mora_9_10));
+        QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(mora_1_6 + mora_7_8 + mora_9_10 + ui->tableWidget_11->item(0, 0)->text().toInt()));
+        QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(crown));
+        item->setTextAlignment(Qt::AlignCenter);
+        item_2->setTextAlignment(Qt::AlignCenter);
+        item_3->setTextAlignment(Qt::AlignCenter);
+        item_4->setTextAlignment(Qt::AlignCenter);
+        item_5->setTextAlignment(Qt::AlignCenter);
+        ui->tableWidget_11->setItem(1, 0, item);
+        ui->tableWidget_11->setItem(2, 0, item_2);
+        ui->tableWidget_11->setItem(3, 0, item_3);
+        ui->tableWidget_11->setItem(4, 0, item_4);
+        ui->tableWidget_11->setItem(5, 0, item_5);
+    }
 }
 
 void genshin_calculator::calculate_weapons(QString val){
@@ -1730,3 +1743,543 @@ void genshin_calculator::on_pushButton_5_clicked()
     }
 }
 
+void genshin_calculator::all_talent_10(QString val) {
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["training"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
+
+    QJsonObject tmp;
+    int mora_1_6 = 0;
+    int mora_7_8 = 0;
+    int mora_9_10 = 0;
+    int crown = 0;
+    for (int i=0; i<jsonArray.size(); i++) {
+        tmp = jsonArray.at(i).toObject();
+        int needed[] = {0,0,0};
+        int common_needed[] = {0,0,0};
+        int weekly = 0;
+        if (tmp["Check"].toBool()){
+            if (tmp["Normal attack lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 10){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+                weekly+=2;
+                crown++;
+            }
+
+
+            if (tmp["Elemental skill lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 10){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+                weekly+=2;
+                crown++;
+            }
+
+
+            if (tmp["Elemental burst lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 10){
+                needed[0] += 16;
+                common_needed[0] += 12;
+                mora_9_10 += 700000;
+                weekly+=2;
+                crown++;
+            }
+
+            if (weekly > 0){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    bool already_exist = false;
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+
+                        for (int i=0; i<ui->tableWidget_14->rowCount(); i++)
+                            if (ui->tableWidget_14->item(i, 0)->text() == tmp2["Weekly material"].toString()){
+                                already_exist = true;
+                                row = i;
+                            }
+
+                        if (already_exist){
+                            weekly += ui->tableWidget_14->item(row, 1)->text().toInt();
+                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(weekly));
+                            item->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(row, 1, item);
+                        }
+                        else{
+                            ui->tableWidget_14->insertRow(ui->tableWidget_14->rowCount());
+                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Weekly material"].toString());
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 0, item);
+                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(weekly));
+                            item_2->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 1, item_2);
+                        }
+                    }
+                }
+            }
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_8->rowCount(); i++)
+                        if (ui->tableWidget_8->item(i, 0)->text() == tmp2["Talent material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_8->item(row, 3) != nullptr)
+                        needed[2] += ui->tableWidget_8->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 2) != nullptr)
+                        needed[1] += ui->tableWidget_8->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 1) != nullptr)
+                        needed[0] += ui->tableWidget_8->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (needed[2] > 0)
+                        ui->tableWidget_8->setItem(row, 3, item_2);
+                    if (needed[1] > 0)
+                        ui->tableWidget_8->setItem(row, 2, item_3);
+                    if (needed[0] > 0)
+                        ui->tableWidget_8->setItem(row, 1, item_4);
+                }
+            }
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_10->rowCount(); i++)
+                        if (ui->tableWidget_10->item(i, 0)->text() == tmp2["Common material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_10->item(row, 3) != nullptr)
+                        common_needed[2] += ui->tableWidget_10->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 2) != nullptr)
+                        common_needed[1] += ui->tableWidget_10->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 1) != nullptr)
+                        common_needed[0] += ui->tableWidget_10->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (common_needed[2] > 0)
+                        ui->tableWidget_10->setItem(row, 3, item_2);
+                    if (common_needed[1] > 0)
+                        ui->tableWidget_10->setItem(row, 2, item_3);
+                    if (common_needed[0] > 0)
+                        ui->tableWidget_10->setItem(row, 1, item_4);
+                }
+            }
+        }
+    }
+
+    QTableWidgetItem *item =  new QTableWidgetItem(QString::number(mora_1_6));
+    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(mora_7_8));
+    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(mora_9_10));
+    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(mora_1_6 + mora_7_8 + mora_9_10 + ui->tableWidget_11->item(0, 0)->text().toInt()));
+    QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(crown));
+    item->setTextAlignment(Qt::AlignCenter);
+    item_2->setTextAlignment(Qt::AlignCenter);
+    item_3->setTextAlignment(Qt::AlignCenter);
+    item_4->setTextAlignment(Qt::AlignCenter);
+    item_5->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_11->setItem(1, 0, item);
+    ui->tableWidget_11->setItem(2, 0, item_2);
+    ui->tableWidget_11->setItem(3, 0, item_3);
+    ui->tableWidget_11->setItem(4, 0, item_4);
+    ui->tableWidget_11->setItem(5, 0, item_5);
+}
+
+void genshin_calculator::all_talent_9(QString val) {
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
+    QJsonObject jsonObject = jsonResponse.object();
+    QJsonArray jsonArray = jsonObject["training"].toArray();
+    QJsonArray jsonArray_2 = jsonObject["characters"].toArray();
+
+    QJsonObject tmp;
+    int mora_1_6 = 0;
+    int mora_7_8 = 0;
+    int mora_9_10 = 0;
+    int crown = 0;
+    for (int i=0; i<jsonArray.size(); i++) {
+        tmp = jsonArray.at(i).toObject();
+        int needed[] = {0,0,0};
+        int common_needed[] = {0,0,0};
+        int weekly = 0;
+        if (tmp["Check"].toBool()){
+            if (tmp["Normal attack lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Normal attack lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+
+
+            if (tmp["Elemental skill lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Elemental skill lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+
+
+            if (tmp["Elemental burst lvl"].toString().toInt() < 2){
+                needed[2] += 3;
+                common_needed[2] += 6;
+                mora_1_6 += 12500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 3){
+                needed[1] += 2;
+                common_needed[1] += 3;
+                mora_1_6 += 17500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 4){
+                needed[1] += 4;
+                common_needed[1] += 4;
+                mora_1_6 += 25000;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 5){
+                needed[1] += 6;
+                common_needed[1] += 6;
+                mora_1_6 += 30000;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 6){
+                needed[1] += 9;
+                common_needed[1] += 9;
+                mora_1_6 += 37500;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 7){
+                needed[0] += 4;
+                common_needed[0] += 4;
+                mora_7_8 += 120000;
+                weekly++;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 8){
+                needed[0] += 6;
+                common_needed[0] += 6;
+                mora_7_8 += 260000;
+                weekly++;
+            }
+            if (tmp["Elemental burst lvl"].toString().toInt() < 9){
+                needed[0] += 12;
+                common_needed[0] += 9;
+                mora_9_10 += 450000;
+                weekly+=2;
+            }
+
+            if (weekly > 0){
+                for (int i=0; i<jsonArray_2.size(); i++) {
+                    QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                    bool already_exist = false;
+                    int row = 0;
+                    if (tmp["Name"].toString() == tmp2["Name"].toString()){
+
+                        for (int i=0; i<ui->tableWidget_14->rowCount(); i++)
+                            if (ui->tableWidget_14->item(i, 0)->text() == tmp2["Weekly material"].toString()){
+                                already_exist = true;
+                                row = i;
+                            }
+
+                        if (already_exist){
+                            weekly += ui->tableWidget_14->item(row, 1)->text().toInt();
+                            QTableWidgetItem *item =  new QTableWidgetItem(QString::number(weekly));
+                            item->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(row, 1, item);
+                        }
+                        else{
+                            ui->tableWidget_14->insertRow(ui->tableWidget_14->rowCount());
+                            QTableWidgetItem *item =  new QTableWidgetItem(tmp2["Weekly material"].toString());
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 0, item);
+                            QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(weekly));
+                            item_2->setTextAlignment(Qt::AlignCenter);
+                            ui->tableWidget_14->setItem(ui->tableWidget_14->rowCount()-1, 1, item_2);
+                        }
+                    }
+                }
+            }
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_8->rowCount(); i++)
+                        if (ui->tableWidget_8->item(i, 0)->text() == tmp2["Talent material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_8->item(row, 3) != nullptr)
+                        needed[2] += ui->tableWidget_8->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 2) != nullptr)
+                        needed[1] += ui->tableWidget_8->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_8->item(row, 1) != nullptr)
+                        needed[0] += ui->tableWidget_8->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (needed[2] > 0)
+                        ui->tableWidget_8->setItem(row, 3, item_2);
+                    if (needed[1] > 0)
+                        ui->tableWidget_8->setItem(row, 2, item_3);
+                    if (needed[0] > 0)
+                        ui->tableWidget_8->setItem(row, 1, item_4);
+                }
+            }
+
+            for (int i=0; i<jsonArray_2.size(); i++) {
+                QJsonObject tmp2 = jsonArray_2.at(i).toObject();
+                int row = 0;
+                if (tmp["Name"].toString() == tmp2["Name"].toString()){
+                    for (int i=0; i<ui->tableWidget_10->rowCount(); i++)
+                        if (ui->tableWidget_10->item(i, 0)->text() == tmp2["Common material"].toString())
+                            row = i;
+
+                    if (ui->tableWidget_10->item(row, 3) != nullptr)
+                        common_needed[2] += ui->tableWidget_10->item(row, 3)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 2) != nullptr)
+                        common_needed[1] += ui->tableWidget_10->item(row, 2)->text().toInt();
+                    if (ui->tableWidget_10->item(row, 1) != nullptr)
+                        common_needed[0] += ui->tableWidget_10->item(row, 1)->text().toInt();
+                    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(common_needed[2]));
+                    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(common_needed[1]));
+                    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(common_needed[0]));
+                    item_2->setTextAlignment(Qt::AlignCenter);
+                    item_3->setTextAlignment(Qt::AlignCenter);
+                    item_4->setTextAlignment(Qt::AlignCenter);
+                    if (common_needed[2] > 0)
+                        ui->tableWidget_10->setItem(row, 3, item_2);
+                    if (common_needed[1] > 0)
+                        ui->tableWidget_10->setItem(row, 2, item_3);
+                    if (common_needed[0] > 0)
+                        ui->tableWidget_10->setItem(row, 1, item_4);
+                }
+            }
+        }
+    }
+
+    QTableWidgetItem *item =  new QTableWidgetItem(QString::number(mora_1_6));
+    QTableWidgetItem *item_2 =  new QTableWidgetItem(QString::number(mora_7_8));
+    QTableWidgetItem *item_3 =  new QTableWidgetItem(QString::number(mora_9_10));
+    QTableWidgetItem *item_4 =  new QTableWidgetItem(QString::number(mora_1_6 + mora_7_8 + mora_9_10 + ui->tableWidget_11->item(0, 0)->text().toInt()));
+    QTableWidgetItem *item_5 =  new QTableWidgetItem(QString::number(crown));
+    item->setTextAlignment(Qt::AlignCenter);
+    item_2->setTextAlignment(Qt::AlignCenter);
+    item_3->setTextAlignment(Qt::AlignCenter);
+    item_4->setTextAlignment(Qt::AlignCenter);
+    item_5->setTextAlignment(Qt::AlignCenter);
+    ui->tableWidget_11->setItem(1, 0, item);
+    ui->tableWidget_11->setItem(2, 0, item_2);
+    ui->tableWidget_11->setItem(3, 0, item_3);
+    ui->tableWidget_11->setItem(4, 0, item_4);
+    ui->tableWidget_11->setItem(5, 0, item_5);
+}
