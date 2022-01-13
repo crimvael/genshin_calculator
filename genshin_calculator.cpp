@@ -6,8 +6,8 @@
 #include "QFile"
 
 extern QString filepath;
-//QString filepath = "C:/Users/Secernato/Documents/Qt projects/genshin_calculator/database.json";
-QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
+QString filepath = "C:/Users/Secernato/Documents/Qt projects/genshin_calculator/database.json";
+//QString filepath = "C:/Users/Oscar/Desktop/genshin_calculator/database.json";
 
 genshin_calculator::genshin_calculator(QWidget *parent)
     : QMainWindow(parent)
@@ -1743,6 +1743,7 @@ void genshin_calculator::on_pushButton_5_clicked()
     }
 }
 
+
 void genshin_calculator::all_talent_10(QString val) {
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
     QJsonObject jsonObject = jsonResponse.object();
@@ -2023,6 +2024,7 @@ void genshin_calculator::all_talent_10(QString val) {
     ui->tableWidget_11->setItem(4, 0, item_4);
     ui->tableWidget_11->setItem(5, 0, item_5);
 }
+
 
 void genshin_calculator::all_talent_9(QString val) {
     QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
