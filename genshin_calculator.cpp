@@ -79,6 +79,7 @@ void genshin_calculator::refresh_items(){
     ui->listWidget_5->clear();
     ui->listWidget_6->clear();
     ui->listWidget_9->clear();
+    ui->radioButton_3->setChecked(true);
     for (int i = 0; i<jsonArray.size(); i++){
         ui->listWidget->addItem(jsonArray[i].toString());
         ui->comboBox_3->addItem(jsonArray[i].toString());
@@ -420,7 +421,7 @@ void genshin_calculator::talent(QString val){
         all_talent_10(val);
     if (ui->radioButton_2->isChecked())
         all_talent_9(val);
-    else {
+    if (ui->radioButton_3->isChecked()){
         QJsonDocument jsonResponse = QJsonDocument::fromJson(val.toUtf8());
         QJsonObject jsonObject = jsonResponse.object();
         QJsonArray jsonArray = jsonObject["training"].toArray();

@@ -948,12 +948,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "3",
+            "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "3",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Xinyan",
-            "Normal attack lvl": "3",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
             "Target lvl": "90"
