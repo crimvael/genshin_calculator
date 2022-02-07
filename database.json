@@ -466,6 +466,16 @@
             "Talent material": "Prosperity",
             "Vision": "Cryo",
             "Weekly material": "Hellfire Butterfly"
+        },
+        {
+            "Ascension material": "Dragonheir's False Fin",
+            "Common material": "Nobushi Handguards",
+            "Local speciality": "Sea Ganoderma",
+            "Name": "Yae Miko",
+            "Region": "Inazuma",
+            "Talent material": "Light",
+            "Vision": "Electro",
+            "Weekly material": "Molten Moment"
         }
     ],
     "common_materials": [
@@ -1109,6 +1119,19 @@
             "Elemental skill lvl": "1",
             "Elemental skill target lvl": "8",
             "Name": "Shenhe",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "1",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Yae Miko",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
             "Phase": "1",
