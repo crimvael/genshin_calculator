@@ -475,7 +475,7 @@
             "Region": "Inazuma",
             "Talent material": "Light",
             "Vision": "Electro",
-            "Weekly material": "Molten Moment"
+            "Weekly material": "The Meaning of Aeons"
         }
     ],
     "common_materials": [
@@ -686,12 +686,12 @@
             "Check": true,
             "Current lvl": "90",
             "Elemental burst lvl": "9",
-            "Elemental burst target lvl": "9",
+            "Elemental burst target lvl": "10",
             "Elemental skill lvl": "8",
-            "Elemental skill target lvl": "8",
+            "Elemental skill target lvl": "10",
             "Name": "Hu Tao",
             "Normal attack lvl": "7",
-            "Normal attack target lvl": "8",
+            "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
         },
@@ -1126,15 +1126,15 @@
         },
         {
             "Check": true,
-            "Current lvl": "1",
-            "Elemental burst lvl": "1",
+            "Current lvl": "90",
+            "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "6",
             "Elemental skill target lvl": "8",
             "Name": "Yae Miko",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "6",
             "Target lvl": "90"
         }
     ],
@@ -2647,6 +2647,9 @@
         "Gilded Scale",
         "Molten Moment",
         "Hellfire Butterfly",
-        "Ashen Heart"
+        "Ashen Heart",
+        "Mudra of the Malefic General",
+        "Tears of the Calamitous God",
+        "The Meaning of Aeons"
     ]
 }
