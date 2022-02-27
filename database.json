@@ -1061,7 +1061,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
@@ -1087,7 +1087,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "90",
+            "Current lvl": "80",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
@@ -1100,7 +1100,7 @@
         },
         {
             "Check": true,
-            "Current lvl": "80",
+            "Current lvl": "90",
             "Elemental burst lvl": "6",
             "Elemental burst target lvl": "8",
             "Elemental skill lvl": "6",
@@ -1129,7 +1129,7 @@
             "Current lvl": "90",
             "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "6",
+            "Elemental skill lvl": "8",
             "Elemental skill target lvl": "8",
             "Name": "Yae Miko",
             "Normal attack lvl": "6",
