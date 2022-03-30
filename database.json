@@ -487,6 +487,16 @@
             "Talent material": "Prosperity",
             "Vision": "Hydro",
             "Weekly material": "Gilded Scale"
+        },
+        {
+            "Ascension material": "Runic Fang",
+            "Common material": "Spectral Cores",
+            "Local speciality": "Naku Weed",
+            "Name": "Kuki Shinobu",
+            "Region": "Inazuma",
+            "Talent material": "Elegance",
+            "Vision": "Electro",
+            "Weekly material": "The Meaning of Aeons"
         }
     ],
     "common_materials": [
@@ -1158,6 +1168,19 @@
             "Elemental skill lvl": "1",
             "Elemental skill target lvl": "8",
             "Name": "Yelan",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Kuki Shinobu",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
             "Phase": "0",
