@@ -14,7 +14,8 @@
         "Storm Beads",
         "Dew of Repudiation",
         "Riftborn Regalia",
-        "Dragonheir's False Fin"
+        "Dragonheir's False Fin",
+        "Runic Fang"
     ],
     "characters": [
         {
@@ -476,6 +477,16 @@
             "Talent material": "Light",
             "Vision": "Electro",
             "Weekly material": "The Meaning of Aeons"
+        },
+        {
+            "Ascension material": "Runic Fang",
+            "Common material": "Fatui Insignia",
+            "Local speciality": "Starconch",
+            "Name": "Yelan",
+            "Region": "Liyue",
+            "Talent material": "Prosperity",
+            "Vision": "Hydro",
+            "Weekly material": "Gilded Scale"
         }
     ],
     "common_materials": [
@@ -487,7 +498,8 @@
         "Fatui Insignia",
         "Whopperflower Nectar",
         "Nobushi Handguards",
-        "Spectral Cores"
+        "Spectral Cores",
+        "Fungal Spore Powder"
     ],
     "elite_materials": [
         "Hilichurl Horns",
@@ -498,7 +510,8 @@
         "Prisms",
         "Chaos Parts",
         "Different Chaos Parts",
-        "Concealed"
+        "Concealed",
+        "Statuettes"
     ],
     "local_materials": [
         "Calla Lily",
@@ -1135,6 +1148,19 @@
             "Normal attack lvl": "6",
             "Normal attack target lvl": "8",
             "Phase": "6",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Yelan",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
             "Target lvl": "90"
         }
     ],
