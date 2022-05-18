@@ -497,6 +497,16 @@
             "Talent material": "Elegance",
             "Vision": "Electro",
             "Weekly material": "Tears of the Calamitous God"
+        },
+        {
+            "Ascension material": "Runic Fang",
+            "Common material": "Treasure Hoarder Insignias",
+            "Local speciality": "Onikabuto",
+            "Name": "Shikanoin Heizou",
+            "Region": "Inazuma",
+            "Talent material": "Transience",
+            "Vision": "Anemo",
+            "Weekly material": "The Meaning of Aeons"
         }
     ],
     "common_materials": [
@@ -1181,6 +1191,19 @@
             "Elemental skill lvl": "1",
             "Elemental skill target lvl": "8",
             "Name": "Kuki Shinobu",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Shikanoin Heizou",
             "Normal attack lvl": "1",
             "Normal attack target lvl": "8",
             "Phase": "0",
