@@ -135,6 +135,11 @@ void genshin_calculator::calculate(){
             ui->tableWidget_10->setItem(i, j, nullptr);
         }
     }
+    for (int i=0; i<ui->tableWidget_12->rowCount(); i++) {
+        for (int j=1; j<ui->tableWidget_12->columnCount(); j++) {
+            ui->tableWidget_12->setItem(i, j, nullptr);
+        }
+    }
 
     QString val;
     QFile file;
