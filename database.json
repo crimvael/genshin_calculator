@@ -743,15 +743,15 @@
         },
         {
             "Check": true,
-            "Current lvl": "1",
-            "Elemental burst lvl": "1",
+            "Current lvl": "90",
+            "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "8",
             "Elemental skill target lvl": "8",
             "Name": "Kaedehara Kazuha",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "8",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "6",
             "Target lvl": "90"
         },
         {
@@ -1198,15 +1198,15 @@
         },
         {
             "Check": true,
-            "Current lvl": "1",
-            "Elemental burst lvl": "1",
+            "Current lvl": "90",
+            "Elemental burst lvl": "8",
             "Elemental burst target lvl": "8",
-            "Elemental skill lvl": "1",
+            "Elemental skill lvl": "8",
             "Elemental skill target lvl": "8",
             "Name": "Shikanoin Heizou",
-            "Normal attack lvl": "1",
+            "Normal attack lvl": "8",
             "Normal attack target lvl": "8",
-            "Phase": "0",
+            "Phase": "6",
             "Target lvl": "90"
         }
     ],
