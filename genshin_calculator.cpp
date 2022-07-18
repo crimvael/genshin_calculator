@@ -778,7 +778,7 @@ void genshin_calculator::calculate_weapons(QString val){
                 if (tmp["Rarity"] == "***")
                     quantity3[5]++;
             }
-            if (curr < 90 && curr < targ){
+            if (curr < 90 && curr < targ && !ui->radioButton_4->isChecked()){
                 if (tmp["Rarity"] == "*****")
                     quantity[6]++;
                 if (tmp["Rarity"] == "****")

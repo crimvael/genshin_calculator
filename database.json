@@ -1223,822 +1223,340 @@
     ],
     "weapon_training": [
         {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Aquila Favonia",
-            "Phase": "1",
+            "Check": true,
+            "Current level": "20",
+            "Name": "The Unforged",
+            "Phase": "0",
             "Rarity": "*****",
             "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Lost Prayer to the Sacred Winds",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Skyward Spine",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Memory of Dust",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Catalyst"
+            "Type": "Claymore"
         },
         {
             "Check": true,
-            "Current level": "1",
-            "Name": "The Unforged",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Vortex Vanquisher",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
+            "Current level": "70",
             "Name": "Skyward Pride",
-            "Phase": "1",
+            "Phase": "4",
             "Rarity": "*****",
             "Target level": "90",
             "Type": "Claymore"
         },
         {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Summit Shaper",
-            "Phase": "1",
+            "Check": true,
+            "Current level": "70",
+            "Name": "Skyward Blade",
+            "Phase": "4",
             "Rarity": "*****",
             "Target level": "90",
             "Type": "Sword"
         },
         {
             "Check": false,
-            "Current level": "80",
-            "Name": "Wolf's Gravestone",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Primordial Jade Cutter",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Staff of Homa",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Current level": "60",
+            "Name": "Lithic Spear",
+            "Phase": "3",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Polearm"
         },
         {
             "Check": false,
+            "Current level": "50",
+            "Name": "The Black Sword",
+            "Phase": "2",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
             "Current level": "80",
-            "Name": "Elegy for the End",
+            "Name": "Favonius Sword",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
+            "Current level": "80",
+            "Name": "Sacrificial Sword",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": false,
+            "Current level": "60",
+            "Name": "Blackcliff Warbow",
+            "Phase": "3",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "70",
+            "Name": "Luxurious Sea-Lord",
+            "Phase": "4",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Claymore"
+        },
+        {
+            "Check": false,
+            "Current level": "40",
+            "Name": "Predator",
             "Phase": "1",
-            "Rarity": "*****",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": false,
+            "Current level": "20",
+            "Name": "Mitternachts Waltz",
+            "Phase": "0",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Bow"
         },
         {
             "Check": false,
             "Current level": "80",
-            "Name": "Song of Broken Pines",
+            "Name": "Windblume Ode",
             "Phase": "1",
-            "Rarity": "*****",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "60",
+            "Name": "Dragonspine Spear",
+            "Phase": "3",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "40",
+            "Name": "Sacrificial Greatsword",
+            "Phase": "1",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Sword"
         },
         {
             "Check": false,
+            "Current level": "20",
+            "Name": "Blackcliff Longsword",
+            "Phase": "0",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
             "Current level": "80",
-            "Name": "Skyward Atlas",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Name": "Iron Sting",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
+            "Current level": "20",
+            "Name": "The Widsith",
+            "Phase": "0",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Catalyst"
         },
         {
-            "Check": false,
+            "Check": true,
+            "Current level": "60",
+            "Name": "Solar Pearl",
+            "Phase": "3",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Catalyst"
+        },
+        {
+            "Check": true,
             "Current level": "80",
-            "Name": "Freedom-Sworn",
+            "Name": "Sacrificial Fragments",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Catalyst"
+        },
+        {
+            "Check": true,
+            "Current level": "80",
+            "Name": "Sacrificial Bow",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "80",
+            "Name": "The Stringless",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "40",
+            "Name": "Favonius Warbow",
             "Phase": "1",
-            "Rarity": "*****",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": false,
+            "Current level": "70",
+            "Name": "Whiteblind",
+            "Phase": "4",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Claymore"
+        },
+        {
+            "Check": false,
+            "Current level": "60",
+            "Name": "Dragon's Bane",
+            "Phase": "3",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Polearm"
+        },
+        {
+            "Check": false,
+            "Current level": "70",
+            "Name": "Blackcliff Pole",
+            "Phase": "4",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Polearm"
+        },
+        {
+            "Check": true,
+            "Current level": "50",
+            "Name": "Harbinger of Dawn",
+            "Phase": "2",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Sword"
         },
         {
             "Check": false,
+            "Current level": "50",
+            "Name": "Harbinger of Dawn",
+            "Phase": "2",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
+            "Current level": "20",
+            "Name": "The Stringless",
+            "Phase": "0",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
             "Current level": "80",
-            "Name": "Skyward Harp",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Name": "Sacrificial Sword",
+            "Phase": "5",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Sword"
+        },
+        {
+            "Check": true,
+            "Current level": "70",
+            "Name": "Sacrificial Fragments",
+            "Phase": "4",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Catalyst"
+        },
+        {
+            "Check": true,
+            "Current level": "20",
+            "Name": "Sacrificial Bow",
+            "Phase": "0",
+            "Rarity": "****",
+            "Target level": "90",
+            "Type": "Bow"
+        },
+        {
+            "Check": true,
+            "Current level": "20",
+            "Name": "Thrilling tales",
+            "Phase": "0",
+            "Rarity": "***",
+            "Target level": "90",
+            "Type": "Catalyst"
+        },
+        {
+            "Check": true,
+            "Current level": "20",
+            "Name": "Sacrificial Greatsword",
+            "Phase": "0",
+            "Rarity": "****",
             "Target level": "90",
             "Type": "Sword"
         },
         {
             "Check": true,
             "Current level": "40",
-            "Name": "Skyward Blade",
+            "Name": "Messenger",
             "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Amos' Bow",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Rarity": "***",
             "Target level": "90",
             "Type": "Bow"
         },
         {
             "Check": false,
-            "Current level": "80",
-            "Name": "Everlasting Moonglow",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Engulfing Lightning",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Thundering Pulse",
-            "Phase": "1",
-            "Rarity": "*****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Mistsplitter Reforged",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Current level": "70",
+            "Name": "Filet Blade",
+            "Phase": "4",
+            "Rarity": "***",
             "Target level": "90",
             "Type": "Sword"
         },
         {
             "Check": false,
-            "Current level": "80",
-            "Name": "Primordial Jade Winged-Spear",
-            "Phase": "1",
-            "Rarity": "*****",
+            "Current level": "20",
+            "Name": "Halberd",
+            "Phase": "0",
+            "Rarity": "***",
             "Target level": "90",
             "Type": "Polearm"
         },
         {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Eye of Perception",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Viridescent Hunt",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Alley Hunter",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Lithic Blade",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Lithic Spear",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Black Sword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Royal Longsword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Wine and Song",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
+            "Check": true,
+            "Current level": "20",
             "Name": "Favonius Sword",
-            "Phase": "1",
+            "Phase": "0",
             "Rarity": "****",
             "Target level": "90",
             "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Deathmatch",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "Sacrificial Sword",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Serpent Spine",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": true,
-            "Current level": "60",
-            "Name": "Blackcliff Warbow",
-            "Phase": "3",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Blackcliff Slasher",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Flute",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Crescent Pike",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Royal Spear",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Alley Flash",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Dodoco Tales",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Luxurious Sea-Lord",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Predator",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Hakushin Ring",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Katsuragikiri Nagamasa",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Kitain Cross Spear",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Amenoma Kageuchi",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Hamayumi",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Mitternachts Waltz",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Favonius Lance",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Windblume Ode",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Dragonspine Spear",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Snow-Tombed Starsilver",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "Festering Desire",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Frostbearer",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Lion's Roar",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Sacrificial Greatsword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Sword of Descension",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Blackcliff Longsword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Prototype Rancour",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Iron Sting",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Sword"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Prototype Amber",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Rainslasher",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Prototype Archaic",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Favonius Greatsword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Widsith",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": true,
-            "Current level": "60",
-            "Name": "Solar Pearl",
-            "Phase": "3",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "Sacrificial Fragments",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Royal Grimoire",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Mappa Mare",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Bell",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Favonius Codex",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Blackcliff Agate",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Catalyst"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "Sacrificial Bow",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "The Stringless",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Rust",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Royal Bow",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": true,
-            "Current level": "80",
-            "Name": "Favonius Warbow",
-            "Phase": "5",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Compound Bow",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Royal Greatsword",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "The Catch",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": true,
-            "Current level": "60",
-            "Name": "Whiteblind",
-            "Phase": "3",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Claymore"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Dragon's Bane",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Prototype Crescent",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Bow"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Prototype Starglitter",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
-        },
-        {
-            "Check": false,
-            "Current level": "80",
-            "Name": "Blackcliff Pole",
-            "Phase": "1",
-            "Rarity": "****",
-            "Target level": "90",
-            "Type": "Polearm"
         }
     ],
     "weapons": [
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Aquila Favonia",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Lost Prayer to the Sacred Winds",
-            "Rarity": "*****",
-            "Type": "Catalyst",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Chaos Parts",
-            "Name": "Skyward Spine",
-            "Rarity": "*****",
-            "Type": "Polearm",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Bone Shards",
-            "Name": "Memory of Dust",
-            "Rarity": "*****",
-            "Type": "Catalyst",
-            "Weapon material": "Aerosiderite"
-        },
         {
             "Common material": "Treasure Hoarder Insignias",
             "Elite material": "Mist Grass",
@@ -2046,14 +1564,6 @@
             "Rarity": "*****",
             "Type": "Claymore",
             "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Bone Shards",
-            "Name": "Vortex Vanquisher",
-            "Rarity": "*****",
-            "Type": "Polearm",
-            "Weapon material": "Aerosiderite"
         },
         {
             "Common material": "Slime",
@@ -2064,164 +1574,12 @@
             "Weapon material": "Boreal Wolf"
         },
         {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Summit Shaper",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Guyun"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Chaos Parts",
-            "Name": "Wolf's Gravestone",
-            "Rarity": "*****",
-            "Type": "Claymore",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Mist Grass",
-            "Name": "Primordial Jade Cutter",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Ley Lines",
-            "Name": "Staff of Homa",
-            "Rarity": "*****",
-            "Type": "Polearm",
-            "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Elegy for the End",
-            "Rarity": "*****",
-            "Type": "Bow",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Song of Broken Pines",
-            "Rarity": "*****",
-            "Type": "Claymore",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Ley Lines",
-            "Name": "Skyward Atlas",
-            "Rarity": "*****",
-            "Type": "Catalyst",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Chaos Parts",
-            "Name": "Freedom-Sworn",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Ley Lines",
-            "Name": "Skyward Harp",
-            "Rarity": "*****",
-            "Type": "Bow",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
             "Common material": "Slime",
             "Elite material": "Ley Lines",
             "Name": "Skyward Blade",
             "Rarity": "*****",
             "Type": "Sword",
             "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Amos' Bow",
-            "Rarity": "*****",
-            "Type": "Bow",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Spectral Cores",
-            "Elite material": "Prisms",
-            "Name": "Everlasting Moonglow",
-            "Rarity": "*****",
-            "Type": "Catalyst",
-            "Weapon material": "Distant Sea"
-        },
-        {
-            "Common material": "Nobushi Handguards",
-            "Elite material": "Different Chaos Parts",
-            "Name": "Engulfing Lightning",
-            "Rarity": "*****",
-            "Type": "Polearm",
-            "Weapon material": "Mask"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Prisms",
-            "Name": "Thundering Pulse",
-            "Rarity": "*****",
-            "Type": "Bow",
-            "Weapon material": "Narukami"
-        },
-        {
-            "Common material": "Nobushi Handguards",
-            "Elite material": "Different Chaos Parts",
-            "Name": "Mistsplitter Reforged",
-            "Rarity": "*****",
-            "Type": "Sword",
-            "Weapon material": "Distant Sea"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Primordial Jade Winged-Spear",
-            "Rarity": "*****",
-            "Type": "Polearm",
-            "Weapon material": "Guyun"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Mist Grass",
-            "Name": "Eye of Perception",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Hilichurl Horns",
-            "Name": "The Viridescent Hunt",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Alley Hunter",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Lithic Blade",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Guyun"
         },
         {
             "Common material": "Hilichurl Arrowheads",
@@ -2242,34 +1600,10 @@
         {
             "Common material": "Hilichurl Arrowheads",
             "Elite material": "Hilichurl Horns",
-            "Name": "Royal Longsword",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Ley Lines",
-            "Name": "Wine and Song",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Hilichurl Horns",
             "Name": "Favonius Sword",
             "Rarity": "****",
             "Type": "Sword",
             "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Whopperflower Nectar",
-            "Elite material": "Ley Lines",
-            "Name": "Deathmatch",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Boreal Wolf"
         },
         {
             "Common material": "Samachurl Scrolls",
@@ -2281,67 +1615,11 @@
         },
         {
             "Common material": "Whopperflower Nectar",
-            "Elite material": "Bone Shards",
-            "Name": "Serpent Spine",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Whopperflower Nectar",
             "Elite material": "Sacrificial Knifes",
             "Name": "Blackcliff Warbow",
             "Rarity": "****",
             "Type": "Bow",
             "Weapon material": "Guyun"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Mist Grass",
-            "Name": "Blackcliff Slasher",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Ley Lines",
-            "Name": "The Flute",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Crescent Pike",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Mist Grass",
-            "Name": "Royal Spear",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Hilichurl Horns",
-            "Name": "The Alley Flash",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Ley Lines",
-            "Name": "Dodoco Tales",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Boreal Wolf"
         },
         {
             "Common material": "Slime",
@@ -2360,60 +1638,12 @@
             "Weapon material": "Narukami"
         },
         {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Prisms",
-            "Name": "Hakushin Ring",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Distant Sea"
-        },
-        {
-            "Common material": "Nobushi Handguards",
-            "Elite material": "Different Chaos Parts",
-            "Name": "Katsuragikiri Nagamasa",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Narukami"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Different Chaos Parts",
-            "Name": "Kitain Cross Spear",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Mask"
-        },
-        {
-            "Common material": "Nobushi Handguards",
-            "Elite material": "Different Chaos Parts",
-            "Name": "Amenoma Kageuchi",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Distant Sea"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Prisms",
-            "Name": "Hamayumi",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Narukami"
-        },
-        {
             "Common material": "Treasure Hoarder Insignias",
             "Elite material": "Hilichurl Horns",
             "Name": "Mitternachts Waltz",
             "Rarity": "****",
             "Type": "Bow",
             "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Favonius Lance",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Dandelion Gladiator"
         },
         {
             "Common material": "Whopperflower Nectar",
@@ -2432,49 +1662,9 @@
             "Weapon material": "Boreal Wolf"
         },
         {
-            "Common material": "Slime",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Snow-Tombed Starsilver",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Festering Desire",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Whopperflower Nectar",
-            "Elite material": "Chaos Parts",
-            "Name": "Frostbearer",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Lion's Roar",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Guyun"
-        },
-        {
             "Common material": "Hilichurl Arrowheads",
             "Elite material": "Ley Lines",
             "Name": "Sacrificial Greatsword",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Boreal Wolf"
-        },
-        {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Ley Lines",
-            "Name": "Sword of Descension",
             "Rarity": "****",
             "Type": "Sword",
             "Weapon material": "Boreal Wolf"
@@ -2488,52 +1678,12 @@
             "Weapon material": "Guyun"
         },
         {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Mist Grass",
-            "Name": "Prototype Rancour",
-            "Rarity": "****",
-            "Type": "Sword",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
             "Common material": "Whopperflower Nectar",
             "Elite material": "Bone Shards",
             "Name": "Iron Sting",
             "Rarity": "****",
             "Type": "Sword",
             "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Hilichurl Arrowheads",
-            "Elite material": "Mist Grass",
-            "Name": "Prototype Amber",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Mist Grass",
-            "Name": "Rainslasher",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Bone Shards",
-            "Name": "Prototype Archaic",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Chaos Parts",
-            "Name": "Favonius Greatsword",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Dandelion Gladiator"
         },
         {
             "Common material": "Hilichurl Masks",
@@ -2560,46 +1710,6 @@
             "Weapon material": "Dandelion Gladiator"
         },
         {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Royal Grimoire",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Bone Shards",
-            "Name": "Mappa Mare",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Whopperflower Nectar",
-            "Elite material": "Hilichurl Horns",
-            "Name": "The Bell",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Hilichurl Horns",
-            "Name": "Favonius Codex",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Decarabian"
-        },
-        {
-            "Common material": "Samachurl Scrolls",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Blackcliff Agate",
-            "Rarity": "****",
-            "Type": "Catalyst",
-            "Weapon material": "Guyun"
-        },
-        {
             "Common material": "Slime",
             "Elite material": "Ley Lines",
             "Name": "Sacrificial Bow",
@@ -2616,52 +1726,12 @@
             "Weapon material": "Decarabian"
         },
         {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Sacrificial Knifes",
-            "Name": "Rust",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Guyun"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Royal Bow",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
             "Common material": "Whopperflower Nectar",
             "Elite material": "Chaos Parts",
             "Name": "Favonius Warbow",
             "Rarity": "****",
             "Type": "Bow",
             "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Fatui Insignia",
-            "Elite material": "Bone Shards",
-            "Name": "Compound Bow",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Aerosiderite"
-        },
-        {
-            "Common material": "Slime",
-            "Elite material": "Chaos Parts",
-            "Name": "Royal Greatsword",
-            "Rarity": "****",
-            "Type": "Claymore",
-            "Weapon material": "Dandelion Gladiator"
-        },
-        {
-            "Common material": "Spectral Cores",
-            "Elite material": "Different Chaos Parts",
-            "Name": "The Catch",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Mask"
         },
         {
             "Common material": "Treasure Hoarder Insignias",
@@ -2680,28 +1750,108 @@
             "Weapon material": "Mist Veiled Elixir"
         },
         {
-            "Common material": "Treasure Hoarder Insignias",
-            "Elite material": "Mist Grass",
-            "Name": "Prototype Crescent",
-            "Rarity": "****",
-            "Type": "Bow",
-            "Weapon material": "Mist Veiled Elixir"
-        },
-        {
-            "Common material": "Hilichurl Masks",
-            "Elite material": "Bone Shards",
-            "Name": "Prototype Starglitter",
-            "Rarity": "****",
-            "Type": "Polearm",
-            "Weapon material": "Aerosiderite"
-        },
-        {
             "Common material": "Fatui Insignia",
             "Elite material": "Mist Grass",
             "Name": "Blackcliff Pole",
             "Rarity": "****",
             "Type": "Polearm",
             "Weapon material": "Mist Veiled Elixir"
+        },
+        {
+            "Common material": "Slime",
+            "Elite material": "Ley Lines",
+            "Name": "Harbinger of Dawn",
+            "Rarity": "****",
+            "Type": "Sword",
+            "Weapon material": "Boreal Wolf"
+        },
+        {
+            "Common material": "Slime",
+            "Elite material": "Ley Lines",
+            "Name": "Harbinger of Dawn",
+            "Rarity": "****",
+            "Type": "Sword",
+            "Weapon material": "Boreal Wolf"
+        },
+        {
+            "Common material": "Hilichurl Arrowheads",
+            "Elite material": "Hilichurl Horns",
+            "Name": "The Stringless",
+            "Rarity": "****",
+            "Type": "Bow",
+            "Weapon material": "Decarabian"
+        },
+        {
+            "Common material": "Samachurl Scrolls",
+            "Elite material": "Chaos Parts",
+            "Name": "Sacrificial Sword",
+            "Rarity": "****",
+            "Type": "Sword",
+            "Weapon material": "Dandelion Gladiator"
+        },
+        {
+            "Common material": "Treasure Hoarder Insignias",
+            "Elite material": "Chaos Parts",
+            "Name": "Sacrificial Fragments",
+            "Rarity": "****",
+            "Type": "Catalyst",
+            "Weapon material": "Dandelion Gladiator"
+        },
+        {
+            "Common material": "Slime",
+            "Elite material": "Ley Lines",
+            "Name": "Sacrificial Bow",
+            "Rarity": "****",
+            "Type": "Bow",
+            "Weapon material": "Boreal Wolf"
+        },
+        {
+            "Common material": "Samachurl Scrolls",
+            "Elite material": "Ley Lines",
+            "Name": "Thrilling tales",
+            "Rarity": "***",
+            "Type": "Catalyst",
+            "Weapon material": "Boreal Wolf"
+        },
+        {
+            "Common material": "Hilichurl Arrowheads",
+            "Elite material": "Ley Lines",
+            "Name": "Sacrificial Greatsword",
+            "Rarity": "****",
+            "Type": "Sword",
+            "Weapon material": "Boreal Wolf"
+        },
+        {
+            "Common material": "Treasure Hoarder Insignias",
+            "Elite material": "Mist Grass",
+            "Name": "Messenger",
+            "Rarity": "***",
+            "Type": "Bow",
+            "Weapon material": "Mist Veiled Elixir"
+        },
+        {
+            "Common material": "Treasure Hoarder Insignias",
+            "Elite material": "Mist Grass",
+            "Name": "Filet Blade",
+            "Rarity": "***",
+            "Type": "Sword",
+            "Weapon material": "Mist Veiled Elixir"
+        },
+        {
+            "Common material": "Whopperflower Nectar",
+            "Elite material": "Mist Grass",
+            "Name": "Halberd",
+            "Rarity": "***",
+            "Type": "Polearm",
+            "Weapon material": "Mist Veiled Elixir"
+        },
+        {
+            "Common material": "Hilichurl Arrowheads",
+            "Elite material": "Hilichurl Horns",
+            "Name": "Favonius Sword",
+            "Rarity": "****",
+            "Type": "Sword",
+            "Weapon material": "Decarabian"
         }
     ],
     "weekly_materials": [

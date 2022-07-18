@@ -97,6 +97,10 @@
 
         void all_talent_9(QString val);
 
+        void on_radioButton_3_clicked();
+
+        void on_radioButton_2_clicked();
+
     private:
         Ui::genshin_calculator *ui;
     };
