@@ -15,7 +15,9 @@
         "Dew of Repudiation",
         "Riftborn Regalia",
         "Dragonheir's False Fin",
-        "Runic Fang"
+        "Runic Fang",
+        "Majestic Hooked Beak",
+        "Thunderclap Fruitcore"
     ],
     "characters": [
         {
@@ -507,6 +509,36 @@
             "Talent material": "Transience",
             "Vision": "Anemo",
             "Weekly material": "The Meaning of Aeons"
+        },
+        {
+            "Ascension material": "Majestic Hooked Beak",
+            "Common material": "Hilichurl Arrowheads",
+            "Local speciality": "Rukkhashava Mushrooms",
+            "Name": "Collei",
+            "Region": "Sumeru",
+            "Talent material": "Sumeru_1",
+            "Vision": "Dendro",
+            "Weekly material": "Tears of the Calamitous God"
+        },
+        {
+            "Ascension material": "Thunderclap Fruitcore",
+            "Common material": "Faded Red Satin",
+            "Local speciality": "Kalpalata Lotus",
+            "Name": "Dori",
+            "Region": "Sumeru",
+            "Talent material": "Sumeru_2",
+            "Vision": "Electro",
+            "Weekly material": "Bloodjade Branch"
+        },
+        {
+            "Ascension material": "Majestic Hooked Beak",
+            "Common material": "Fungal Spore Powder",
+            "Local speciality": "Nilotpala Lotus",
+            "Name": "Tighnari",
+            "Region": "Sumeru",
+            "Talent material": "Sumeru_3",
+            "Vision": "Dendro",
+            "Weekly material": "The Meaning of Aeons"
         }
     ],
     "common_materials": [
@@ -519,7 +551,8 @@
         "Whopperflower Nectar",
         "Nobushi Handguards",
         "Spectral Cores",
-        "Fungal Spore Powder"
+        "Fungal Spore Powder",
+        "Faded Red Satin"
     ],
     "elite_materials": [
         "Hilichurl Horns",
@@ -558,7 +591,10 @@
         "Wolfhook",
         "Amakumo Fruit",
         "Sango Pearl",
-        "Fluorescent Fungus"
+        "Fluorescent Fungus",
+        "Nilotpala Lotus",
+        "Rukkhashava Mushrooms",
+        "Kalpalata Lotus"
     ],
     "talent_materials": [
         "Freedom",
@@ -569,7 +605,10 @@
         "Gold",
         "Transience",
         "Elegance",
-        "Light"
+        "Light",
+        "Sumeru_1",
+        "Sumeru_2",
+        "Sumeru_3"
     ],
     "training": [
         {
@@ -744,12 +783,12 @@
         {
             "Check": true,
             "Current lvl": "90",
-            "Elemental burst lvl": "8",
+            "Elemental burst lvl": "10",
             "Elemental burst target lvl": "10",
-            "Elemental skill lvl": "8",
+            "Elemental skill lvl": "10",
             "Elemental skill target lvl": "10",
             "Name": "Kaedehara Kazuha",
-            "Normal attack lvl": "8",
+            "Normal attack lvl": "10",
             "Normal attack target lvl": "10",
             "Phase": "6",
             "Target lvl": "90"
@@ -1207,6 +1246,45 @@
             "Normal attack lvl": "8",
             "Normal attack target lvl": "8",
             "Phase": "6",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Collei",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
+            "Target lvl": "90"
+        },
+        {
+            "Check": true,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Dori",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
+            "Target lvl": "90"
+        },
+        {
+            "Check": false,
+            "Current lvl": "1",
+            "Elemental burst lvl": "1",
+            "Elemental burst target lvl": "8",
+            "Elemental skill lvl": "1",
+            "Elemental skill target lvl": "8",
+            "Name": "Tighnari",
+            "Normal attack lvl": "1",
+            "Normal attack target lvl": "8",
+            "Phase": "0",
             "Target lvl": "90"
         }
     ],
